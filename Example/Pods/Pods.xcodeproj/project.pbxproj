@@ -7,95 +7,95 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0868D89026928B4E3AB9429A89B9D080 /* EVContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272107D6DD5E02A4B5B48E11AB6CD35A /* EVContact.swift */; };
-		0BC6CCC224C712180C3582DEC39FA666 /* EVContactBubbleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4A80644A0687645B1BAFFB284D9B4F /* EVContactBubbleDelegate.swift */; };
-		12C2D5471D002F3A1132C69D52B1C2F8 /* EVContactBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514308A975A65C19A3846D6203985778 /* EVContactBubble.swift */; };
-		1BCE44C4E1E98456493113675ABD02FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097371D3D9C68E04180BE5E6F10C00DE /* Foundation.framework */; };
-		23256063F74A8D992D30BF39341F4FE2 /* EVContactsPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8F789274C5AF733FA7AC0C17C9567ABE /* EVContactsPicker.bundle */; };
-		2C77F491A994B05A1F5D98E217426E85 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097371D3D9C68E04180BE5E6F10C00DE /* Foundation.framework */; };
+		171BD474252E26B2E48EB5C5EFFC6908 /* EVBubbleColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3110D9D558BD99455DF9925D4F32057 /* EVBubbleColor.swift */; };
+		1BCE44C4E1E98456493113675ABD02FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175025F5CC898319ADA1D159E168D2A1 /* Foundation.framework */; };
+		1E38CC7ADCBF024E78CF0F998C58C1A4 /* EVContactBubbleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F7E2AA478412C1B67168E68A388B3D /* EVContactBubbleDelegate.swift */; };
+		2C77F491A994B05A1F5D98E217426E85 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175025F5CC898319ADA1D159E168D2A1 /* Foundation.framework */; };
 		2E1D0C6C1F485E108904233766069823 /* Pods-EVContactsPicker_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B4EF5126103B3FB9AAF157C68D4C7F /* Pods-EVContactsPicker_Example-dummy.m */; };
 		471626F87B6F1F974EC46CCC63EE0516 /* Pods-EVContactsPicker_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B8AA4568B8658ECF9CB84C31D26D78E /* Pods-EVContactsPicker_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		479A7780FA5F93EF03E1DE4E7A050DC9 /* Pods-EVContactsPicker_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C37A2D0A95FC2F25EF53C7CE25B6A1D /* Pods-EVContactsPicker_Tests-dummy.m */; };
-		74D338A9CE80E24450CFB4F518D5BDA4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 097371D3D9C68E04180BE5E6F10C00DE /* Foundation.framework */; };
-		76603B26DE56381AC68EB7A846F08F98 /* EVContactsPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E99A6E975DEE2A0A79BE52AEE0E94C /* EVContactsPicker-dummy.m */; };
+		5C4F4F2DD2A1161D0D74C9975A4AA115 /* EVPickedContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A594EAB303C8FCB40B60051C034F5C /* EVPickedContactsView.swift */; };
+		6CBD4B69FF30E58B1D79B1E41126CE34 /* EVContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084BD670AD528352D138A8E1E16C9023 /* EVContact.swift */; };
+		80973F02C056F201B540818C6A935B59 /* EVContactsPicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2583FEC91D035BD61B1827F2B70FCAF5 /* EVContactsPicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		81AC375EC0F40F860C0B2ABEE92B283B /* Pods-EVContactsPicker_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A45DE1BAF708123A5281D3B79328643 /* Pods-EVContactsPicker_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		90D8838B090D742806AF7AD7D7B29CBE /* EVBubbleColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F83400C7649B097F634599ACA00111D /* EVBubbleColor.swift */; };
-		A503293DF196CB7B7BBFB31F945E48A6 /* EVPickedContactsViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAAE957AB61849B425CCB2E83787717 /* EVPickedContactsViewDelegate.swift */; };
-		C25676720E1D36BAB52510B9B6B0808C /* EVPickedContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8DF0D255A5C575618C41ED6A823E75 /* EVPickedContactsView.swift */; };
-		FE426B189CFD72DCC2141E5D27159D83 /* EVContactsPicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D2EA40F570DDDB61046048A9611BDA51 /* EVContactsPicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C77CB9E630408754A72F8AA5F9E28563 /* EVContactsPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BB2E32FA58F7BE7DF8AB8B95CBF7AAE /* EVContactsPicker-dummy.m */; };
+		CCB68F183D17FA2A43C418AD8AC038A8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175025F5CC898319ADA1D159E168D2A1 /* Foundation.framework */; };
+		DD4275C4D3ECC793C823DE8577531004 /* EVContactsPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 015C0FFAAE855318366290470E4C9DFB /* EVContactsPicker.bundle */; };
+		DE8901D4471AD535A771EC5B3D5BEEF3 /* EVPickedContactsViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F98BE87E3C14A137726371B5AE73EE /* EVPickedContactsViewDelegate.swift */; };
+		FA1669163CB719703A292DB180896372 /* EVContactBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94319B2BC04E4E83247B944B88026DE4 /* EVContactBubble.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7FBED9C11540F3EB1EDC130DB678F82F /* PBXContainerItemProxy */ = {
+		18C2916297F94ECADF6A5C44D22736FE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 4B20AD4132870D15080B53A9E359B1F2;
+			remoteGlobalIDString = F5087C13AFB95B09E71D43D72FDBD53E;
 			remoteInfo = EVContactsPicker;
 		};
-		8D8E1D9581EC76D2ABCD608221F842D8 /* PBXContainerItemProxy */ = {
+		73FB54BBCD762482C545E5D3DF3810DE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 277C7F0ABB775D54C7165D242977AFEC;
+			remoteGlobalIDString = F5087C13AFB95B09E71D43D72FDBD53E;
+			remoteInfo = EVContactsPicker;
+		};
+		8F8694987F3531184028E38850761AF2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1779D3E897AFEF0215E014A7BA65EFD;
 			remoteInfo = "EVContactsPicker-EVContactsPicker";
-		};
-		FC29B018FE9F6A6A1164743725A8603B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4B20AD4132870D15080B53A9E359B1F2;
-			remoteInfo = EVContactsPicker;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		097371D3D9C68E04180BE5E6F10C00DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		015C0FFAAE855318366290470E4C9DFB /* EVContactsPicker.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EVContactsPicker.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		084BD670AD528352D138A8E1E16C9023 /* EVContact.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVContact.swift; sourceTree = "<group>"; };
 		0A45DE1BAF708123A5281D3B79328643 /* Pods-EVContactsPicker_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EVContactsPicker_Tests-umbrella.h"; sourceTree = "<group>"; };
 		0B4D8FE6B468B1D1E68A0B05FA2AE955 /* Pods-EVContactsPicker_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EVContactsPicker_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0BB2E32FA58F7BE7DF8AB8B95CBF7AAE /* EVContactsPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EVContactsPicker-dummy.m"; sourceTree = "<group>"; };
 		0EED9BD0EDFE77B74DE706B13E7AB2B1 /* Pods-EVContactsPicker_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EVContactsPicker_Example-frameworks.sh"; sourceTree = "<group>"; };
+		175025F5CC898319ADA1D159E168D2A1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		20E8DF3444DED0F6BC41CFF7238C3799 /* EVContactsPicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EVContactsPicker.xcconfig; sourceTree = "<group>"; };
 		2168F8EA6760B7296FAB7BCA971E9F99 /* Pods-EVContactsPicker_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EVContactsPicker_Tests-resources.sh"; sourceTree = "<group>"; };
-		272107D6DD5E02A4B5B48E11AB6CD35A /* EVContact.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVContact.swift; sourceTree = "<group>"; };
+		23A594EAB303C8FCB40B60051C034F5C /* EVPickedContactsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVPickedContactsView.swift; sourceTree = "<group>"; };
+		2583FEC91D035BD61B1827F2B70FCAF5 /* EVContactsPicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EVContactsPicker-umbrella.h"; sourceTree = "<group>"; };
 		2983357F49F0810E16CE62479894EB0A /* Pods-EVContactsPicker_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EVContactsPicker_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		2C063B114BD5F8F8D54527CFA8D2ED8B /* EVContactsPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EVContactsPicker-prefix.pch"; sourceTree = "<group>"; };
-		2CAAE957AB61849B425CCB2E83787717 /* EVPickedContactsViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVPickedContactsViewDelegate.swift; sourceTree = "<group>"; };
 		31AFFE69EFE609AADBFEA23AEC3BB7C0 /* Pods-EVContactsPicker_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EVContactsPicker_Example.release.xcconfig"; sourceTree = "<group>"; };
 		3AFBCC30980F68D670A118C4D904396D /* Pods-EVContactsPicker_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-EVContactsPicker_Example.modulemap"; sourceTree = "<group>"; };
-		3F83400C7649B097F634599ACA00111D /* EVBubbleColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVBubbleColor.swift; sourceTree = "<group>"; };
-		4CD2548DE3E60635F1B451F1CF582968 /* EVContactsPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EVContactsPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5079AC107DA9B43762BB633A2FC7A16E /* Pods-EVContactsPicker_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EVContactsPicker_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		514308A975A65C19A3846D6203985778 /* EVContactBubble.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVContactBubble.swift; sourceTree = "<group>"; };
 		5B8AA4568B8658ECF9CB84C31D26D78E /* Pods-EVContactsPicker_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EVContactsPicker_Example-umbrella.h"; sourceTree = "<group>"; };
 		61202B7640993C4CFA721BAE2DF2C940 /* Pods-EVContactsPicker_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EVContactsPicker_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		6B4A80644A0687645B1BAFFB284D9B4F /* EVContactBubbleDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVContactBubbleDelegate.swift; sourceTree = "<group>"; };
+		61D12CE742DB92C076AE8E5D894273A8 /* EVContactsPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EVContactsPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C37A2D0A95FC2F25EF53C7CE25B6A1D /* Pods-EVContactsPicker_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EVContactsPicker_Tests-dummy.m"; sourceTree = "<group>"; };
 		77C6E7390C3EB5E35ECE4605A0351D10 /* Pods-EVContactsPicker_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EVContactsPicker_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		80AD18F3AB8A004B42E3967B1D6B63D1 /* Pods_EVContactsPicker_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EVContactsPicker_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		846257AEF94AB1091158EFF7CFD49E1C /* EVContactsPicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EVContactsPicker.xcconfig; sourceTree = "<group>"; };
-		8F789274C5AF733FA7AC0C17C9567ABE /* EVContactsPicker.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EVContactsPicker.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		94319B2BC04E4E83247B944B88026DE4 /* EVContactBubble.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVContactBubble.swift; sourceTree = "<group>"; };
 		A686DC16EA88188538A022F1BAA703B8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ADC4D2AAE12F34E1B4880C4437D23A62 /* Pods-EVContactsPicker_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EVContactsPicker_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		AE0DD46258DEEBB8C4D3C783B56F4AB9 /* Pods-EVContactsPicker_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-EVContactsPicker_Tests.modulemap"; sourceTree = "<group>"; };
+		B3110D9D558BD99455DF9925D4F32057 /* EVBubbleColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVBubbleColor.swift; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		BB537C0F6DF2B0C61D37B203208C04DF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C3E99A6E975DEE2A0A79BE52AEE0E94C /* EVContactsPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EVContactsPicker-dummy.m"; sourceTree = "<group>"; };
 		C8C4DC85DCC2EBD89D8517FE45CE4588 /* Pods-EVContactsPicker_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EVContactsPicker_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		D2EA40F570DDDB61046048A9611BDA51 /* EVContactsPicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EVContactsPicker-umbrella.h"; sourceTree = "<group>"; };
 		D7F47BED347D261BD9DE631E98E65DFC /* EVContactsPicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = EVContactsPicker.modulemap; sourceTree = "<group>"; };
 		E3E23A8278579CC10E09C630ECA5D621 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4A98BDD327599F16BB44312814B2A23 /* Pods_EVContactsPicker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EVContactsPicker_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4DA320C5CEC8FDA897345D9EAC8ADD1 /* Pods-EVContactsPicker_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EVContactsPicker_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		E4F399D367519DF6544F63D1BDE940CA /* Pods-EVContactsPicker_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EVContactsPicker_Example-resources.sh"; sourceTree = "<group>"; };
 		E6B4EF5126103B3FB9AAF157C68D4C7F /* Pods-EVContactsPicker_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EVContactsPicker_Example-dummy.m"; sourceTree = "<group>"; };
-		ED8DF0D255A5C575618C41ED6A823E75 /* EVPickedContactsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVPickedContactsView.swift; sourceTree = "<group>"; };
+		F1F98BE87E3C14A137726371B5AE73EE /* EVPickedContactsViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVPickedContactsViewDelegate.swift; sourceTree = "<group>"; };
+		F3F7E2AA478412C1B67168E68A388B3D /* EVContactBubbleDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVContactBubbleDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7C5ACF4ABDBA4046E74DA4D91FD0B2B0 /* Frameworks */ = {
+		1A1439ED9FEFBAC11B86F9100AE097C4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74D338A9CE80E24450CFB4F518D5BDA4 /* Foundation.framework in Frameworks */,
+				CCB68F183D17FA2A43C418AD8AC038A8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,7 +107,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A691067F1A94422ECB265137A2E06E81 /* Frameworks */ = {
+		B9B76BABAC0FF81B9B471EC589347C92 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -128,7 +128,7 @@
 		53F661C0CA7190D2CF05023FB33D61E4 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				097371D3D9C68E04180BE5E6F10C00DE /* Foundation.framework */,
+				175025F5CC898319ADA1D159E168D2A1 /* Foundation.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -137,10 +137,10 @@
 			isa = PBXGroup;
 			children = (
 				D7F47BED347D261BD9DE631E98E65DFC /* EVContactsPicker.modulemap */,
-				846257AEF94AB1091158EFF7CFD49E1C /* EVContactsPicker.xcconfig */,
-				C3E99A6E975DEE2A0A79BE52AEE0E94C /* EVContactsPicker-dummy.m */,
+				20E8DF3444DED0F6BC41CFF7238C3799 /* EVContactsPicker.xcconfig */,
+				0BB2E32FA58F7BE7DF8AB8B95CBF7AAE /* EVContactsPicker-dummy.m */,
 				2C063B114BD5F8F8D54527CFA8D2ED8B /* EVContactsPicker-prefix.pch */,
-				D2EA40F570DDDB61046048A9611BDA51 /* EVContactsPicker-umbrella.h */,
+				2583FEC91D035BD61B1827F2B70FCAF5 /* EVContactsPicker-umbrella.h */,
 				BB537C0F6DF2B0C61D37B203208C04DF /* Info.plist */,
 			);
 			name = "Support Files";
@@ -166,8 +166,8 @@
 		7484788FF2BD985E1D7038113D1C8BD9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8F789274C5AF733FA7AC0C17C9567ABE /* EVContactsPicker.bundle */,
-				4CD2548DE3E60635F1B451F1CF582968 /* EVContactsPicker.framework */,
+				015C0FFAAE855318366290470E4C9DFB /* EVContactsPicker.bundle */,
+				61D12CE742DB92C076AE8E5D894273A8 /* EVContactsPicker.framework */,
 				E4A98BDD327599F16BB44312814B2A23 /* Pods_EVContactsPicker_Example.framework */,
 				80AD18F3AB8A004B42E3967B1D6B63D1 /* Pods_EVContactsPicker_Tests.framework */,
 			);
@@ -188,12 +188,12 @@
 		88357BA9F7A0C9E2FF664E1C8FE8A7A3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				3F83400C7649B097F634599ACA00111D /* EVBubbleColor.swift */,
-				272107D6DD5E02A4B5B48E11AB6CD35A /* EVContact.swift */,
-				514308A975A65C19A3846D6203985778 /* EVContactBubble.swift */,
-				6B4A80644A0687645B1BAFFB284D9B4F /* EVContactBubbleDelegate.swift */,
-				ED8DF0D255A5C575618C41ED6A823E75 /* EVPickedContactsView.swift */,
-				2CAAE957AB61849B425CCB2E83787717 /* EVPickedContactsViewDelegate.swift */,
+				B3110D9D558BD99455DF9925D4F32057 /* EVBubbleColor.swift */,
+				084BD670AD528352D138A8E1E16C9023 /* EVContact.swift */,
+				94319B2BC04E4E83247B944B88026DE4 /* EVContactBubble.swift */,
+				F3F7E2AA478412C1B67168E68A388B3D /* EVContactBubbleDelegate.swift */,
+				23A594EAB303C8FCB40B60051C034F5C /* EVPickedContactsView.swift */,
+				F1F98BE87E3C14A137726371B5AE73EE /* EVPickedContactsViewDelegate.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -272,11 +272,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A9B5909038F9330FA38B2EE8615E24B1 /* Headers */ = {
+		9B805915635CFC213CF92524D6EE0B55 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE426B189CFD72DCC2141E5D27159D83 /* EVContactsPicker-umbrella.h in Headers */,
+				80973F02C056F201B540818C6A935B59 /* EVContactsPicker-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,47 +302,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				EE0FED4671305D7E9A17E6D06A0168CF /* PBXTargetDependency */,
+				1C307B02A75F64158CF085B6D9BEAF7D /* PBXTargetDependency */,
 			);
 			name = "Pods-EVContactsPicker_Tests";
 			productName = "Pods-EVContactsPicker_Tests";
 			productReference = 80AD18F3AB8A004B42E3967B1D6B63D1 /* Pods_EVContactsPicker_Tests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		277C7F0ABB775D54C7165D242977AFEC /* EVContactsPicker-EVContactsPicker */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 835F85148D086DBA38E7602A7D5805C1 /* Build configuration list for PBXNativeTarget "EVContactsPicker-EVContactsPicker" */;
-			buildPhases = (
-				CE756A41142025FF15C649D2E1816FB4 /* Sources */,
-				A691067F1A94422ECB265137A2E06E81 /* Frameworks */,
-				3452A4BD0026CB6B4A4DF52E7A4C81A8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "EVContactsPicker-EVContactsPicker";
-			productName = "EVContactsPicker-EVContactsPicker";
-			productReference = 8F789274C5AF733FA7AC0C17C9567ABE /* EVContactsPicker.bundle */;
-			productType = "com.apple.product-type.bundle";
-		};
-		4B20AD4132870D15080B53A9E359B1F2 /* EVContactsPicker */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = ABE251B4BFF977226CA0D5BC9E76D096 /* Build configuration list for PBXNativeTarget "EVContactsPicker" */;
-			buildPhases = (
-				FF376114F7BD17D9F9C4BFD52BC9FC4A /* Sources */,
-				7C5ACF4ABDBA4046E74DA4D91FD0B2B0 /* Frameworks */,
-				97961146A8A9C2619F85C8ACAA7BBF0E /* Resources */,
-				A9B5909038F9330FA38B2EE8615E24B1 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				88DC459CD69C5014BE402D030260139E /* PBXTargetDependency */,
-			);
-			name = EVContactsPicker;
-			productName = EVContactsPicker;
-			productReference = 4CD2548DE3E60635F1B451F1CF582968 /* EVContactsPicker.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		656870E05E03B32A41D01D54661CE58C /* Pods-EVContactsPicker_Example */ = {
@@ -356,11 +320,47 @@
 			buildRules = (
 			);
 			dependencies = (
-				12502442CD580E5A1F6652414937A50F /* PBXTargetDependency */,
+				D0A203EE9FCB2A4D066A2649DEFC5F7E /* PBXTargetDependency */,
 			);
 			name = "Pods-EVContactsPicker_Example";
 			productName = "Pods-EVContactsPicker_Example";
 			productReference = E4A98BDD327599F16BB44312814B2A23 /* Pods_EVContactsPicker_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A1779D3E897AFEF0215E014A7BA65EFD /* EVContactsPicker-EVContactsPicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45CF5E4DD331022A366769EA031BB2AD /* Build configuration list for PBXNativeTarget "EVContactsPicker-EVContactsPicker" */;
+			buildPhases = (
+				0395077235C6EEB1A30C2D8AF02C61E4 /* Sources */,
+				B9B76BABAC0FF81B9B471EC589347C92 /* Frameworks */,
+				B6D2789C75ED7C2D5DE0DE158FF8F061 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "EVContactsPicker-EVContactsPicker";
+			productName = "EVContactsPicker-EVContactsPicker";
+			productReference = 015C0FFAAE855318366290470E4C9DFB /* EVContactsPicker.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		F5087C13AFB95B09E71D43D72FDBD53E /* EVContactsPicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7D15F8DEE28B2B5A2C52B32030A264D /* Build configuration list for PBXNativeTarget "EVContactsPicker" */;
+			buildPhases = (
+				D10D795B4A7238E8B2AA591FB0FBE308 /* Sources */,
+				1A1439ED9FEFBAC11B86F9100AE097C4 /* Frameworks */,
+				674972CCD5E2355360781CD612758DB5 /* Resources */,
+				9B805915635CFC213CF92524D6EE0B55 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				913C56BB50D4FF3C1392BC5AB69AE9E1 /* PBXTargetDependency */,
+			);
+			name = EVContactsPicker;
+			productName = EVContactsPicker;
+			productReference = 61D12CE742DB92C076AE8E5D894273A8 /* EVContactsPicker.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -384,8 +384,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4B20AD4132870D15080B53A9E359B1F2 /* EVContactsPicker */,
-				277C7F0ABB775D54C7165D242977AFEC /* EVContactsPicker-EVContactsPicker */,
+				F5087C13AFB95B09E71D43D72FDBD53E /* EVContactsPicker */,
+				A1779D3E897AFEF0215E014A7BA65EFD /* EVContactsPicker-EVContactsPicker */,
 				656870E05E03B32A41D01D54661CE58C /* Pods-EVContactsPicker_Example */,
 				17A388643F0855379FCA2E9C07B81CF9 /* Pods-EVContactsPicker_Tests */,
 			);
@@ -393,24 +393,31 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3452A4BD0026CB6B4A4DF52E7A4C81A8 /* Resources */ = {
+		674972CCD5E2355360781CD612758DB5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD4275C4D3ECC793C823DE8577531004 /* EVContactsPicker.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		97961146A8A9C2619F85C8ACAA7BBF0E /* Resources */ = {
+		B6D2789C75ED7C2D5DE0DE158FF8F061 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23256063F74A8D992D30BF39341F4FE2 /* EVContactsPicker.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0395077235C6EEB1A30C2D8AF02C61E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		84682D8995ED52C7235B4BC123E66190 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -427,47 +434,40 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CE756A41142025FF15C649D2E1816FB4 /* Sources */ = {
+		D10D795B4A7238E8B2AA591FB0FBE308 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FF376114F7BD17D9F9C4BFD52BC9FC4A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				90D8838B090D742806AF7AD7D7B29CBE /* EVBubbleColor.swift in Sources */,
-				0868D89026928B4E3AB9429A89B9D080 /* EVContact.swift in Sources */,
-				12C2D5471D002F3A1132C69D52B1C2F8 /* EVContactBubble.swift in Sources */,
-				0BC6CCC224C712180C3582DEC39FA666 /* EVContactBubbleDelegate.swift in Sources */,
-				76603B26DE56381AC68EB7A846F08F98 /* EVContactsPicker-dummy.m in Sources */,
-				C25676720E1D36BAB52510B9B6B0808C /* EVPickedContactsView.swift in Sources */,
-				A503293DF196CB7B7BBFB31F945E48A6 /* EVPickedContactsViewDelegate.swift in Sources */,
+				171BD474252E26B2E48EB5C5EFFC6908 /* EVBubbleColor.swift in Sources */,
+				6CBD4B69FF30E58B1D79B1E41126CE34 /* EVContact.swift in Sources */,
+				FA1669163CB719703A292DB180896372 /* EVContactBubble.swift in Sources */,
+				1E38CC7ADCBF024E78CF0F998C58C1A4 /* EVContactBubbleDelegate.swift in Sources */,
+				C77CB9E630408754A72F8AA5F9E28563 /* EVContactsPicker-dummy.m in Sources */,
+				5C4F4F2DD2A1161D0D74C9975A4AA115 /* EVPickedContactsView.swift in Sources */,
+				DE8901D4471AD535A771EC5B3D5BEEF3 /* EVPickedContactsViewDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		12502442CD580E5A1F6652414937A50F /* PBXTargetDependency */ = {
+		1C307B02A75F64158CF085B6D9BEAF7D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = EVContactsPicker;
-			target = 4B20AD4132870D15080B53A9E359B1F2 /* EVContactsPicker */;
-			targetProxy = 7FBED9C11540F3EB1EDC130DB678F82F /* PBXContainerItemProxy */;
+			target = F5087C13AFB95B09E71D43D72FDBD53E /* EVContactsPicker */;
+			targetProxy = 73FB54BBCD762482C545E5D3DF3810DE /* PBXContainerItemProxy */;
 		};
-		88DC459CD69C5014BE402D030260139E /* PBXTargetDependency */ = {
+		913C56BB50D4FF3C1392BC5AB69AE9E1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "EVContactsPicker-EVContactsPicker";
-			target = 277C7F0ABB775D54C7165D242977AFEC /* EVContactsPicker-EVContactsPicker */;
-			targetProxy = 8D8E1D9581EC76D2ABCD608221F842D8 /* PBXContainerItemProxy */;
+			target = A1779D3E897AFEF0215E014A7BA65EFD /* EVContactsPicker-EVContactsPicker */;
+			targetProxy = 8F8694987F3531184028E38850761AF2 /* PBXContainerItemProxy */;
 		};
-		EE0FED4671305D7E9A17E6D06A0168CF /* PBXTargetDependency */ = {
+		D0A203EE9FCB2A4D066A2649DEFC5F7E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = EVContactsPicker;
-			target = 4B20AD4132870D15080B53A9E359B1F2 /* EVContactsPicker */;
-			targetProxy = FC29B018FE9F6A6A1164743725A8603B /* PBXContainerItemProxy */;
+			target = F5087C13AFB95B09E71D43D72FDBD53E /* EVContactsPicker */;
+			targetProxy = 18C2916297F94ECADF6A5C44D22736FE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -564,9 +564,36 @@
 			};
 			name = Release;
 		};
-		51CA3E0F9E0626B377296E6CBD71A970 /* Debug */ = {
+		29F8842D2C96C2087BD5D1BC95572572 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 846257AEF94AB1091158EFF7CFD49E1C /* EVContactsPicker.xcconfig */;
+			baseConfigurationReference = 20E8DF3444DED0F6BC41CFF7238C3799 /* EVContactsPicker.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 0.1.0;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 0.1.0;
+				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/EVContactsPicker/EVContactsPicker-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EVContactsPicker/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/EVContactsPicker/EVContactsPicker.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = EVContactsPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4D92086E0DBD39EB8808A994BE9807FA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20E8DF3444DED0F6BC41CFF7238C3799 /* EVContactsPicker.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = EVContactsPicker;
@@ -574,7 +601,7 @@
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = bundle;
 			};
-			name = Debug;
+			name = Release;
 		};
 		552D02D5BA751AC2E8790D2811D496CA /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -615,9 +642,21 @@
 			};
 			name = Debug;
 		};
-		5C8E222C7E6D73572CE35F7C79579B83 /* Release */ = {
+		5AC0DF544A0A9B0AA29F2924698147C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 846257AEF94AB1091158EFF7CFD49E1C /* EVContactsPicker.xcconfig */;
+			baseConfigurationReference = 20E8DF3444DED0F6BC41CFF7238C3799 /* EVContactsPicker.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = EVContactsPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		90239A84CA33BC1F5D388C2FA3060F25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20E8DF3444DED0F6BC41CFF7238C3799 /* EVContactsPicker.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 0.1.0;
@@ -632,27 +671,16 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/EVContactsPicker/EVContactsPicker.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = EVContactsPicker;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
-		};
-		93594A3ED847A3E7A1078217D6B5E4A8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 846257AEF94AB1091158EFF7CFD49E1C /* EVContactsPicker.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = EVContactsPicker;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
+			name = Debug;
 		};
 		C795503CEB46E7DBA00AE2600A509CAD /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -714,34 +742,6 @@
 			};
 			name = Debug;
 		};
-		DD8A8EDFF2361D5A9924CE27FE52F8F6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 846257AEF94AB1091158EFF7CFD49E1C /* EVContactsPicker.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.1.0;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 0.1.0;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/EVContactsPicker/EVContactsPicker-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/EVContactsPicker/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/EVContactsPicker/EVContactsPicker.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = EVContactsPicker;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -772,20 +772,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		835F85148D086DBA38E7602A7D5805C1 /* Build configuration list for PBXNativeTarget "EVContactsPicker-EVContactsPicker" */ = {
+		45CF5E4DD331022A366769EA031BB2AD /* Build configuration list for PBXNativeTarget "EVContactsPicker-EVContactsPicker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				51CA3E0F9E0626B377296E6CBD71A970 /* Debug */,
-				93594A3ED847A3E7A1078217D6B5E4A8 /* Release */,
+				5AC0DF544A0A9B0AA29F2924698147C7 /* Debug */,
+				4D92086E0DBD39EB8808A994BE9807FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ABE251B4BFF977226CA0D5BC9E76D096 /* Build configuration list for PBXNativeTarget "EVContactsPicker" */ = {
+		A7D15F8DEE28B2B5A2C52B32030A264D /* Build configuration list for PBXNativeTarget "EVContactsPicker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DD8A8EDFF2361D5A9924CE27FE52F8F6 /* Debug */,
-				5C8E222C7E6D73572CE35F7C79579B83 /* Release */,
+				90239A84CA33BC1F5D388C2FA3060F25 /* Debug */,
+				29F8842D2C96C2087BD5D1BC95572572 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
