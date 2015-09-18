@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "EVContactsPicker"
-  s.version          = "0.1.2"
+  s.version          = "0.1.3"
   s.summary          = "A Contact Picker that allows any input source not just the Apple Contacts."
 
 # This description is used to generate tags and improve search results.
