@@ -19,7 +19,7 @@ class EVContact: NSObject {
     var date : NSDate?
     var dateUpdated : NSDate?
     
-    init(attributes: [NSObject : AnyObject]) {
+    init(attributes: [String : AnyObject]) {
         super.init()
         self.setValuesForKeysWithDictionary(attributes)
     }
@@ -28,28 +28,38 @@ class EVContact: NSObject {
         switch(key) {
             case "id" :
                 self.recordId = value?.integerValue
+                break
             case "firstName" :
                 self.firstName = value as! String?
+                break
             case "lastName" :
                 self.lastName = value as! String?
+                break
             case "phone":
                 self.phone = value as! String?
+                break
             case "email" :
                 self.email = value as! String?
+                break
             case "image":
                 self.image = value as! UIImage?
+                break
             case "isSelected" :
                 self.selected = value!.boolValue!
+                break
             case "date" :
                 let dateFormatter = NSDateFormatter()
                 dateFormatter.dateFormat = "yyyy-MM-dd"
                 self.date = dateFormatter.dateFromString(value! as! String)
+                break
             case "dateUpdated" :
                 let dateFormatter = NSDateFormatter()
                 dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
                 self.dateUpdated = dateFormatter.dateFromString(value! as! String)
+                break
             default :
-                let i = 2
+                break
+            
         }
 
 

@@ -17,9 +17,8 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
     var limitToOne : Bool = false
     var viewPadding : CGFloat?
     var font : UIFont?
-    
-    
-    required init(coder aDecoder: NSCoder) {
+        
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.setup()
     }
@@ -31,8 +30,10 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
     
     // MARK: - Public Methods
     func addContact(contact : AnyObject, name: String) -> Void {
-        let contactKey = NSValue(nonretainedObject: contact)
-        if(self.contactKeys?)
+        //let contactKey = NSValue(nonretainedObject: contact)
+        //if(self.contactKeys?)
+        
+        //if()
     }
     
     func removeContact(contact : AnyObject) -> Void {
@@ -122,7 +123,7 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
         self.textView?.autocorrectionType = UITextAutocorrectionType.No
         
         self.backgroundColor = UIColor.whiteColor()
-        var layer = self.layer
+        let layer = self.layer
         layer.shadowColor = UIColor(red: 225.0/255.0, green: 226.0/255.0, blue: 228.0/255.0, alpha: 1.0).CGColor
         layer.shadowOffset = CGSizeMake(0, 2)
         layer.shadowOpacity = 1.0
@@ -134,7 +135,7 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
         self.placeholderLabel?.textColor = UIColor.grayColor()
         self.addSubview(self.placeholderLabel!)
         
-        var tapGesture = UITapGestureRecognizer(target: self, action: Selector("handleTapGesture"))
+        let tapGesture = UITapGestureRecognizer(target: self, action: Selector("handleTapGesture"))
         tapGesture.numberOfTapsRequired = 1
         tapGesture.numberOfTouchesRequired = 1
         self.addGestureRecognizer(tapGesture)

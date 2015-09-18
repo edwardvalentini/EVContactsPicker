@@ -37,7 +37,7 @@ class EVContactBubble: UIView, UITextViewDelegate {
         self.setupView()
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 
@@ -57,7 +57,7 @@ class EVContactBubble: UIView, UITextViewDelegate {
         self.textView?.hidden = true
         self.addSubview(self.textView!)
         
-        var tapGesture = UITapGestureRecognizer(target: self, action: Selector("handleTapGesture"))
+        let tapGesture = UITapGestureRecognizer(target: self, action: Selector("handleTapGesture"))
         tapGesture.numberOfTapsRequired = 1
         tapGesture.numberOfTouchesRequired = 1
         self.addGestureRecognizer(tapGesture)
@@ -82,7 +82,7 @@ class EVContactBubble: UIView, UITextViewDelegate {
         }
         self.gradientLayer?.frame = self.bounds
         
-        var viewLayer = self.layer
+        let viewLayer = self.layer
         viewLayer.cornerRadius = self.bounds.size.height / 2.0
         viewLayer.borderWidth = 1.0
         viewLayer.masksToBounds = true
@@ -93,12 +93,12 @@ class EVContactBubble: UIView, UITextViewDelegate {
             self.delegate?.contactBubbleWasSelected(self)
         }
         
-        var viewLayer = self.layer
+        let viewLayer = self.layer
         
         viewLayer.borderColor = self.selectedColor?.border?.CGColor
         
-        let xxx = self.selectedColor?.gradientTop?.CGColor!
-        let yyy = self.selectedColor?.gradientBottom?.CGColor!
+        let xxx = self.selectedColor?.gradientTop?.CGColor
+        let yyy = self.selectedColor?.gradientBottom?.CGColor
         
         let arr2 = NSArray(arrayLiteral: xxx!,yyy!)
         
@@ -113,13 +113,13 @@ class EVContactBubble: UIView, UITextViewDelegate {
     }
     
     func unSelect() -> Void {
-        var viewLayer = self.layer
+        let viewLayer = self.layer
         
         viewLayer.borderColor = self.color?.border?.CGColor
         
         
-        let xxx = self.color?.gradientTop?.CGColor!
-        let yyy = self.color?.gradientBottom?.CGColor!
+        let xxx = self.color?.gradientTop?.CGColor
+        let yyy = self.color?.gradientBottom?.CGColor
         
         let arr2 = NSArray(arrayLiteral: xxx!,yyy!)
 
