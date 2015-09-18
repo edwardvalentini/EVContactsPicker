@@ -9,21 +9,24 @@
 Pod::Spec.new do |s|
   s.name             = "EVContactsPicker"
   s.version          = "0.1.1"
-  s.summary          = "A short description of EVContactsPicker."
+  s.summary          = "A Contact Picker that allows any input source not just the Apple Contacts."
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
 #   * Try to keep it short, snappy and to the point.
 #   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!  
+#   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description      = <<-DESC
+                        Rewrite of THContactPicker in Swift in order to allow any
+                        contact source to be used as long as it conforms to the
+                        EVCContactsPickerDataSourceProtocol Protocol.
                        DESC
 
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/EVContactsPicker"
+  s.homepage         = "https://interlook.com"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
-  s.license          = 'MIT'
+  s.license          = 'Proprietary'
   s.author           = { "Edward Valentini" => "edward@interlook.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/EVContactsPicker.git", :tag => s.version.to_s }
+  s.source           = { :git => "ssh://git@git.timeraven.com/evcontactspicker.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform     = :ios, '8.0'
