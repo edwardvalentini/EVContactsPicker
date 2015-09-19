@@ -1,8 +1,72 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B17c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B17c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jew-q2-0or">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Demo View Controller-->
+        <scene sceneID="G7A-8S-xcU">
+            <objects>
+                <viewController id="ydK-Wa-ZZA" customClass="DemoViewController" customModule="EVContactsPicker_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uom-Wp-EfR"/>
+                        <viewControllerLayoutGuide type="bottom" id="aTx-bP-5LE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ads-50-xH6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zoL-1W-igH">
+                                <rect key="frame" x="214" y="104" width="174" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Click to Choose Contacts"/>
+                                <connections>
+                                    <action selector="showDemo:" destination="ydK-Wa-ZZA" eventType="touchUpInside" id="Gum-tM-GkN"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="No Contacts Selected." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="244-AO-5ZR">
+                                <rect key="frame" x="101" y="194" width="399" height="269"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="244-AO-5ZR" firstAttribute="leading" secondItem="Ads-50-xH6" secondAttribute="leadingMargin" constant="84" id="0Ya-NI-VDH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="244-AO-5ZR" secondAttribute="trailing" constant="77" id="6i2-Uw-BPq"/>
+                            <constraint firstItem="244-AO-5ZR" firstAttribute="centerX" secondItem="Ads-50-xH6" secondAttribute="centerX" id="74b-ov-r59"/>
+                            <constraint firstItem="244-AO-5ZR" firstAttribute="top" secondItem="zoL-1W-igH" secondAttribute="bottom" constant="60" id="9Ro-Mx-90c"/>
+                            <constraint firstItem="zoL-1W-igH" firstAttribute="centerX" secondItem="Ads-50-xH6" secondAttribute="centerX" id="TpS-2d-5Du"/>
+                            <constraint firstItem="zoL-1W-igH" firstAttribute="top" secondItem="uom-Wp-EfR" secondAttribute="bottom" constant="40" id="whc-dv-w93"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="peN-3I-6p5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="POz-WE-3d3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1244" y="413"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FSg-7G-TBE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jew-q2-0or" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ieO-MP-Fbv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ydK-Wa-ZZA" kind="relationship" relationship="rootViewController" id="GVr-Xg-MuU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VGU-yx-LN8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="432" y="413"/>
+        </scene>
+    </scenes>
 </document>

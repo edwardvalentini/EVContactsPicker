@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EVContact: NSObject {
+public class EVContact: NSObject {
     var identifier : String?
     var firstName : String?
     var lastName : String?
@@ -28,7 +28,7 @@ class EVContact: NSObject {
         self.setValuesForKeysWithDictionary(attributes)
     }
     
-    override func setValue(value: AnyObject?, forKey key: String) {
+    override public func setValue(value: AnyObject?, forKey key: String) {
         switch(key) {
             case "id" :
                 self.identifier = value as! String?

@@ -12,5 +12,4 @@ protocol EVContactBubbleDelegate : NSObjectProtocol {
     func contactBubbleWasSelected(contactBubble: EVContactBubble) -> Void
     func contactBubbleWasUnSelected(contactBubble: EVContactBubble) -> Void
     func contactBubbleShouldBeRemoved(contactBubble: EVContactBubble) -> Void
-    
 }

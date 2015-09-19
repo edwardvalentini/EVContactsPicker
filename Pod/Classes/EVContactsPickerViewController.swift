@@ -25,6 +25,7 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
     var selectedContacts : [EVContact]? = nil
     var filteredContacts : [EVContact]? = nil
     var barButton : UIBarButtonItem? = nil
+    public var delegate : EVContactsPickerDelegate?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -357,7 +358,20 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
 
     public func done(sender: AnyObject) -> Void {
         let alertView = UIAlertController(title: "Done!", message: "Finish App", preferredStyle: .Alert)
-        let okaction = UIAlertAction(title: "ok", style: UIAlertActionStyle.Cancel, handler: nil)
+        let okaction = UIAlertAction(title: "Dismiss", style: .Cancel) { (action) -> Void in
+            let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.01 * Double(NSEC_PER_SEC)))
+
+            dispatch_after(delayTime, dispatch_get_main_queue(), { () -> Void in
+                if let del = self.delegate {
+                    if(del.respondsToSelector(Selector("didChooseContacts:"))) {
+                        del.didChooseContacts(self.selectedContacts)
+                    }
+                }
+                self.navigationController?.popViewControllerAnimated(true)
+
+            });
+
+        }
         alertView.addAction(okaction)
         self.presentViewController(alertView, animated: true, completion: nil)
     }
