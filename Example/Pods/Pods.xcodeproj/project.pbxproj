@@ -10,6 +10,12 @@
 		171BD474252E26B2E48EB5C5EFFC6908 /* EVBubbleColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3110D9D558BD99455DF9925D4F32057 /* EVBubbleColor.swift */; };
 		1BCE44C4E1E98456493113675ABD02FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175025F5CC898319ADA1D159E168D2A1 /* Foundation.framework */; };
 		1E38CC7ADCBF024E78CF0F998C58C1A4 /* EVContactBubbleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F7E2AA478412C1B67168E68A388B3D /* EVContactBubbleDelegate.swift */; };
+		2BB4F8441BADF55200E28CB0 /* icon-avatar-60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BB4F83D1BADF55200E28CB0 /* icon-avatar-60x60.png */; settings = {ASSET_TAGS = (); }; };
+		2BB4F8451BADF55200E28CB0 /* icon-avatar-60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BB4F83E1BADF55200E28CB0 /* icon-avatar-60x60@2x.png */; settings = {ASSET_TAGS = (); }; };
+		2BB4F8461BADF55200E28CB0 /* icon-checkbox-selected-green-25x25.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BB4F83F1BADF55200E28CB0 /* icon-checkbox-selected-green-25x25.png */; settings = {ASSET_TAGS = (); }; };
+		2BB4F8471BADF55200E28CB0 /* icon-checkbox-selected-green-25x25@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BB4F8401BADF55200E28CB0 /* icon-checkbox-selected-green-25x25@2x.png */; settings = {ASSET_TAGS = (); }; };
+		2BB4F8481BADF55200E28CB0 /* icon-checkbox-unselected-25x25.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BB4F8411BADF55200E28CB0 /* icon-checkbox-unselected-25x25.png */; settings = {ASSET_TAGS = (); }; };
+		2BB4F8491BADF55200E28CB0 /* icon-checkbox-unselected-25x25@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BB4F8421BADF55200E28CB0 /* icon-checkbox-unselected-25x25@2x.png */; settings = {ASSET_TAGS = (); }; };
 		2BEEE5571BAC74AB000ACACF /* EVContactsPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEEE5531BAC74AB000ACACF /* EVContactsPickerViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		2BEEE5581BAC74AB000ACACF /* EVContactsPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BEEE5541BAC74AB000ACACF /* EVContactsPickerViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		2BEEE5591BAC74AB000ACACF /* EVContactsPickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BEEE5551BAC74AB000ACACF /* EVContactsPickerTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
@@ -66,6 +72,12 @@
 		23A594EAB303C8FCB40B60051C034F5C /* EVPickedContactsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVPickedContactsView.swift; sourceTree = "<group>"; };
 		2583FEC91D035BD61B1827F2B70FCAF5 /* EVContactsPicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EVContactsPicker-umbrella.h"; sourceTree = "<group>"; };
 		2983357F49F0810E16CE62479894EB0A /* Pods-EVContactsPicker_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EVContactsPicker_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		2BB4F83D1BADF55200E28CB0 /* icon-avatar-60x60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-avatar-60x60.png"; sourceTree = "<group>"; };
+		2BB4F83E1BADF55200E28CB0 /* icon-avatar-60x60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-avatar-60x60@2x.png"; sourceTree = "<group>"; };
+		2BB4F83F1BADF55200E28CB0 /* icon-checkbox-selected-green-25x25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-checkbox-selected-green-25x25.png"; sourceTree = "<group>"; };
+		2BB4F8401BADF55200E28CB0 /* icon-checkbox-selected-green-25x25@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-checkbox-selected-green-25x25@2x.png"; sourceTree = "<group>"; };
+		2BB4F8411BADF55200E28CB0 /* icon-checkbox-unselected-25x25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-checkbox-unselected-25x25.png"; sourceTree = "<group>"; };
+		2BB4F8421BADF55200E28CB0 /* icon-checkbox-unselected-25x25@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-checkbox-unselected-25x25@2x.png"; sourceTree = "<group>"; };
 		2BEEE5531BAC74AB000ACACF /* EVContactsPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVContactsPickerViewController.swift; sourceTree = "<group>"; };
 		2BEEE5541BAC74AB000ACACF /* EVContactsPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EVContactsPickerViewController.xib; sourceTree = "<group>"; };
 		2BEEE5551BAC74AB000ACACF /* EVContactsPickerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVContactsPickerTableViewCell.swift; sourceTree = "<group>"; };
@@ -133,6 +145,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2BB4F83B1BADF55200E28CB0 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				2BB4F83D1BADF55200E28CB0 /* icon-avatar-60x60.png */,
+				2BB4F83E1BADF55200E28CB0 /* icon-avatar-60x60@2x.png */,
+				2BB4F83F1BADF55200E28CB0 /* icon-checkbox-selected-green-25x25.png */,
+				2BB4F8401BADF55200E28CB0 /* icon-checkbox-selected-green-25x25@2x.png */,
+				2BB4F8411BADF55200E28CB0 /* icon-checkbox-unselected-25x25.png */,
+				2BB4F8421BADF55200E28CB0 /* icon-checkbox-unselected-25x25@2x.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		53F661C0CA7190D2CF05023FB33D61E4 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +191,7 @@
 		61AFB0E73A2D899B8BF70B1BF6E47181 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
+				2BB4F83B1BADF55200E28CB0 /* Assets */,
 				88357BA9F7A0C9E2FF664E1C8FE8A7A3 /* Classes */,
 			);
 			path = Pod;
@@ -410,8 +436,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BEEE5581BAC74AB000ACACF /* EVContactsPickerViewController.xib in Resources */,
+				2BB4F8481BADF55200E28CB0 /* icon-checkbox-unselected-25x25.png in Resources */,
+				2BB4F8451BADF55200E28CB0 /* icon-avatar-60x60@2x.png in Resources */,
+				2BB4F8471BADF55200E28CB0 /* icon-checkbox-selected-green-25x25@2x.png in Resources */,
+				2BB4F8461BADF55200E28CB0 /* icon-checkbox-selected-green-25x25.png in Resources */,
 				DD4275C4D3ECC793C823DE8577531004 /* EVContactsPicker.bundle in Resources */,
 				2BEEE55A1BAC74AB000ACACF /* EVContactsPickerTableViewCell.xib in Resources */,
+				2BB4F8441BADF55200E28CB0 /* icon-avatar-60x60.png in Resources */,
+				2BB4F8491BADF55200E28CB0 /* icon-checkbox-unselected-25x25@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

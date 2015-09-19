@@ -7,27 +7,32 @@
 //
 
 import UIKit
-import AddressBook
-import AddressBookUI
+//import AddressBook
+//import AddressBookUI
+import Contacts
+import ContactsUI
 
 
-public class EVContactsPickerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,  EVPickedContactsViewDelegate, ABPersonViewControllerDelegate {
+@available(iOS 9.0, *)
+public class EVContactsPickerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,  EVPickedContactsViewDelegate, CNContactViewControllerDelegate {
     
     let kKeyboardHeight : CGFloat = 0.0
     
     var contactPickerView : EVPickedContactsView? = nil
-    var addressBookRef : ABAddressBookRef? = nil
+    var store : CNContactStore? = nil
     var tableView : UITableView? = nil
-    var contacts : [AnyObject]? = nil
-    var selectedContacts : [AnyObject]? = nil
-    var filteredContacts : [AnyObject]? = nil
+    var contacts : [EVContact]? = nil
+    var selectedContacts : [EVContact]? = nil
+    var filteredContacts : [EVContact]? = nil
     var barButton : UIBarButtonItem? = nil
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        self.title  = "Select Contacts (0)"
-        var err : Unmanaged<CFError>? = nil
-        addressBookRef = ABAddressBookCreateWithOptions(nil, &err).takeRetainedValue()
+        self.title  = "Selected Contacts (0)"
+        self.store = CNContactStore()
+        
+//        var err : Unmanaged<CFError>? = nil
+//        addressBookRef = ABAddressBookCreateWithOptions(nil, &err).takeRetainedValue()
     }
 
     required public init?(coder aDecoder: NSCoder) {
@@ -36,10 +41,16 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
 
     override public func viewDidLoad() {
         super.viewDidLoad()
+        
+        let curBundle = NSBundle(forClass: self.dynamicType)
+        
+        
+        
+        
 
         // Do any additional setup after loading the view.
         
-        barButton = UIBarButtonItem(title: "Done", style: .Done, target: self, action: Selector("done"))
+        barButton = UIBarButtonItem(title: "Done", style: .Done, target: self, action: Selector("done:"))
         barButton?.enabled = false
         self.navigationItem.rightBarButtonItem = barButton
         
@@ -54,10 +65,12 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
         self.tableView?.delegate  = self
         self.tableView?.dataSource = self
         
-        self.tableView?.registerNib(UINib(nibName: "EVContactsPickerTableViewCell", bundle: nil), forCellReuseIdentifier: "ContactCell")
+
+        
+        self.tableView?.registerNib(UINib(nibName: "EVContactsPickerTableViewCell", bundle: curBundle), forCellReuseIdentifier: "contactCell")
         self.view.insertSubview(self.tableView!, belowSubview: self.contactPickerView!)
         
-        ABAddressBookRequestAccessWithCompletion(self.addressBookRef!) { (granted : Bool, error: CFError!) -> Void in
+        self.store?.requestAccessForEntityType(.Contacts, completionHandler: { (granted : Bool, error: NSError?) -> Void in
             if(granted) {
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     self.getContactsFromAddressBook()
@@ -67,8 +80,40 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
                     print("show UIalert for problem")
                 })
             }
+        })
+    }
+    
+    override public func viewWillAppear(animated: Bool) -> Void {
+        super.viewWillAppear(animated)
+        dispatch_async(dispatch_get_main_queue()) { () -> Void in
+            self.refreshContacts()
         }
-        
+    }
+    
+    override public func viewDidLayoutSubviews() -> Void {
+        super.viewDidLayoutSubviews()
+        var topOffset : CGFloat = 0.0
+        if( self.respondsToSelector(Selector("topLayoutGuide"))) {
+            topOffset = self.topLayoutGuide.length
+        }
+        self.contactPickerView?.frame.origin.y = topOffset
+        self.adjustTableViewFrame(false)
+    }
+    
+    func adjustTableViewFrame(animated: Bool) -> Void {
+        var frame = self.tableView?.frame
+        frame?.origin.y = (self.contactPickerView?.frame.size.height)!
+        frame?.size.height = self.view.frame.size.height - (self.contactPickerView?.frame.size.height)! - kKeyboardHeight
+        if( animated ) {
+            UIView.beginAnimations(nil, context: nil)
+            UIView.setAnimationDuration(0.3)
+            UIView.setAnimationDelay(0.1)
+            UIView.setAnimationCurve(.EaseOut)
+            self.tableView?.frame = frame!
+            UIView.commitAnimations()
+        } else {
+            self.tableView?.frame = frame!
+        }
     }
 
     override public func didReceiveMemoryWarning() {
@@ -80,27 +125,93 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
     
     func getContactsFromAddressBook() -> Void {
         
-        var err : Unmanaged<CFError>? = nil
-        let addressBook = ABAddressBookCreateWithOptions(nil, &err).takeRetainedValue()
         self.contacts = []
+        var mutableContacts : [EVContact] = []
+        
+        let req : CNContactFetchRequest = CNContactFetchRequest(keysToFetch: [CNContactEmailAddressesKey,CNContactGivenNameKey,CNContactFamilyNameKey,CNContactImageDataAvailableKey,CNContactThumbnailImageDataKey,CNContactImageDataKey,CNContactPhoneNumbersKey])
+        
+        do {
+            try self.store?.enumerateContactsWithFetchRequest(req, usingBlock: { (contact: CNContact, boolprop : UnsafeMutablePointer<ObjCBool> ) -> Void in
+                
+                let tmpContact = EVContact()
+                tmpContact.identifier = contact.identifier
+                tmpContact.firstName = contact.givenName
+                tmpContact.lastName = contact.familyName
+                if (contact.phoneNumbers.count > 0) {
+                    tmpContact.phone = (contact.phoneNumbers[0].value as! CNPhoneNumber).stringValue
 
-        let allContacts = ABAddressBookCopyArrayOfAllPeople(addressBook)
-        var mutableContacts : [AnyObject] = []
-        
-        var i = 0
-        
-        for tmpContact in allContacts {
-            
+                }
+                if (contact.emailAddresses.count > 0) {
+                    tmpContact.email = (contact.emailAddresses[0].value as! String)
+                }
+                //tmpContact.email = (contact.emailAddresses[0].value as! String)
+                
+                if(contact.imageDataAvailable) {
+                    let imgData = contact.imageData
+                    let img = UIImage(data: imgData!)
+                    tmpContact.image = img
+                } else {
+                    let curBundle = NSBundle(forClass: self.dynamicType)
+                    let im = UIImage(named: "icon-avatar-60x60", inBundle: curBundle, compatibleWithTraitCollection: nil)
+                    tmpContact.image = im
+                }
+                
+                mutableContacts.append(tmpContact)
+                self.contacts = mutableContacts
+                self.selectedContacts = []
+                self.filteredContacts = self.contacts
+                self.tableView?.reloadData()
+                
+            })
+        } catch {
+            print("error occured")
         }
-
-        
-        
-    }
-
-    public func personViewController(personViewController: ABPersonViewController, shouldPerformDefaultActionForPerson person: ABRecord, property: ABPropertyID, identifier: ABMultiValueIdentifier) -> Bool {
-        return true
+  
     }
     
+    func refreshContacts() -> Void {
+        if let contacts = self.contacts {
+            for contact in contacts {
+                self.refreshContact(contact)
+            }
+            self.tableView?.reloadData()
+        }
+    }
+
+    func refreshContact(contact: EVContact) {
+       // let predicate = CNContact.predicateForContactsWithIdentifiers([contact.identifier!])
+        do {
+            if let tmpContact = try self.store?.unifiedContactWithIdentifier(contact.identifier!, keysToFetch: [CNContactEmailAddressesKey,CNContactGivenNameKey,CNContactFamilyNameKey,CNContactImageDataAvailableKey,CNContactThumbnailImageDataKey,CNContactImageDataKey,CNContactPhoneNumbersKey]) {
+                contact.identifier = tmpContact.identifier
+                contact.firstName = tmpContact.givenName
+                contact.lastName = tmpContact.familyName
+                if (tmpContact.phoneNumbers.count > 0) {
+                    contact.phone = (tmpContact.phoneNumbers[0].value as! CNPhoneNumber).stringValue
+                    
+                }
+                if (tmpContact.emailAddresses.count > 0) {
+                    contact.email = (tmpContact.emailAddresses[0].value as! String)
+                }
+
+                
+                if(tmpContact.imageDataAvailable) {
+                    let imgData = tmpContact.imageData
+                    let img = UIImage(data: imgData!)
+                    contact.image = img
+                } else {
+                    let curBundle = NSBundle(forClass: self.dynamicType)
+                    let im = UIImage(named: "icon-avatar-60x60", inBundle: curBundle, compatibleWithTraitCollection: nil)
+                    contact.image = im
+                }
+            }
+        } catch {
+            print("error")
+        }
+    }
+    
+    public func contactViewController(viewController: CNContactViewController, shouldPerformDefaultActionForContactProperty property: CNContactProperty) -> Bool {
+        return true
+    }
     
     // MARK: - TableView
     
@@ -109,7 +220,11 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
     }
     
     public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        if( self.filteredContacts == nil ) {
+            return 0
+        } else {
+            return self.filteredContacts!.count
+        }
     }
     
     public func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -118,37 +233,151 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
     
     public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "contactCell"
-        var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)
-        if( cell == nil) {
-            cell = UITableViewCell(style: .Default, reuseIdentifier: cellIdentifier)
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as! EVContactsPickerTableViewCell
+        let contact = self.filteredContacts?[indexPath.row]
+        
+        cell.fullName?.text = contact?.fullname()
+        cell.phone?.text = contact?.phone
+        cell.email?.text = contact?.email
+        if((contact?.image) != nil) {
+            cell.contactImage?.image = contact?.image
         }
         
-        return cell!
+        cell.contactImage?.layer.masksToBounds = true
+        cell.contactImage?.layer.cornerRadius = 20
+        
+        if(self.selectedContacts == nil) {
+            let curBundle = NSBundle(forClass: self.dynamicType)
+            let im = UIImage(named: "icon-checkbox-unselected-25x25", inBundle: curBundle, compatibleWithTraitCollection: nil)
+            cell.checkImage?.image = im
+        } else {
+            if (self.selectedContacts!.contains(contact!)) {
+                let curBundle = NSBundle(forClass: self.dynamicType)
+                let im = UIImage(named: "icon-checkbox-selected-green-25x25", inBundle: curBundle, compatibleWithTraitCollection: nil)
+                cell.checkImage?.image = im
+            } else {
+                let curBundle = NSBundle(forClass: self.dynamicType)
+                let im = UIImage(named: "icon-checkbox-unselected-25x25", inBundle: curBundle, compatibleWithTraitCollection: nil)
+                cell.checkImage?.image = im
+            }
+        }
+//        if(( self.selectedContacts?.contains(contact!)) != nil) {
+//            let curBundle = NSBundle(forClass: self.dynamicType)
+//            let im = UIImage(named: "icon-checkbox-selected-green-25x25", inBundle: curBundle, compatibleWithTraitCollection: nil)
+//            cell.checkImage?.image = im
+//        } else {
+//            let curBundle = NSBundle(forClass: self.dynamicType)
+//            let im = UIImage(named: "icon-checkbox-unselected-25x25", inBundle: curBundle, compatibleWithTraitCollection: nil)
+//            cell.checkImage?.image = im
+//        }
+//        
+        cell.accessoryView = UIButton(type: .DetailDisclosure)
+        let but = cell.accessoryView as! UIButton
+        but.addTarget(self, action: Selector("viewContactDetail:"), forControlEvents: UIControlEvents.TouchUpInside)
+
+        return cell
     }
     
-    public func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+    public func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+
+        self.contactPickerView?.resignKeyboard()
         
+        
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! EVContactsPickerTableViewCell
+        
+        let user = self.filteredContacts?[indexPath.row]
+        
+            if (self.selectedContacts!.contains(user!)) {
+                let ind = selectedContacts?.indexOf(user!)
+                self.selectedContacts?.removeAtIndex(ind!)
+                self.contactPickerView?.removeContact(user!)
+                let curBundle = NSBundle(forClass: self.dynamicType)
+                let im = UIImage(named: "icon-checkbox-unselected-25x25", inBundle: curBundle, compatibleWithTraitCollection: nil)
+                cell.checkImage?.image = im
+            } else {
+                self.selectedContacts?.append(user!)
+                self.contactPickerView?.addContact(user!, name: (user?.fullname())!)
+                
+                
+                
+                let curBundle = NSBundle(forClass: self.dynamicType)
+                let im = UIImage(named: "icon-checkbox-selected-green-25x25", inBundle: curBundle, compatibleWithTraitCollection: nil)
+                cell.checkImage?.image = im
+            }
+        
+        if(self.selectedContacts?.count > 0) {
+            self.barButton?.enabled = true
+        } else {
+            self.barButton?.enabled = false
+        }
+        
+        self.title = String("Add members (\(self.selectedContacts!.count))")
+        self.filteredContacts = self.contacts
+        self.tableView?.reloadData()
+        
+        return indexPath
     }
     
     // MARK: - EVPickedContactsViewDelegate
     
     func contactPickerTextViewDidChange(textViewText: String) -> Void {
+        if(textViewText == "") {
+            self.filteredContacts = self.contacts
+        } else {
+            let pred = NSPredicate(format: "self.%@ contains[cd] %@ OR self.%@ contains[cd] %@", "firstName", textViewText, "lastName", textViewText)
+            self.filteredContacts = self.contacts?.filter { pred.evaluateWithObject($0) }
+        }
         
-    }
+        self.tableView?.reloadData()
+        
+     }
     
     func contactPickerDidRemoveContact(contact: AnyObject) -> Void {
-        
+        let c = contact as! EVContact
+        let ind = self.selectedContacts?.indexOf(c)
+        self.selectedContacts?.removeAtIndex(ind!)
+        let indexPath = NSIndexPath(forRow: ind!, inSection: 0)
+        let cell = self.tableView?.cellForRowAtIndexPath(indexPath) as! EVContactsPickerTableViewCell
+        if(self.selectedContacts?.count > 0) {
+            self.barButton?.enabled = true
+        } else {
+            self.barButton?.enabled = false
+        }
+        let curBundle = NSBundle(forClass: self.dynamicType)
+        let im = UIImage(named: "icon-checkbox-unselected-25x25", inBundle: curBundle, compatibleWithTraitCollection: nil)
+        cell.checkImage?.image = im
+        self.title = String("Add members (\(self.selectedContacts!.count))")
     }
     
     func contactPickerDidResize(pickedContactView: EVPickedContactsView) -> Void {
-        
+        self.adjustTableViewFrame(true)
     }
     
     // MARK: - Miscellaneous
 
-    func done(sender: AnyObject) -> Void {
+    public func done(sender: AnyObject) -> Void {
         let alertView = UIAlertController(title: "Done!", message: "Finish App", preferredStyle: .Alert)
+        let okaction = UIAlertAction(title: "ok", style: UIAlertActionStyle.Cancel, handler: nil)
+        alertView.addAction(okaction)
         self.presentViewController(alertView, animated: true, completion: nil)
+    }
+    
+    @IBAction func viewContactDetail(sender: UIButton) -> Void {
+        print("clicked discloser")
+        
+        let indexp = NSIndexPath(forRow: 0, inSection: 0)
+        
+        let c =    self.filteredContacts?[indexp.row]
+        do {
+            let appconact = try self.store?.unifiedContactWithIdentifier((c?.identifier!)!, keysToFetch: [CNContactViewController.descriptorForRequiredKeys()] )
+            let vc = CNContactViewController(forContact: appconact!)
+            CNContactViewController.descriptorForRequiredKeys()
+            self.navigationController?.pushViewController(vc, animated: true)
+        } catch {
+            print("error")
+        }
+        
+        
     }
 
 }

@@ -9,7 +9,13 @@
 import UIKit
 
 class EVContactsPickerTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet var fullName : UILabel?
+    @IBOutlet var phone : UILabel?
+    @IBOutlet var email : UILabel?
+    @IBOutlet var contactImage : UIImageView?
+    @IBOutlet var checkImage : UIImageView?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

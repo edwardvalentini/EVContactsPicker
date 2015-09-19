@@ -9,7 +9,7 @@
 import UIKit
 
 class EVContact: NSObject {
-    var recordId : NSInteger?
+    var identifier : String?
     var firstName : String?
     var lastName : String?
     var phone : String?
@@ -19,6 +19,10 @@ class EVContact: NSObject {
     var date : NSDate?
     var dateUpdated : NSDate?
     
+    override init() {
+        super.init()
+    }
+    
     init(attributes: [String : AnyObject]) {
         super.init()
         self.setValuesForKeysWithDictionary(attributes)
@@ -27,7 +31,7 @@ class EVContact: NSObject {
     override func setValue(value: AnyObject?, forKey key: String) {
         switch(key) {
             case "id" :
-                self.recordId = value?.integerValue
+                self.identifier = value as! String?
                 break
             case "firstName" :
                 self.firstName = value as! String?

@@ -36,9 +36,11 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
         layer.shadowOpacity = 0.0
     }
     
-    func addContact(contact : AnyObject, name: String) -> Void {
+    func addContact(contact : EVContact, name: String) -> Void {
         let contactKey = NSValue(nonretainedObject: contact)
-        if((self.contactKeys?.contains(contactKey)) != nil) {
+        
+        
+        if(self.contactKeys!.contains(contactKey)) {
             return
         }
         
@@ -62,6 +64,7 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
         self.textView?.text = ""
         
         self.scrollToBottomWithAnimation(false)
+        
     }
     
     func selectTextView() -> Void {
@@ -83,22 +86,26 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
         self.textView?.text = ""
     }
     
-    func removeContact(contact : AnyObject) -> Void {
-        let contactKey = NSValue(nonretainedObject: contact)
-        let contactBubble = self.contacts?[contactKey] as! EVContactBubble
-        contactBubble.removeFromSuperview()
-        self.contacts?.removeValueForKey(contactKey)
-        
-        if let foundIndex = self.contactKeys?.indexOf(contactKey) {
-            self.contactKeys?.removeAtIndex(foundIndex)
-        }
-        
-        self.layoutView()
-        
-        self.textView?.hidden = false
-        self.textView?.text = ""
-        
-        self.scrollToBottomWithAnimation(false)
+    func removeContact(contact : EVContact) -> Void {
+         let contactKey = NSValue(nonretainedObject: contact)
+
+            if let contacts = self.contacts {
+                if let contactBubble = contacts[contactKey] as? EVContactBubble {
+                    contactBubble.removeFromSuperview()
+                    self.contacts?.removeValueForKey(contactKey)
+                    
+                    if let foundIndex = self.contactKeys?.indexOf(contactKey) {
+                        self.contactKeys?.removeAtIndex(foundIndex)
+                    }
+                    
+                    self.layoutView()
+                    
+                    self.textView?.hidden = false
+                    self.textView?.text = ""
+                    
+                    self.scrollToBottomWithAnimation(false)
+                }
+            }
     }
     
     
@@ -191,6 +198,8 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
         tapGesture.numberOfTapsRequired = 1
         tapGesture.numberOfTouchesRequired = 1
         self.addGestureRecognizer(tapGesture)
+        
+        print("setting up picked contacts view")
         
     }
     
@@ -354,9 +363,10 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
         }
         
         if( textView.text == "" && text == "" ) {
-            let contactKey = self.contactKeys?.last!
-            self.selectedContactBubble = (self.contacts?[contactKey!] as! EVContactBubble)
-            self.selectedContactBubble?.select()
+            if let contactKey = self.contactKeys?.last {
+                self.selectedContactBubble = (self.contacts?[contactKey] as! EVContactBubble)
+                self.selectedContactBubble?.select()
+            }
         }
         
         return true
