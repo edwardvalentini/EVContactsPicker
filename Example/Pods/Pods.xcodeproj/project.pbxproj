@@ -10,7 +10,12 @@
 		161DD5149D38A7610C66114E3A977E05 /* EVContactBubbleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8787E9EF55FB7A5869D3F5E95FA10F /* EVContactBubbleDelegate.swift */; };
 		1BCE44C4E1E98456493113675ABD02FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9866DABA3F700249BF83028A4EFF01 /* Foundation.framework */; };
 		220288FCEF128D4707A7EC8C4092D35F /* EVContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052E27A3CABBC24BF99E60728350D673 /* EVContact.swift */; };
-		2BB4F84F1BAE636900E28CB0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BB4F84E1BAE636900E28CB0 /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
+		2B1160081BAF764800B6B07E /* icon-avatar-60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B1160021BAF764800B6B07E /* icon-avatar-60x60.png */; settings = {ASSET_TAGS = (); }; };
+		2B1160091BAF764800B6B07E /* icon-avatar-60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B1160031BAF764800B6B07E /* icon-avatar-60x60@2x.png */; settings = {ASSET_TAGS = (); }; };
+		2B11600A1BAF764800B6B07E /* icon-checkbox-selected-green-25x25.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B1160041BAF764800B6B07E /* icon-checkbox-selected-green-25x25.png */; settings = {ASSET_TAGS = (); }; };
+		2B11600B1BAF764800B6B07E /* icon-checkbox-selected-green-25x25@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B1160051BAF764800B6B07E /* icon-checkbox-selected-green-25x25@2x.png */; settings = {ASSET_TAGS = (); }; };
+		2B11600C1BAF764800B6B07E /* icon-checkbox-unselected-25x25.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B1160061BAF764800B6B07E /* icon-checkbox-unselected-25x25.png */; settings = {ASSET_TAGS = (); }; };
+		2B11600D1BAF764800B6B07E /* icon-checkbox-unselected-25x25@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B1160071BAF764800B6B07E /* icon-checkbox-unselected-25x25@2x.png */; settings = {ASSET_TAGS = (); }; };
 		2C77F491A994B05A1F5D98E217426E85 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A9866DABA3F700249BF83028A4EFF01 /* Foundation.framework */; };
 		2E1D0C6C1F485E108904233766069823 /* Pods-EVContactsPicker_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B4EF5126103B3FB9AAF157C68D4C7F /* Pods-EVContactsPicker_Example-dummy.m */; };
 		3E05930E67CAA041A6561AC473C5F2AA /* EVContactsPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9427DE8EE370208E3946DE1B6E7EFC20 /* EVContactsPicker-dummy.m */; };
@@ -65,7 +70,12 @@
 		2168F8EA6760B7296FAB7BCA971E9F99 /* Pods-EVContactsPicker_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EVContactsPicker_Tests-resources.sh"; sourceTree = "<group>"; };
 		216E33DE2F6AC5B96928ABF2D3EBA3C4 /* EVContactsPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EVContactsPicker-prefix.pch"; sourceTree = "<group>"; };
 		2983357F49F0810E16CE62479894EB0A /* Pods-EVContactsPicker_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EVContactsPicker_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		2BB4F84E1BAE636900E28CB0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2B1160021BAF764800B6B07E /* icon-avatar-60x60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-avatar-60x60.png"; sourceTree = "<group>"; };
+		2B1160031BAF764800B6B07E /* icon-avatar-60x60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-avatar-60x60@2x.png"; sourceTree = "<group>"; };
+		2B1160041BAF764800B6B07E /* icon-checkbox-selected-green-25x25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-checkbox-selected-green-25x25.png"; sourceTree = "<group>"; };
+		2B1160051BAF764800B6B07E /* icon-checkbox-selected-green-25x25@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-checkbox-selected-green-25x25@2x.png"; sourceTree = "<group>"; };
+		2B1160061BAF764800B6B07E /* icon-checkbox-unselected-25x25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-checkbox-unselected-25x25.png"; sourceTree = "<group>"; };
+		2B1160071BAF764800B6B07E /* icon-checkbox-unselected-25x25@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-checkbox-unselected-25x25@2x.png"; sourceTree = "<group>"; };
 		2DED138FD072ADF065D6AE76040D3CD6 /* EVBubbleColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVBubbleColor.swift; sourceTree = "<group>"; };
 		2F82D57B1CC83C43959F7670F647EDEB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31AFFE69EFE609AADBFEA23AEC3BB7C0 /* Pods-EVContactsPicker_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EVContactsPicker_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -181,7 +191,12 @@
 		52FFE57491B0B44839F9C6AB09B47639 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				2BB4F84E1BAE636900E28CB0 /* Images.xcassets */,
+				2B1160021BAF764800B6B07E /* icon-avatar-60x60.png */,
+				2B1160031BAF764800B6B07E /* icon-avatar-60x60@2x.png */,
+				2B1160041BAF764800B6B07E /* icon-checkbox-selected-green-25x25.png */,
+				2B1160051BAF764800B6B07E /* icon-checkbox-selected-green-25x25@2x.png */,
+				2B1160061BAF764800B6B07E /* icon-checkbox-unselected-25x25.png */,
+				2B1160071BAF764800B6B07E /* icon-checkbox-unselected-25x25@2x.png */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -447,7 +462,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5C3B4172EB628688A53633C803E0696 /* EVContactsPicker.bundle in Resources */,
-				2BB4F84F1BAE636900E28CB0 /* Images.xcassets in Resources */,
+				2B11600B1BAF764800B6B07E /* icon-checkbox-selected-green-25x25@2x.png in Resources */,
+				2B11600D1BAF764800B6B07E /* icon-checkbox-unselected-25x25@2x.png in Resources */,
+				2B11600A1BAF764800B6B07E /* icon-checkbox-selected-green-25x25.png in Resources */,
+				2B1160081BAF764800B6B07E /* icon-avatar-60x60.png in Resources */,
+				2B1160091BAF764800B6B07E /* icon-avatar-60x60@2x.png in Resources */,
+				2B11600C1BAF764800B6B07E /* icon-checkbox-unselected-25x25.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

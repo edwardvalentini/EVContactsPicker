@@ -148,8 +148,7 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
                     let img = UIImage(data: imgData!)
                     tmpContact.image = img
                 } else {
-                    //let curBundle = NSBundle(forClass: self.dynamicType)
-                    let im = UIImage(named: "avatar", inBundle: self.curBundle, compatibleWithTraitCollection: nil)
+                    let im = UIImage(named: "icon-avatar-60x60", inBundle: self.curBundle, compatibleWithTraitCollection: nil)
                     tmpContact.image = im
                 }
                 
@@ -195,7 +194,7 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
                     let img = UIImage(data: imgData!)
                     contact.image = img
                 } else {
-                    let im = UIImage(named: "avatar", inBundle: self.curBundle, compatibleWithTraitCollection: nil)
+                    let im = UIImage(named: "icon-avatar-60x60", inBundle: self.curBundle, compatibleWithTraitCollection: nil)
                     contact.image = im
                 }
             }
@@ -242,14 +241,14 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
         cell.contactImage?.layer.cornerRadius = 20
         
         if(self.selectedContacts == nil) {
-            let im = UIImage(named: "checkbox-unselected", inBundle: self.curBundle, compatibleWithTraitCollection: nil)
+            let im = UIImage(named: "icon-checkbox-unselected-25x25", inBundle: self.curBundle, compatibleWithTraitCollection: nil)
             cell.checkImage?.image = im
         } else {
             if (self.selectedContacts!.contains(contact!)) {
-                let im = UIImage(named: "checkbox-selected", inBundle: self.curBundle, compatibleWithTraitCollection: nil)
+                let im = UIImage(named: "icon-checkbox-selected-green-25x25", inBundle: self.curBundle, compatibleWithTraitCollection: nil)
                 cell.checkImage?.image = im
             } else {
-                let im = UIImage(named: "checkbox-unselected", inBundle: self.curBundle, compatibleWithTraitCollection: nil)
+                let im = UIImage(named: "icon-checkbox-unselected-25x25", inBundle: self.curBundle, compatibleWithTraitCollection: nil)
                 cell.checkImage?.image = im
             }
         }
@@ -273,12 +272,12 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
                 let ind = selectedContacts?.indexOf(user!)
                 self.selectedContacts?.removeAtIndex(ind!)
                 self.contactPickerView?.removeContact(user!)
-                let im = UIImage(named: "checkbox-unselected", inBundle: self.curBundle, compatibleWithTraitCollection: nil)
+                let im = UIImage(named: "icon-checkbox-unselected-25x25", inBundle: self.curBundle, compatibleWithTraitCollection: nil)
                 cell.checkImage?.image = im
             } else {
                 self.selectedContacts?.append(user!)
                 self.contactPickerView?.addContact(user!, name: (user?.fullname())!)
-                let im = UIImage(named: "checkbox-selected", inBundle: self.curBundle, compatibleWithTraitCollection: nil)
+                let im = UIImage(named: "icon-checkbox-selected-green-25x25", inBundle: self.curBundle, compatibleWithTraitCollection: nil)
                 cell.checkImage?.image = im
             }
         
@@ -320,7 +319,7 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
         } else {
             self.barButton?.enabled = false
         }
-        let im = UIImage(named: "checkbox-unselected", inBundle: self.curBundle, compatibleWithTraitCollection: nil)
+        let im = UIImage(named: "icon-checkbox-unselected-25x25", inBundle: self.curBundle, compatibleWithTraitCollection: nil)
         cell.checkImage?.image = im
         self.title = String("Add members (\(self.selectedContacts!.count))")
     }
