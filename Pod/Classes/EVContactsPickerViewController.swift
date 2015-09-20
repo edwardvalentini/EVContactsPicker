@@ -148,7 +148,8 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
                     let img = UIImage(data: imgData!)
                     tmpContact.image = img
                 } else {
-                    let im = UIImage(named: "icon-avatar-60x60", inBundle: self.curBundle, compatibleWithTraitCollection: nil)
+                    let imPath = self.curBundle?.pathForResource(kAvatarImage, ofType: "png", inDirectory: "EVContactsPicker.bundle")
+                    let im = UIImage(contentsOfFile: imPath!)
                     tmpContact.image = im
                 }
                 
@@ -194,7 +195,8 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
                     let img = UIImage(data: imgData!)
                     contact.image = img
                 } else {
-                    let im = UIImage(named: "icon-avatar-60x60", inBundle: self.curBundle, compatibleWithTraitCollection: nil)
+                    let imPath = self.curBundle?.pathForResource(kAvatarImage, ofType: "png", inDirectory: "EVContactsPicker.bundle")
+                    let im = UIImage(contentsOfFile: imPath!)
                     contact.image = im
                 }
             }
@@ -241,14 +243,17 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
         cell.contactImage?.layer.cornerRadius = 20
         
         if(self.selectedContacts == nil) {
-            let im = UIImage(named: "icon-checkbox-unselected-25x25", inBundle: self.curBundle, compatibleWithTraitCollection: nil)
+            let imPath = self.curBundle?.pathForResource(kUnselectedCheckbox, ofType: "png", inDirectory: "EVContactsPicker.bundle")
+            let im = UIImage(contentsOfFile: imPath!)
             cell.checkImage?.image = im
         } else {
             if (self.selectedContacts!.contains(contact!)) {
-                let im = UIImage(named: "icon-checkbox-selected-green-25x25", inBundle: self.curBundle, compatibleWithTraitCollection: nil)
+                let imPath = self.curBundle?.pathForResource(kSelectedCheckbox, ofType: "png", inDirectory: "EVContactsPicker.bundle")
+                let im = UIImage(contentsOfFile: imPath!)
                 cell.checkImage?.image = im
             } else {
-                let im = UIImage(named: "icon-checkbox-unselected-25x25", inBundle: self.curBundle, compatibleWithTraitCollection: nil)
+                let imPath = self.curBundle?.pathForResource(kUnselectedCheckbox, ofType: "png", inDirectory: "EVContactsPicker.bundle")
+                let im = UIImage(contentsOfFile: imPath!)
                 cell.checkImage?.image = im
             }
         }
@@ -272,12 +277,14 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
                 let ind = selectedContacts?.indexOf(user!)
                 self.selectedContacts?.removeAtIndex(ind!)
                 self.contactPickerView?.removeContact(user!)
-                let im = UIImage(named: "icon-checkbox-unselected-25x25", inBundle: self.curBundle, compatibleWithTraitCollection: nil)
+                let imPath = self.curBundle?.pathForResource(kUnselectedCheckbox, ofType: "png", inDirectory: "EVContactsPicker.bundle")
+                let im = UIImage(contentsOfFile: imPath!)
                 cell.checkImage?.image = im
             } else {
                 self.selectedContacts?.append(user!)
                 self.contactPickerView?.addContact(user!, name: (user?.fullname())!)
-                let im = UIImage(named: "icon-checkbox-selected-green-25x25", inBundle: self.curBundle, compatibleWithTraitCollection: nil)
+                let imPath = self.curBundle?.pathForResource(kSelectedCheckbox, ofType: "png", inDirectory: "EVContactsPicker.bundle")
+                let im = UIImage(contentsOfFile: imPath!)
                 cell.checkImage?.image = im
             }
         
@@ -319,7 +326,8 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
         } else {
             self.barButton?.enabled = false
         }
-        let im = UIImage(named: "icon-checkbox-unselected-25x25", inBundle: self.curBundle, compatibleWithTraitCollection: nil)
+        let imPath = self.curBundle?.pathForResource(kUnselectedCheckbox, ofType: "png", inDirectory: "EVContactsPicker.bundle")
+        let im = UIImage(contentsOfFile: imPath!)
         cell.checkImage?.image = im
         self.title = String("Add members (\(self.selectedContacts!.count))")
     }
