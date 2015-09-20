@@ -1,6 +1,6 @@
 {
   "name": "EVContactsPicker",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "summary": "A Contact Picker that allows any input source not just the Apple Contacts.",
   "description": "Rewrite of THContactPicker in Swift in order to allow any\ncontact source to be used as long as it conforms to the\nEVCContactsPickerDataSourceProtocol Protocol.",
   "homepage": "https://interlook.com",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "ssh://git@git.timeraven.com/evcontactspicker.git",
-    "tag": "0.1.4"
+    "tag": "0.1.5"
   },
   "platforms": {
     "ios": "8.0"

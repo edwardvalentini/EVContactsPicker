@@ -25,7 +25,7 @@
                                     <action selector="showDemo:" destination="ydK-Wa-ZZA" eventType="touchUpInside" id="Gum-tM-GkN"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" text="No Contacts Selected." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="244-AO-5ZR">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" text="No Contacts Selected." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="244-AO-5ZR">
                                 <rect key="frame" x="101" y="194" width="399" height="269"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -44,6 +44,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="peN-3I-6p5"/>
+                    <connections>
+                        <outlet property="textView" destination="244-AO-5ZR" id="RX1-5A-WlL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="POz-WE-3d3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

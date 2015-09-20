@@ -26,30 +26,27 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
     var filteredContacts : [EVContact]? = nil
     var barButton : UIBarButtonItem? = nil
     public var delegate : EVContactsPickerDelegate?
+    private var curBundle : NSBundle?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        self.title  = "Selected Contacts (0)"
-        self.store = CNContactStore()
-        
-//        var err : Unmanaged<CFError>? = nil
-//        addressBookRef = ABAddressBookCreateWithOptions(nil, &err).takeRetainedValue()
+        self.setup()
     }
 
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        self.setup()
+
+    }
+    
+    func setup() -> Void {
+        self.title  = "Selected Contacts (0)"
+        self.store = CNContactStore()
+        self.curBundle = NSBundle(forClass: self.dynamicType)
     }
 
     override public func viewDidLoad() {
         super.viewDidLoad()
-        
-        let curBundle = NSBundle(forClass: self.dynamicType)
-        
-        
-        
-        
-
-        // Do any additional setup after loading the view.
         
         barButton = UIBarButtonItem(title: "Done", style: .Done, target: self, action: Selector("done:"))
         barButton?.enabled = false
@@ -68,7 +65,7 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
         
 
         
-        self.tableView?.registerNib(UINib(nibName: "EVContactsPickerTableViewCell", bundle: curBundle), forCellReuseIdentifier: "contactCell")
+        self.tableView?.registerNib(UINib(nibName: "EVContactsPickerTableViewCell", bundle: self.curBundle), forCellReuseIdentifier: "contactCell")
         self.view.insertSubview(self.tableView!, belowSubview: self.contactPickerView!)
         
         self.store?.requestAccessForEntityType(.Contacts, completionHandler: { (granted : Bool, error: NSError?) -> Void in
@@ -145,15 +142,14 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
                 if (contact.emailAddresses.count > 0) {
                     tmpContact.email = (contact.emailAddresses[0].value as! String)
                 }
-                //tmpContact.email = (contact.emailAddresses[0].value as! String)
                 
                 if(contact.imageDataAvailable) {
                     let imgData = contact.imageData
                     let img = UIImage(data: imgData!)
                     tmpContact.image = img
                 } else {
-                    let curBundle = NSBundle(forClass: self.dynamicType)
-                    let im = UIImage(named: "icon-avatar-60x60", inBundle: curBundle, compatibleWithTraitCollection: nil)
+                    //let curBundle = NSBundle(forClass: self.dynamicType)
+                    let im = UIImage(named: "avatar", inBundle: self.curBundle, compatibleWithTraitCollection: nil)
                     tmpContact.image = im
                 }
                 
@@ -180,7 +176,6 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
     }
 
     func refreshContact(contact: EVContact) {
-       // let predicate = CNContact.predicateForContactsWithIdentifiers([contact.identifier!])
         do {
             if let tmpContact = try self.store?.unifiedContactWithIdentifier(contact.identifier!, keysToFetch: [CNContactEmailAddressesKey,CNContactGivenNameKey,CNContactFamilyNameKey,CNContactImageDataAvailableKey,CNContactThumbnailImageDataKey,CNContactImageDataKey,CNContactPhoneNumbersKey]) {
                 contact.identifier = tmpContact.identifier
@@ -200,8 +195,7 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
                     let img = UIImage(data: imgData!)
                     contact.image = img
                 } else {
-                    let curBundle = NSBundle(forClass: self.dynamicType)
-                    let im = UIImage(named: "icon-avatar-60x60", inBundle: curBundle, compatibleWithTraitCollection: nil)
+                    let im = UIImage(named: "avatar", inBundle: self.curBundle, compatibleWithTraitCollection: nil)
                     contact.image = im
                 }
             }
@@ -248,30 +242,17 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
         cell.contactImage?.layer.cornerRadius = 20
         
         if(self.selectedContacts == nil) {
-            let curBundle = NSBundle(forClass: self.dynamicType)
-            let im = UIImage(named: "icon-checkbox-unselected-25x25", inBundle: curBundle, compatibleWithTraitCollection: nil)
+            let im = UIImage(named: "checkbox-unselected", inBundle: self.curBundle, compatibleWithTraitCollection: nil)
             cell.checkImage?.image = im
         } else {
             if (self.selectedContacts!.contains(contact!)) {
-                let curBundle = NSBundle(forClass: self.dynamicType)
-                let im = UIImage(named: "icon-checkbox-selected-green-25x25", inBundle: curBundle, compatibleWithTraitCollection: nil)
+                let im = UIImage(named: "checkbox-selected", inBundle: self.curBundle, compatibleWithTraitCollection: nil)
                 cell.checkImage?.image = im
             } else {
-                let curBundle = NSBundle(forClass: self.dynamicType)
-                let im = UIImage(named: "icon-checkbox-unselected-25x25", inBundle: curBundle, compatibleWithTraitCollection: nil)
+                let im = UIImage(named: "checkbox-unselected", inBundle: self.curBundle, compatibleWithTraitCollection: nil)
                 cell.checkImage?.image = im
             }
         }
-//        if(( self.selectedContacts?.contains(contact!)) != nil) {
-//            let curBundle = NSBundle(forClass: self.dynamicType)
-//            let im = UIImage(named: "icon-checkbox-selected-green-25x25", inBundle: curBundle, compatibleWithTraitCollection: nil)
-//            cell.checkImage?.image = im
-//        } else {
-//            let curBundle = NSBundle(forClass: self.dynamicType)
-//            let im = UIImage(named: "icon-checkbox-unselected-25x25", inBundle: curBundle, compatibleWithTraitCollection: nil)
-//            cell.checkImage?.image = im
-//        }
-//        
         cell.accessoryView = UIButton(type: .DetailDisclosure)
         let but = cell.accessoryView as! UIButton
         but.addTarget(self, action: Selector("viewContactDetail:"), forControlEvents: UIControlEvents.TouchUpInside)
@@ -292,17 +273,12 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
                 let ind = selectedContacts?.indexOf(user!)
                 self.selectedContacts?.removeAtIndex(ind!)
                 self.contactPickerView?.removeContact(user!)
-                let curBundle = NSBundle(forClass: self.dynamicType)
-                let im = UIImage(named: "icon-checkbox-unselected-25x25", inBundle: curBundle, compatibleWithTraitCollection: nil)
+                let im = UIImage(named: "checkbox-unselected", inBundle: self.curBundle, compatibleWithTraitCollection: nil)
                 cell.checkImage?.image = im
             } else {
                 self.selectedContacts?.append(user!)
                 self.contactPickerView?.addContact(user!, name: (user?.fullname())!)
-                
-                
-                
-                let curBundle = NSBundle(forClass: self.dynamicType)
-                let im = UIImage(named: "icon-checkbox-selected-green-25x25", inBundle: curBundle, compatibleWithTraitCollection: nil)
+                let im = UIImage(named: "checkbox-selected", inBundle: self.curBundle, compatibleWithTraitCollection: nil)
                 cell.checkImage?.image = im
             }
         
@@ -344,8 +320,7 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
         } else {
             self.barButton?.enabled = false
         }
-        let curBundle = NSBundle(forClass: self.dynamicType)
-        let im = UIImage(named: "icon-checkbox-unselected-25x25", inBundle: curBundle, compatibleWithTraitCollection: nil)
+        let im = UIImage(named: "checkbox-unselected", inBundle: self.curBundle, compatibleWithTraitCollection: nil)
         cell.checkImage?.image = im
         self.title = String("Add members (\(self.selectedContacts!.count))")
     }
@@ -357,27 +332,24 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
     // MARK: - Miscellaneous
 
     public func done(sender: AnyObject) -> Void {
-        let alertView = UIAlertController(title: "Done!", message: "Finish App", preferredStyle: .Alert)
-        let okaction = UIAlertAction(title: "Dismiss", style: .Cancel) { (action) -> Void in
-            let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.01 * Double(NSEC_PER_SEC)))
+        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.01 * Double(NSEC_PER_SEC)))
 
-            dispatch_after(delayTime, dispatch_get_main_queue(), { () -> Void in
-                if let del = self.delegate {
-                    if(del.respondsToSelector(Selector("didChooseContacts:"))) {
-                        del.didChooseContacts(self.selectedContacts)
+        dispatch_after(delayTime, dispatch_get_main_queue(), { () -> Void in
+            if let del = self.delegate {
+                if(del.respondsToSelector(Selector("didChooseContacts:"))) {
+                    if let selcontacts = self.selectedContacts {
+                        del.didChooseContacts(selcontacts)
+                    } else {
+                        del.didChooseContacts(nil)
                     }
                 }
-                self.navigationController?.popViewControllerAnimated(true)
-
-            });
-
-        }
-        alertView.addAction(okaction)
-        self.presentViewController(alertView, animated: true, completion: nil)
+            }
+            self.navigationController?.popViewControllerAnimated(true)
+        });
     }
     
     @IBAction func viewContactDetail(sender: UIButton) -> Void {
-        print("clicked discloser")
+       // print("clicked discloser")
         
         let indexp = NSIndexPath(forRow: 0, inSection: 0)
         

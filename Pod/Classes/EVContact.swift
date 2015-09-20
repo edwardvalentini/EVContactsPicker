@@ -10,11 +10,11 @@ import UIKit
 
 public class EVContact: NSObject {
     var identifier : String?
-    var firstName : String?
-    var lastName : String?
-    var phone : String?
-    var email : String?
-    var image : UIImage?
+    public var firstName : String?
+    public var lastName : String?
+    public var phone : String?
+    public var email : String?
+    public var image : UIImage?
     var selected : Bool = false
     var date : NSDate?
     var dateUpdated : NSDate?
@@ -69,7 +69,7 @@ public class EVContact: NSObject {
 
     }
     
-    func fullname() -> String {
+    public func fullname() -> String {
         if(self.firstName != nil && self.lastName != nil) {
             return String(self.firstName! + " " + self.lastName!)
         } else if (self.firstName != nil) {

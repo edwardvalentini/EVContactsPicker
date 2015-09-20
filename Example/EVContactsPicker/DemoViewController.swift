@@ -11,6 +11,8 @@ import EVContactsPicker
 
 class DemoViewController: UIViewController, EVContactsPickerDelegate {
 
+    @IBOutlet var textView : UITextView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,7 +31,15 @@ class DemoViewController: UIViewController, EVContactsPickerDelegate {
     }
     
     func didChooseContacts(contacts: [EVContact]?) {
-        print("I chose \(contacts)")
+        var conlist : String = ""
+        if let cons = contacts {
+            for con in cons {
+                conlist += con.fullname() + "\n"
+            }
+            self.textView?.text = conlist
+        } else {
+            print("I got nothing")
+        }
     }
     
     /*
