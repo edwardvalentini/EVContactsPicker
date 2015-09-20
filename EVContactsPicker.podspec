@@ -17,8 +17,9 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description      = <<-DESC
-                        Rewrite of THContactPicker in Swift in order to allow any
-                        contact source to be used as long as it conforms to the
+                        Rewrite of THContactPicker in Swift with the following changes
+                        1. uses Apples new ios9 Contacts and ContactsUI Frameworks
+                        2. allows any contact source to be used as long as it conforms to the
                         EVCContactsPickerDataSourceProtocol Protocol.
                        DESC
 
@@ -34,7 +35,7 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Pod/Classes/**/*'
   s.resource_bundles = {
-    'EVContactsPicker' => ['Pod/Assets/*']
+    'EVContactsPicker' => ['Pod/Assets/**/*']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
