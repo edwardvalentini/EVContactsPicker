@@ -40,6 +40,8 @@ class DemoViewController: UIViewController, EVContactsPickerDelegate {
         } else {
             print("I got nothing")
         }
+        self.navigationController?.popViewControllerAnimated(true)
+
     }
     
     /*

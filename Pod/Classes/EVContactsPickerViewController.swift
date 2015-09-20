@@ -344,7 +344,6 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
                     }
                 }
             }
-            self.navigationController?.popViewControllerAnimated(true)
         });
     }
     

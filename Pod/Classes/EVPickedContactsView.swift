@@ -198,9 +198,6 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
         tapGesture.numberOfTapsRequired = 1
         tapGesture.numberOfTouchesRequired = 1
         self.addGestureRecognizer(tapGesture)
-        
-        print("setting up picked contacts view")
-        
     }
     
     func scrollToBottomWithAnimation(animated : Bool) -> Void {
