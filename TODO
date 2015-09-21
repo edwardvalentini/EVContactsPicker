@@ -1,0 +1,12 @@
+allow to customize cell bubble color
+expose just getting contacts from addressbook
+
+add options 
+EVContactPickerDataSourceOptions.Addressbook
+or
+EVContactPickerDataSourceOptions.CoreData
+
+if coredata submit Entity, Context... Entity MUST conform to EVContactsPickerDataSourceProtocol
+
+allow to submit a predicate for both address book and core data format
+detail page for coredata wont work... need to make custom
