@@ -20,6 +20,12 @@ it, simply add the following line to your Podfile:
 pod "EVContactsPicker"
 ```
 
+## Examples
+
+```
+coming soon
+```
+
 ## Author
 
 Edward Valentini, edward@interlook.com
