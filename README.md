@@ -5,6 +5,10 @@
 [![License](https://img.shields.io/cocoapods/l/EVContactsPicker.svg?style=flat)](http://cocoapods.org/pods/EVContactsPicker)
 [![Platform](https://img.shields.io/cocoapods/p/EVContactsPicker.svg?style=flat)](http://cocoapods.org/pods/EVContactsPicker)
 
+## DISCLAIMER
+
+This is a work in progress... Use at your own risk.
+
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
