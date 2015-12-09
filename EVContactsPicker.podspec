@@ -18,11 +18,11 @@ Pod::Spec.new do |s|
                         EVCContactsPickerDataSourceProtocol Protocol.
                        DESC
 
-  s.homepage         = "https://interlook.com"
+  s.homepage         = "https://github.com/edwardvalentini/EVContactsPicker"
   # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
-  s.license          = 'Proprietary'
+  s.license          = 'MIT'
   s.author           = { "Edward Valentini" => "edward@interlook.com" }
-  s.source           = { :git => "ssh://git@git.timeraven.com/evcontactspicker.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/edwardvalentini/EVContactsPicker.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.platform     = :ios, '9.0'
