@@ -12,6 +12,18 @@ import UIKit
 import Contacts
 import ContactsUI
 
+public struct EVContactModeOption : OptionSetType {
+    public let rawValue: Int
+    
+    public init(rawValue : Int) {
+        self.rawValue = rawValue
+    }
+    
+    public static let Apple        = EVContactModeOption(rawValue: 1 << 0)
+    public static let Array        = EVContactModeOption(rawValue: 1 << 1)
+    public static let CoreData     = EVContactModeOption(rawValue: 1 << 2)
+}
+
 
 @available(iOS 9.0, *)
 public class EVContactsPickerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,  EVPickedContactsViewDelegate, CNContactViewControllerDelegate {
@@ -25,12 +37,19 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
     var selectedContacts : [EVContact]? = nil
     var filteredContacts : [EVContact]? = nil
     var barButton : UIBarButtonItem? = nil
+    var contactPickerMode : EVContactModeOption! = .Apple
+    
     public var delegate : EVContactsPickerDelegate?
     private var curBundle : NSBundle?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.setup()
+    }
+    
+    public init(mode: EVContactModeOption!) {
+        self.init()
+        self.contactPickerMode = mode
     }
 
     required public init?(coder aDecoder: NSCoder) {

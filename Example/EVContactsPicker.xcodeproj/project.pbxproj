@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2BB4F84B1BAE1A9C00E28CB0 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB4F84A1BAE1A9C00E28CB0 /* DemoViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		518C94E0AFD78D2DF88D1389 /* Pods_EVContactsPicker_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF6BAD3384B024D06AF8BEB /* Pods_EVContactsPicker_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		2BB4F84B1BAE1A9C00E28CB0 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB4F84A1BAE1A9C00E28CB0 /* DemoViewController.swift */; };
+		518C94E0AFD78D2DF88D1389 /* Pods_EVContactsPicker_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF6BAD3384B024D06AF8BEB /* Pods_EVContactsPicker_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		CCC5ADB45481458F142A5845 /* Pods_EVContactsPicker_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ABABE0C391684216AAD80CC /* Pods_EVContactsPicker_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		CCC5ADB45481458F142A5845 /* Pods_EVContactsPicker_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ABABE0C391684216AAD80CC /* Pods_EVContactsPicker_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */

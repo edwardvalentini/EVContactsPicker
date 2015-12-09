@@ -25,7 +25,7 @@ class DemoViewController: UIViewController, EVContactsPickerDelegate {
     }
     
     @IBAction func showDemo(sender: AnyObject?) -> Void {
-        let contactPicker = EVContactsPickerViewController()
+        let contactPicker = EVContactsPickerViewController(mode: [.Apple,.Array])
         contactPicker.delegate = self
         self.navigationController?.pushViewController(contactPicker, animated: true)
     }
