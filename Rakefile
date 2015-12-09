@@ -23,7 +23,7 @@ task :version do
     version = suggested_version_number
   end
 
-  puts "Enter the version you want to release (" + version + ") "
+#  puts "Enter the version you want to release (" + version + ") "
 #  new_version_number = $stdin.gets.strip
 #  if new_version_number == ""
     new_version_number = version
