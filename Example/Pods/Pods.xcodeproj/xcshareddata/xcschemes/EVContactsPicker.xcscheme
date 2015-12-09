@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'EFC20CE76599A80BAE7B9C82'
+               BlueprintIdentifier = '7D3876147514F5185B5D732B'
                BlueprintName = 'EVContactsPicker'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'EVContactsPicker.framework'>
