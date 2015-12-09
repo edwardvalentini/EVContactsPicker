@@ -49,8 +49,7 @@ task :release do
       exit 1
     end
 
-    puts "You are about to release `#{spec_version}`, is that correct? [y/n]"
-    exit if $stdin.gets.strip.downcase != 'y'
+    puts "You are about to release `#{spec_version}`"
   end
 
   puts "* Running specs"
