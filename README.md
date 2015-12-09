@@ -1,6 +1,6 @@
 # EVContactsPicker
 
-[![CI Status](http://img.shields.io/travis/Edward Valentini/EVContactsPicker.svg?style=flat)](https://travis-ci.org/Edward Valentini/EVContactsPicker)
+[![CI Status](http://img.shields.io/travis/edwardvalentini/EVContactsPicker.svg?style=flat)](https://travis-ci.org/Edward Valentini/EVContactsPicker)
 [![Version](https://img.shields.io/cocoapods/v/EVContactsPicker.svg?style=flat)](http://cocoapods.org/pods/EVContactsPicker)
 [![License](https://img.shields.io/cocoapods/l/EVContactsPicker.svg?style=flat)](http://cocoapods.org/pods/EVContactsPicker)
 [![Platform](https://img.shields.io/cocoapods/p/EVContactsPicker.svg?style=flat)](http://cocoapods.org/pods/EVContactsPicker)
