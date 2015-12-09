@@ -11,11 +11,6 @@ Pod::Spec.new do |s|
   s.version          = "0.1.13"
   s.summary          = "A Contact Picker using Contacts Framework that allows any input source not just the Apple Contacts."
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description      = <<-DESC
                         Rewrite of THContactPicker in Swift with the following changes
                         1. uses Apples new ios9 Contacts and ContactsUI Frameworks

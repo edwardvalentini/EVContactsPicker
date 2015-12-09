@@ -13,6 +13,8 @@
 		1C36AFA1A6F8BBF19795D5037C236EAB /* Pods-EVContactsPicker_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C37A2D0A95FC2F25EF53C7CE25B6A1D /* Pods-EVContactsPicker_Tests-dummy.m */; };
 		1FF26FB632803D385F71C9F5F13BADF8 /* Pods-EVContactsPicker_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B4EF5126103B3FB9AAF157C68D4C7F /* Pods-EVContactsPicker_Example-dummy.m */; };
 		268778B22D99A39D3C72355A800A6AF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		2B5FA0911C18CC2E00D9D05F /* EVBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FA0901C18CC2E00D9D05F /* EVBundle.swift */; };
+		2B5FA0931C18D19600D9D05F /* EVCContactsPickerDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5FA0921C18D19600D9D05F /* EVCContactsPickerDataSourceProtocol.swift */; };
 		35208B5636BD186A9CEB98CBAC733B24 /* EVContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665742308D12E84D881634DA2EBB489A /* EVContact.swift */; };
 		4CFDD7602D8635C04DFC0368E0432555 /* EVContactsPickerTableViewCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 55DC233988C8D7BD5BB8FCDE8C74F2E1 /* EVContactsPickerTableViewCell.xib */; };
 		5B29A3D306BB2F1C03443F968D5B188A /* EVContactsPicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D325FC0D2CD2A8A7640AF837E75B1694 /* EVContactsPicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -71,6 +73,8 @@
 		2168F8EA6760B7296FAB7BCA971E9F99 /* Pods-EVContactsPicker_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EVContactsPicker_Tests-resources.sh"; sourceTree = "<group>"; };
 		216E33DE2F6AC5B96928ABF2D3EBA3C4 /* EVContactsPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EVContactsPicker-prefix.pch"; sourceTree = "<group>"; };
 		2983357F49F0810E16CE62479894EB0A /* Pods-EVContactsPicker_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EVContactsPicker_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		2B5FA0901C18CC2E00D9D05F /* EVBundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVBundle.swift; sourceTree = "<group>"; };
+		2B5FA0921C18D19600D9D05F /* EVCContactsPickerDataSourceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EVCContactsPickerDataSourceProtocol.swift; sourceTree = "<group>"; };
 		2F82D57B1CC83C43959F7670F647EDEB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31AFFE69EFE609AADBFEA23AEC3BB7C0 /* Pods-EVContactsPicker_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EVContactsPicker_Example.release.xcconfig"; sourceTree = "<group>"; };
 		38309813BC00DFF2879544C403252FA6 /* icon-avatar-60x60@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "icon-avatar-60x60@2x.png"; sourceTree = "<group>"; };
@@ -292,6 +296,8 @@
 				4C54B2FA2150C296E8D9FC3BBE453F2D /* EVContactsPickerViewController.xib */,
 				68551D6A902B297D02976BC061B33BA0 /* EVPickedContactsView.swift */,
 				542F9CADAC7A2BB5AA89420712443612 /* EVPickedContactsViewDelegate.swift */,
+				2B5FA0901C18CC2E00D9D05F /* EVBundle.swift */,
+				2B5FA0921C18D19600D9D05F /* EVCContactsPickerDataSourceProtocol.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -490,6 +496,8 @@
 			files = (
 				F6478DA6BD384E6C8E210C910DBBD20C /* EVBubbleColor.swift in Sources */,
 				35208B5636BD186A9CEB98CBAC733B24 /* EVContact.swift in Sources */,
+				2B5FA0911C18CC2E00D9D05F /* EVBundle.swift in Sources */,
+				2B5FA0931C18D19600D9D05F /* EVCContactsPickerDataSourceProtocol.swift in Sources */,
 				AC7DF2199ECDD83FDA93B2D7695D40F4 /* EVContactBubble.swift in Sources */,
 				02285510B3D6CA0BB6E2B9736860FD0A /* EVContactBubbleDelegate.swift in Sources */,
 				FC80333085666E254575D240FC7A5367 /* EVContactsPicker-dummy.m in Sources */,

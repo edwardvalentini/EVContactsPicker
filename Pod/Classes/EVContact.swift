@@ -9,7 +9,7 @@
 import UIKit
 
 public class EVContact: NSObject {
-    var identifier : String?
+    public var identifier : String?
     public var firstName : String?
     public var lastName : String?
     public var phone : String?
@@ -19,11 +19,11 @@ public class EVContact: NSObject {
     var date : NSDate?
     var dateUpdated : NSDate?
     
-    override init() {
+    public override init() {
         super.init()
     }
     
-    init(attributes: [String : AnyObject]) {
+    public init(attributes: [String : AnyObject]) {
         super.init()
         self.setValuesForKeysWithDictionary(attributes)
     }

@@ -12,17 +12,16 @@ import UIKit
 import Contacts
 import ContactsUI
 
-public struct EVContactModeOption : OptionSetType {
-    public let rawValue: Int
-    
-    public init(rawValue : Int) {
-        self.rawValue = rawValue
-    }
-    
-    public static let Apple        = EVContactModeOption(rawValue: 1 << 0)
-    public static let Array        = EVContactModeOption(rawValue: 1 << 1)
-    public static let CoreData     = EVContactModeOption(rawValue: 1 << 2)
-}
+//public struct EVContactModeOption : OptionSetType {
+//    public let rawValue: Int
+//    
+//    public init(rawValue : Int) {
+//        self.rawValue = rawValue
+//    }
+//    
+//    public static let Internal        = EVContactModeOption(rawValue: 1 << 0)
+//    public static let External        = EVContactModeOption(rawValue: 1 << 1)
+//}
 
 
 @available(iOS 9.0, *)
@@ -37,7 +36,9 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
     var selectedContacts : [EVContact]? = nil
     var filteredContacts : [EVContact]? = nil
     var barButton : UIBarButtonItem? = nil
-    var contactPickerMode : EVContactModeOption! = .Apple
+    //var contactPickerMode : EVContactModeOption! = .Internal
+    var useExternal : Bool = false
+    var externalDataSource : [EVContact]? = nil
     
     public var delegate : EVContactsPickerDelegate?
     private var curBundle : NSBundle?
@@ -47,9 +48,11 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
         self.setup()
     }
     
-    public init(mode: EVContactModeOption!) {
+    public init(externalDataSource: [EVContact]!) {
         self.init()
-        self.contactPickerMode = mode
+        self.useExternal = true
+        self.externalDataSource = externalDataSource
+        self.setup()
     }
 
     required public init?(coder aDecoder: NSCoder) {
@@ -60,8 +63,11 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
     
     func setup() -> Void {
         self.title  = "Selected Contacts (0)"
-        self.store = CNContactStore()
         self.curBundle = NSBundle(forClass: self.dynamicType)
+        if( self.useExternal == false ) {
+            self.store = CNContactStore()
+        }
+
     }
 
     override public func viewDidLoad() {
@@ -87,17 +93,24 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
         self.tableView?.registerNib(UINib(nibName: "EVContactsPickerTableViewCell", bundle: self.curBundle), forCellReuseIdentifier: "contactCell")
         self.view.insertSubview(self.tableView!, belowSubview: self.contactPickerView!)
         
-        self.store?.requestAccessForEntityType(.Contacts, completionHandler: { (granted : Bool, error: NSError?) -> Void in
-            if(granted) {
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    self.getContactsFromAddressBook()
-                })
-            } else {
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    print("show UIalert for problem")
-                })
-            }
-        })
+        if( self.useExternal == false ) {
+            self.store?.requestAccessForEntityType(.Contacts, completionHandler: { (granted : Bool, error: NSError?) -> Void in
+                if(granted) {
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        self.getContactsFromAddressBook()
+                    })
+                } else {
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        print("show UIalert for problem")
+                    })
+                }
+            })
+        } else {
+            self.contacts = self.externalDataSource
+            self.selectedContacts = []
+            self.filteredContacts = self.contacts
+            self.tableView?.reloadData()
+        }
     }
     
     override public func viewWillAppear(animated: Bool) -> Void {
@@ -190,37 +203,45 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
             for contact in contacts {
                 self.refreshContact(contact)
             }
-            self.tableView?.reloadData()
         }
+        self.tableView?.reloadData()
     }
 
     func refreshContact(contact: EVContact) {
-        do {
-            if let tmpContact = try self.store?.unifiedContactWithIdentifier(contact.identifier!, keysToFetch: [CNContactEmailAddressesKey,CNContactGivenNameKey,CNContactFamilyNameKey,CNContactImageDataAvailableKey,CNContactThumbnailImageDataKey,CNContactImageDataKey,CNContactPhoneNumbersKey]) {
-                contact.identifier = tmpContact.identifier
-                contact.firstName = tmpContact.givenName
-                contact.lastName = tmpContact.familyName
-                if (tmpContact.phoneNumbers.count > 0) {
-                    contact.phone = (tmpContact.phoneNumbers[0].value as! CNPhoneNumber).stringValue
-                    
-                }
-                if (tmpContact.emailAddresses.count > 0) {
-                    contact.email = (tmpContact.emailAddresses[0].value as! String)
-                }
+        if( self.useExternal == false ) {
+            do {
+                if let tmpContact = try self.store?.unifiedContactWithIdentifier(contact.identifier!, keysToFetch: [CNContactEmailAddressesKey,CNContactGivenNameKey,CNContactFamilyNameKey,CNContactImageDataAvailableKey,CNContactThumbnailImageDataKey,CNContactImageDataKey,CNContactPhoneNumbersKey]) {
+                    contact.identifier = tmpContact.identifier
+                    contact.firstName = tmpContact.givenName
+                    contact.lastName = tmpContact.familyName
+                    if (tmpContact.phoneNumbers.count > 0) {
+                        contact.phone = (tmpContact.phoneNumbers[0].value as! CNPhoneNumber).stringValue
+                        
+                    }
+                    if (tmpContact.emailAddresses.count > 0) {
+                        contact.email = (tmpContact.emailAddresses[0].value as! String)
+                    }
 
-                
-                if(tmpContact.imageDataAvailable) {
-                    let imgData = tmpContact.imageData
-                    let img = UIImage(data: imgData!)
-                    contact.image = img
-                } else {
-                    let imPath = self.curBundle?.pathForResource(kAvatarImage, ofType: "png", inDirectory: "EVContactsPicker.bundle")
-                    let im = UIImage(contentsOfFile: imPath!)
-                    contact.image = im
+                    
+                    if(tmpContact.imageDataAvailable) {
+                        let imgData = tmpContact.imageData
+                        let img = UIImage(data: imgData!)
+                        contact.image = img
+                    } else {
+                        let imPath = self.curBundle?.pathForResource(kAvatarImage, ofType: "png", inDirectory: "EVContactsPicker.bundle")
+                        let im = UIImage(contentsOfFile: imPath!)
+                        contact.image = im
+                    }
                 }
+            } catch {
+                print("error")
             }
-        } catch {
-            print("error")
+        } else {
+            if(contact.image == nil) {
+                let imPath = self.curBundle?.pathForResource(kAvatarImage, ofType: "png", inDirectory: "EVContactsPicker.bundle")
+                let im = UIImage(contentsOfFile: imPath!)
+                contact.image = im
+            }
         }
     }
     
@@ -276,9 +297,14 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
                 cell.checkImage?.image = im
             }
         }
-        cell.accessoryView = UIButton(type: .DetailDisclosure)
-        let but = cell.accessoryView as! UIButton
-        but.addTarget(self, action: Selector("viewContactDetail:"), forControlEvents: UIControlEvents.TouchUpInside)
+        if (self.useExternal == false ) {
+            cell.accessoryView = UIButton(type: .DetailDisclosure)
+            let but = cell.accessoryView as! UIButton
+            but.addTarget(self, action: Selector("viewContactDetail:"), forControlEvents: UIControlEvents.TouchUpInside)
+        } else {
+            cell.accessoryType = .None
+            cell.accessoryView?.hidden = true
+        }
 
         return cell
     }
@@ -376,16 +402,18 @@ public class EVContactsPickerViewController: UIViewController, UITableViewDataSo
     @IBAction func viewContactDetail(sender: UIButton) -> Void {
        // print("clicked discloser")
         
-        let indexp = NSIndexPath(forRow: 0, inSection: 0)
-        
-        let c =    self.filteredContacts?[indexp.row]
-        do {
-            let appconact = try self.store?.unifiedContactWithIdentifier((c?.identifier!)!, keysToFetch: [CNContactViewController.descriptorForRequiredKeys()] )
-            let vc = CNContactViewController(forContact: appconact!)
-            CNContactViewController.descriptorForRequiredKeys()
-            self.navigationController?.pushViewController(vc, animated: true)
-        } catch {
-            print("error")
+        if( self.useExternal == false ) {
+            let indexp = NSIndexPath(forRow: 0, inSection: 0)
+            
+            let c =    self.filteredContacts?[indexp.row]
+            do {
+                let appconact = try self.store?.unifiedContactWithIdentifier((c?.identifier!)!, keysToFetch: [CNContactViewController.descriptorForRequiredKeys()] )
+                let vc = CNContactViewController(forContact: appconact!)
+                CNContactViewController.descriptorForRequiredKeys()
+                self.navigationController?.pushViewController(vc, animated: true)
+            } catch {
+                print("error")
+            }
         }
         
         

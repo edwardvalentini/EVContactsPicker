@@ -25,7 +25,25 @@ class DemoViewController: UIViewController, EVContactsPickerDelegate {
     }
     
     @IBAction func showDemo(sender: AnyObject?) -> Void {
-        let contactPicker = EVContactsPickerViewController(mode: [.Apple,.Array])
+        
+        let c1 : EVContact = EVContact()
+        c1.identifier = "a12332"
+        c1.firstName = "Mr. "
+        c1.lastName = "T"
+        
+        let c2 : EVContact = EVContact()
+        c2.identifier = "a93898"
+        c2.firstName = "Mrs. "
+        c2.lastName = "Q"
+        
+        
+        let c3 = EVContact(attributes: ["id":"gh2798932","firstName": "Jack", "lastName": "Smith", "image" : UIImage(named: "jacksmith")! ])
+        
+        let cArr : [EVContact] = [ c1,c2, c3 ]
+
+        
+        let contactPicker = EVContactsPickerViewController(externalDataSource: cArr)
+        //let contactPicker = EVContactsPickerViewController()
         contactPicker.delegate = self
         self.navigationController?.pushViewController(contactPicker, animated: true)
     }
