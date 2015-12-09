@@ -27,7 +27,7 @@ pod "EVContactsPicker"
 ## Examples
 
 ```
-coming soon
+coming soon, for now look in the Example folder.
 ```
 
 ## Author
