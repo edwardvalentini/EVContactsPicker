@@ -1,4 +1,4 @@
-PODREPO = "timeravencocoapods"
+PODREPO = "timeraven-timeravencocoapods"
 
 desc "Runs the specs [EMPTY]"
 task :spec do
