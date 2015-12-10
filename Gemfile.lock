@@ -267,6 +267,7 @@ DEPENDENCIES
   fastlane
   net-ssh (= 2.10.1.rc1)
   pilot
+  xcpretty
 
 BUNDLED WITH
    1.10.6
