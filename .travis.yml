@@ -8,7 +8,7 @@ podfile: Example/Podfile
 env:
    global:
    - LANG=en_US.UTF-8
-   - WORKSPACE="EVContactsPicker.xcworkspace"
+   - WORKSPACE="Example/EVContactsPicker.xcworkspace"
    - IOS_SCHEME="EVContactsPicker"
    - IOS_SDK=iphonesimulator9.1
 
