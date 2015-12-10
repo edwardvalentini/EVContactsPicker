@@ -20,6 +20,10 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+* iOS 9.0+
+* ARC
+
+
 ## Installation
 
 EVContactsPicker is available through [CocoaPods](http://cocoapods.org). To install
@@ -42,3 +46,6 @@ Edward Valentini, edward@interlook.com
 ## License
 
 EVContactsPicker is available under the MIT license. See the LICENSE file for more info.
+
+[img0]:https://raw.githubusercontent.com/edwardvalentini/EVContactsPicker/master/Screenshots/screenshot0.png
+[img1]:https://raw.githubusercontent.com/edwardvalentini/EVContactsPicker/master/Screenshots/screenshot1.png
