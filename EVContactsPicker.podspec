@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
                        DESC
 
   s.homepage         = "https://github.com/edwardvalentini/EVContactsPicker"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.screenshots      = ["https://raw.githubusercontent.com/edwardvalentini/EVContactsPicker/master/Screenshots/screenshot0.png", "https://raw.githubusercontent.com/edwardvalentini/EVContactsPicker/master/Screenshots/screenshot1.png"]
   s.license          = 'MIT'
   s.author           = { "Edward Valentini" => "edward@interlook.com" }
   s.source           = { :git => "https://github.com/edwardvalentini/EVContactsPicker.git", :tag => s.version.to_s }
