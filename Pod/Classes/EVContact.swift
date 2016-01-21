@@ -8,7 +8,7 @@
 
 import UIKit
 
-public class EVContact: NSObject {
+@objc public class EVContact: NSObject {
     public var identifier : String?
     public var firstName : String?
     public var lastName : String?
