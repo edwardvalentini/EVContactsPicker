@@ -8,6 +8,6 @@
 
 import Foundation
 
-public protocol EVContactsPickerDelegate : NSObjectProtocol {
+@objc public protocol EVContactsPickerDelegate : NSObjectProtocol {
     func didChooseContacts(contacts: [EVContact]? ) -> Void
 }
