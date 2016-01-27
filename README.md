@@ -37,13 +37,18 @@ pod "EVContactsPicker"
 
 ```swift
 
+import UIKit
 import EVContactsPicker
 
-class DemoController: EVContactsPickerDelegate {
+class DemoController: UIViewController, EVContactsPickerDelegate {
+
+    ...
+
 
     func showPicker() {
         let contactPicker = EVContactsPickerViewController()
         contactPicker.delegate = self
+        self.navigationController?.pushViewController(contactPicker, animated: true)
     }
 
     func didChooseContacts(contacts: [EVContact]?) {
@@ -52,7 +57,11 @@ class DemoController: EVContactsPickerDelegate {
                 print("\(con.fullname()")
             }
         }
+
+        self.navigationController?.popViewControllerAnimated(true)
     }
+
+    ...
 }
 
 ```
