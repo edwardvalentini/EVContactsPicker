@@ -16,6 +16,7 @@
 		24DBFEB1E5299A2FA900092F0B25866E /* icon-avatar-60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = E576FD0E44491D51B5BD3AA205751626 /* icon-avatar-60x60.png */; };
 		2582D701638C9CC42B1B09339AAF4AA8 /* EVContactsPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A900482FF8E7FFE9CC3CD36BD9893E /* EVContactsPickerDelegate.swift */; };
 		268778B22D99A39D3C72355A800A6AF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
+		2B8C86481C589AB600E7614D /* EVContactsPickerAssets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2B8C86471C589AB600E7614D /* EVContactsPickerAssets.bundle */; };
 		327B70AB61EBADB307CF4DFDA3D959E8 /* EVContactsPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FA2FC6E4BF057A5C0B2423120CA29F99 /* EVContactsPicker.bundle */; };
 		4208BC576D9C9EB487C85ABAE42D80DC /* EVContactsPickerViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 31F0366F6FB451476C7993B3D35A4FDA /* EVContactsPickerViewController.xib */; };
 		4BFA7544A6D8FFCEBCE19E92EA7F9570 /* icon-checkbox-unselected-25x25@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 70B7107DAE22133AF8C9D963AAAF891E /* icon-checkbox-unselected-25x25@2x.png */; };
@@ -73,6 +74,7 @@
 		2168F8EA6760B7296FAB7BCA971E9F99 /* Pods-EVContactsPicker_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EVContactsPicker_Tests-resources.sh"; sourceTree = "<group>"; };
 		216E33DE2F6AC5B96928ABF2D3EBA3C4 /* EVContactsPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EVContactsPicker-prefix.pch"; sourceTree = "<group>"; };
 		2983357F49F0810E16CE62479894EB0A /* Pods-EVContactsPicker_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EVContactsPicker_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		2B8C86471C589AB600E7614D /* EVContactsPickerAssets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EVContactsPickerAssets.bundle; sourceTree = "<group>"; };
 		2EF5ACC9EB9E6E7AA7F0A7265A7E46CB /* EVContactsPickerTableViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = EVContactsPickerTableViewCell.xib; sourceTree = "<group>"; };
 		2F82D57B1CC83C43959F7670F647EDEB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		30D96F16773BE991A67FF8BE17523D44 /* EVPickedContactsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVPickedContactsView.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				EEFC13C2E2A943F23712513E8BCB9CD3 /* icon-checkbox-selected-green-25x25@2x.png */,
 				5785C08C0D126B3B20BAEAE68B36B18A /* icon-checkbox-unselected-25x25.png */,
 				70B7107DAE22133AF8C9D963AAAF891E /* icon-checkbox-unselected-25x25@2x.png */,
+				2B8C86471C589AB600E7614D /* EVContactsPickerAssets.bundle */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B8C86481C589AB600E7614D /* EVContactsPickerAssets.bundle in Resources */,
 				327B70AB61EBADB307CF4DFDA3D959E8 /* EVContactsPicker.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
