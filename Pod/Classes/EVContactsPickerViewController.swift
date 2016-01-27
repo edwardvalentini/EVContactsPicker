@@ -62,7 +62,7 @@ import ContactsUI
     }
     
     func setup() -> Void {
-        self.title  = "Selected Contacts (0)"
+        self.title  = NSBundle.evLocalizedStringForKey("Selected Contacts") + "(0)"
         self.curBundle = NSBundle(forClass: self.dynamicType)
         if( self.useExternal == false ) {
             self.store = CNContactStore()
@@ -73,13 +73,13 @@ import ContactsUI
     override public func viewDidLoad() {
         super.viewDidLoad()
         
-        barButton = UIBarButtonItem(title: "Done", style: .Done, target: self, action: Selector("done:"))
+        barButton = UIBarButtonItem(title: NSBundle.evLocalizedStringForKey("Done"), style: .Done, target: self, action: Selector("done:"))
         barButton?.enabled = false
         self.navigationItem.rightBarButtonItem = barButton
         
         self.contactPickerView = EVPickedContactsView(frame: CGRectMake(0, 0, self.view.frame.size.width, 100))
         self.contactPickerView?.delegate = self
-        self.contactPickerView?.setPlaceHolderString("Type Contact Name")
+        self.contactPickerView?.setPlaceHolderString(NSBundle.evLocalizedStringForKey("Type Contact Name"))
         self.view.addSubview(self.contactPickerView!)
         
         
@@ -339,7 +339,7 @@ import ContactsUI
             self.barButton?.enabled = false
         }
         
-        self.title = String("Add members (\(self.selectedContacts!.count))")
+        self.title = String(NSBundle.evLocalizedStringForKey("Add members") + "(\(self.selectedContacts!.count))")
         self.filteredContacts = self.contacts
         self.tableView?.reloadData()
         
@@ -374,7 +374,7 @@ import ContactsUI
         let imPath = self.curBundle?.pathForResource(kUnselectedCheckbox, ofType: "png", inDirectory: "EVContactsPicker.bundle")
         let im = UIImage(contentsOfFile: imPath!)
         cell.checkImage?.image = im
-        self.title = String("Add members (\(self.selectedContacts!.count))")
+        self.title = String(NSBundle.evLocalizedStringForKey("Add members") + "(\(self.selectedContacts!.count))")
     }
     
     func contactPickerDidResize(pickedContactView: EVPickedContactsView) -> Void {
