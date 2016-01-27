@@ -5,10 +5,6 @@
 [![License](https://img.shields.io/cocoapods/l/EVContactsPicker.svg?style=flat)](http://cocoapods.org/pods/EVContactsPicker)
 [![Platform](https://img.shields.io/cocoapods/p/EVContactsPicker.svg?style=flat)](http://cocoapods.org/pods/EVContactsPicker)
 
-## DISCLAIMER
-
-This is a work in progress... Use at your own risk.
-
 
 ## Screenshots
 
@@ -17,6 +13,10 @@ This is a work in progress... Use at your own risk.
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
+```swift
+import EVContactsPicker
+```
 
 ## Requirements
 
@@ -33,10 +33,28 @@ it, simply add the following line to your Podfile:
 pod "EVContactsPicker"
 ```
 
-## Examples
+## Example
 
-```
-coming soon, for now look in the Example folder.
+```swift
+
+import EVContactsPicker
+
+class DemoController: EVContactsPickerDelegate {
+
+    func showPicker() {
+        let contactPicker = EVContactsPickerViewController()
+        contactPicker.delegate = self
+    }
+
+    func didChooseContacts(contacts: [EVContact]?) {
+        if let cons = contacts {
+            for con in cons {
+                print("\(con.fullname()")
+            }
+        }
+    }
+}
+
 ```
 
 
