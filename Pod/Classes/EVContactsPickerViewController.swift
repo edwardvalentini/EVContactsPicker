@@ -12,16 +12,12 @@ import UIKit
 import Contacts
 import ContactsUI
 
-//public struct EVContactModeOption : OptionSetType {
-//    public let rawValue: Int
-//    
-//    public init(rawValue : Int) {
-//        self.rawValue = rawValue
-//    }
-//    
-//    public static let Internal        = EVContactModeOption(rawValue: 1 << 0)
-//    public static let External        = EVContactModeOption(rawValue: 1 << 1)
-//}
+
+/*
+let kAvatarImage =  "icon-avatar-60x60"
+let kSelectedCheckbox = "icon-checkbox-selected-green-25x25"
+let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
+*/
 
 
 @available(iOS 9.0, *)
@@ -42,6 +38,25 @@ import ContactsUI
     
     public var delegate : EVContactsPickerDelegate?
     private var curBundle : NSBundle?
+    
+    
+    lazy var avatarImage : UIImage = {
+       let bundle = NSBundle.evAssetsBundle()
+       let path = bundle.pathForResource(kAvatarImage, ofType: "png", inDirectory: "Images")
+       return UIImage(named: path!)!
+    }()
+    
+    lazy var selectedCheckbox : UIImage = {
+        let bundle = NSBundle.evAssetsBundle()
+        let path = bundle.pathForResource(kSelectedCheckbox, ofType: "png", inDirectory: "Images")
+        return UIImage(named: path!)!
+    }()
+    
+    lazy var unselectedCheckbox : UIImage = {
+        let bundle = NSBundle.evAssetsBundle()
+        let path = bundle.pathForResource(kUnselectedCheckbox, ofType: "png", inDirectory: "Images")
+        return UIImage(named: path!)!
+    }()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -180,9 +195,9 @@ import ContactsUI
                     let img = UIImage(data: imgData!)
                     tmpContact.image = img
                 } else {
-                    let imPath = self.curBundle?.pathForResource(kAvatarImage, ofType: "png", inDirectory: "EVContactsPicker.bundle")
-                    let im = UIImage(contentsOfFile: imPath!)
-                    tmpContact.image = im
+//                    let imPath = self.curBundle?.pathForResource(kAvatarImage, ofType: "png", inDirectory: "EVContactsPicker.bundle")
+//                    let im = UIImage(contentsOfFile: imPath!)
+                    tmpContact.image = self.avatarImage
                 }
                 
                 mutableContacts.append(tmpContact)
@@ -228,9 +243,10 @@ import ContactsUI
                         let img = UIImage(data: imgData!)
                         contact.image = img
                     } else {
-                        let imPath = self.curBundle?.pathForResource(kAvatarImage, ofType: "png", inDirectory: "EVContactsPicker.bundle")
-                        let im = UIImage(contentsOfFile: imPath!)
-                        contact.image = im
+//                        let imPath = self.curBundle?.pathForResource(kAvatarImage, ofType: "png", inDirectory: "EVContactsPicker.bundle")
+//                        let im = UIImage(contentsOfFile: imPath!)
+                        
+                        contact.image = self.avatarImage
                     }
                 }
             } catch {
@@ -238,9 +254,9 @@ import ContactsUI
             }
         } else {
             if(contact.image == nil) {
-                let imPath = self.curBundle?.pathForResource(kAvatarImage, ofType: "png", inDirectory: "EVContactsPicker.bundle")
-                let im = UIImage(contentsOfFile: imPath!)
-                contact.image = im
+//                let imPath = self.curBundle?.pathForResource(kAvatarImage, ofType: "png", inDirectory: "EVContactsPicker.bundle")
+//                let im = UIImage(contentsOfFile: imPath!)
+                contact.image = self.avatarImage
             }
         }
     }
@@ -283,18 +299,18 @@ import ContactsUI
         cell.contactImage?.layer.cornerRadius = 20
         
         if(self.selectedContacts == nil) {
-            let imPath = self.curBundle?.pathForResource(kUnselectedCheckbox, ofType: "png", inDirectory: "EVContactsPicker.bundle")
-            let im = UIImage(contentsOfFile: imPath!)
-            cell.checkImage?.image = im
+//            let imPath = self.curBundle?.pathForResource(kUnselectedCheckbox, ofType: "png", inDirectory: "EVContactsPicker.bundle")
+//            let im = UIImage(contentsOfFile: imPath!)
+            cell.checkImage?.image = self.unselectedCheckbox
         } else {
             if (self.selectedContacts!.contains(contact!)) {
-                let imPath = self.curBundle?.pathForResource(kSelectedCheckbox, ofType: "png", inDirectory: "EVContactsPicker.bundle")
-                let im = UIImage(contentsOfFile: imPath!)
-                cell.checkImage?.image = im
+//                let imPath = self.curBundle?.pathForResource(kSelectedCheckbox, ofType: "png", inDirectory: "EVContactsPicker.bundle")
+//                let im = UIImage(contentsOfFile: imPath!)
+                cell.checkImage?.image = self.selectedCheckbox
             } else {
-                let imPath = self.curBundle?.pathForResource(kUnselectedCheckbox, ofType: "png", inDirectory: "EVContactsPicker.bundle")
-                let im = UIImage(contentsOfFile: imPath!)
-                cell.checkImage?.image = im
+//                let imPath = self.curBundle?.pathForResource(kUnselectedCheckbox, ofType: "png", inDirectory: "EVContactsPicker.bundle")
+//                let im = UIImage(contentsOfFile: imPath!)
+                cell.checkImage?.image = self.unselectedCheckbox
             }
         }
         if (self.useExternal == false ) {
@@ -322,15 +338,15 @@ import ContactsUI
                 let ind = selectedContacts?.indexOf(user!)
                 self.selectedContacts?.removeAtIndex(ind!)
                 self.contactPickerView?.removeContact(user!)
-                let imPath = self.curBundle?.pathForResource(kUnselectedCheckbox, ofType: "png", inDirectory: "EVContactsPicker.bundle")
-                let im = UIImage(contentsOfFile: imPath!)
-                cell.checkImage?.image = im
+//                let imPath = self.curBundle?.pathForResource(kUnselectedCheckbox, ofType: "png", inDirectory: "EVContactsPicker.bundle")
+//                let im = UIImage(contentsOfFile: imPath!)
+                cell.checkImage?.image = self.unselectedCheckbox
             } else {
                 self.selectedContacts?.append(user!)
                 self.contactPickerView?.addContact(user!, name: (user?.fullname())!)
-                let imPath = self.curBundle?.pathForResource(kSelectedCheckbox, ofType: "png", inDirectory: "EVContactsPicker.bundle")
-                let im = UIImage(contentsOfFile: imPath!)
-                cell.checkImage?.image = im
+//                let imPath = self.curBundle?.pathForResource(kSelectedCheckbox, ofType: "png", inDirectory: "EVContactsPicker.bundle")
+//                let im = UIImage(contentsOfFile: imPath!)
+                cell.checkImage?.image = self.selectedCheckbox
             }
         
         if(self.selectedContacts?.count > 0) {
