@@ -44,7 +44,6 @@ class DemoController: UIViewController, EVContactsPickerDelegate {
 
     ...
 
-
     func showPicker() {
         let contactPicker = EVContactsPickerViewController()
         contactPicker.delegate = self
@@ -57,11 +56,11 @@ class DemoController: UIViewController, EVContactsPickerDelegate {
                 print("\(con.fullname()")
             }
         }
-
         self.navigationController?.popViewControllerAnimated(true)
     }
 
     ...
+    
 }
 
 ```
