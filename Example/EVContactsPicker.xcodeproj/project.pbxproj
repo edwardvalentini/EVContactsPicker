@@ -8,13 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		2BB4F84B1BAE1A9C00E28CB0 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB4F84A1BAE1A9C00E28CB0 /* DemoViewController.swift */; };
-		518C94E0AFD78D2DF88D1389 /* Pods_EVContactsPicker_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF6BAD3384B024D06AF8BEB /* Pods_EVContactsPicker_Example.framework */; };
+		4DB2EF8E0D78DF5A7AFA017E /* Pods_EVContactsPicker_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD23A3A1E3CE2AD464406DE /* Pods_EVContactsPicker_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		CCC5ADB45481458F142A5845 /* Pods_EVContactsPicker_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ABABE0C391684216AAD80CC /* Pods_EVContactsPicker_Tests.framework */; };
+		BC3D581D77A0AF0F9E6C7D5E /* Pods_EVContactsPicker_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE6828520FC64CFC5D1705C /* Pods_EVContactsPicker_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,10 +28,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1FF6BAD3384B024D06AF8BEB /* Pods_EVContactsPicker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EVContactsPicker_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		02318C824993B0232A4E25C9 /* Pods-EVContactsPicker_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EVContactsPicker_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EVContactsPicker_Tests/Pods-EVContactsPicker_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		20327C1958198E5849B35C43 /* EVContactsPicker.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = EVContactsPicker.podspec; path = ../EVContactsPicker.podspec; sourceTree = "<group>"; };
+		28E3E54644A427DE84BC53DF /* Pods-EVContactsPicker_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EVContactsPicker_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-EVContactsPicker_Example/Pods-EVContactsPicker_Example.release.xcconfig"; sourceTree = "<group>"; };
 		2BB4F84A1BAE1A9C00E28CB0 /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		4890B9939CE4267C8E0BF77E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		5AE6828520FC64CFC5D1705C /* Pods_EVContactsPicker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EVContactsPicker_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* EVContactsPicker_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EVContactsPicker_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,12 +43,10 @@
 		607FACE51AFB9204008FA782 /* EVContactsPicker_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EVContactsPicker_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		6F4D672C5906183C0DB10FCB /* Pods-EVContactsPicker_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EVContactsPicker_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-EVContactsPicker_Example/Pods-EVContactsPicker_Example.release.xcconfig"; sourceTree = "<group>"; };
-		7ABABE0C391684216AAD80CC /* Pods_EVContactsPicker_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EVContactsPicker_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		98B8FF75F26860682A4A302A /* Pods-EVContactsPicker_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EVContactsPicker_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EVContactsPicker_Tests/Pods-EVContactsPicker_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		93A3C14CC30B84A936293F01 /* Pods-EVContactsPicker_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EVContactsPicker_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EVContactsPicker_Example/Pods-EVContactsPicker_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D729466EF394CDF38864B6E9 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		E634C23EA908F5382725F90A /* Pods-EVContactsPicker_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EVContactsPicker_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EVContactsPicker_Tests/Pods-EVContactsPicker_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		EC8DC634E731255709AF1080 /* Pods-EVContactsPicker_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EVContactsPicker_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EVContactsPicker_Example/Pods-EVContactsPicker_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		DAD23A3A1E3CE2AD464406DE /* Pods_EVContactsPicker_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EVContactsPicker_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0096977995FF2F276E14F33 /* Pods-EVContactsPicker_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EVContactsPicker_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EVContactsPicker_Tests/Pods-EVContactsPicker_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				518C94E0AFD78D2DF88D1389 /* Pods_EVContactsPicker_Example.framework in Frameworks */,
+				BC3D581D77A0AF0F9E6C7D5E /* Pods_EVContactsPicker_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCC5ADB45481458F142A5845 /* Pods_EVContactsPicker_Tests.framework in Frameworks */,
+				4DB2EF8E0D78DF5A7AFA017E /* Pods_EVContactsPicker_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,8 +76,8 @@
 				607FACD21AFB9204008FA782 /* Example for EVContactsPicker */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				7D31EFF48F1DFC4611CE50A7 /* Pods */,
-				8C4FB7E05BCF2B5325BBBFED /* Frameworks */,
+				972EEB1E6F56FDDA03E8FD55 /* Pods */,
+				6AC6254F9366FB141155B5E4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -139,24 +139,24 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		7D31EFF48F1DFC4611CE50A7 /* Pods */ = {
+		6AC6254F9366FB141155B5E4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EC8DC634E731255709AF1080 /* Pods-EVContactsPicker_Example.debug.xcconfig */,
-				6F4D672C5906183C0DB10FCB /* Pods-EVContactsPicker_Example.release.xcconfig */,
-				E634C23EA908F5382725F90A /* Pods-EVContactsPicker_Tests.debug.xcconfig */,
-				98B8FF75F26860682A4A302A /* Pods-EVContactsPicker_Tests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		8C4FB7E05BCF2B5325BBBFED /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1FF6BAD3384B024D06AF8BEB /* Pods_EVContactsPicker_Example.framework */,
-				7ABABE0C391684216AAD80CC /* Pods_EVContactsPicker_Tests.framework */,
+				5AE6828520FC64CFC5D1705C /* Pods_EVContactsPicker_Example.framework */,
+				DAD23A3A1E3CE2AD464406DE /* Pods_EVContactsPicker_Tests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		972EEB1E6F56FDDA03E8FD55 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				93A3C14CC30B84A936293F01 /* Pods-EVContactsPicker_Example.debug.xcconfig */,
+				28E3E54644A427DE84BC53DF /* Pods-EVContactsPicker_Example.release.xcconfig */,
+				02318C824993B0232A4E25C9 /* Pods-EVContactsPicker_Tests.debug.xcconfig */,
+				F0096977995FF2F276E14F33 /* Pods-EVContactsPicker_Tests.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,12 +166,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "EVContactsPicker_Example" */;
 			buildPhases = (
-				281777A735F508817C2F8A23 /* Check Pods Manifest.lock */,
+				1D348B9D138D29EB78AE8E26 /* Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				88DADDFAE52945CF5E16EE04 /* Embed Pods Frameworks */,
-				2E3DB0566C8694CCE469783A /* Copy Pods Resources */,
+				00C3B904048440ED13858DCF /* Embed Pods Frameworks */,
+				7FAC9FC745629C3AFA31D85C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -186,12 +186,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "EVContactsPicker_Tests" */;
 			buildPhases = (
-				439C47B0692821A24364D9ED /* Check Pods Manifest.lock */,
+				5C584A7E810798AB6F93C85F /* Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				FCB973AC34345415C060AC85 /* Embed Pods Frameworks */,
-				BF97F364397AE703B1138602 /* Copy Pods Resources */,
+				939E826206D7FDA25F3C97E8 /* Embed Pods Frameworks */,
+				A1F2B75C55691F2D3392433A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -263,52 +263,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		281777A735F508817C2F8A23 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		2E3DB0566C8694CCE469783A /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EVContactsPicker_Example/Pods-EVContactsPicker_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		439C47B0692821A24364D9ED /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		88DADDFAE52945CF5E16EE04 /* Embed Pods Frameworks */ = {
+		00C3B904048440ED13858DCF /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -323,7 +278,37 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EVContactsPicker_Example/Pods-EVContactsPicker_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BF97F364397AE703B1138602 /* Copy Pods Resources */ = {
+		1D348B9D138D29EB78AE8E26 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5C584A7E810798AB6F93C85F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7FAC9FC745629C3AFA31D85C /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -335,10 +320,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EVContactsPicker_Tests/Pods-EVContactsPicker_Tests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EVContactsPicker_Example/Pods-EVContactsPicker_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FCB973AC34345415C060AC85 /* Embed Pods Frameworks */ = {
+		939E826206D7FDA25F3C97E8 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -351,6 +336,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EVContactsPicker_Tests/Pods-EVContactsPicker_Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1F2B75C55691F2D3392433A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EVContactsPicker_Tests/Pods-EVContactsPicker_Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -487,7 +487,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EC8DC634E731255709AF1080 /* Pods-EVContactsPicker_Example.debug.xcconfig */;
+			baseConfigurationReference = 93A3C14CC30B84A936293F01 /* Pods-EVContactsPicker_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = EVContactsPicker/Info.plist;
@@ -500,7 +500,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6F4D672C5906183C0DB10FCB /* Pods-EVContactsPicker_Example.release.xcconfig */;
+			baseConfigurationReference = 28E3E54644A427DE84BC53DF /* Pods-EVContactsPicker_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = EVContactsPicker/Info.plist;
@@ -513,7 +513,7 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E634C23EA908F5382725F90A /* Pods-EVContactsPicker_Tests.debug.xcconfig */;
+			baseConfigurationReference = 02318C824993B0232A4E25C9 /* Pods-EVContactsPicker_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -534,7 +534,7 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 98B8FF75F26860682A4A302A /* Pods-EVContactsPicker_Tests.release.xcconfig */;
+			baseConfigurationReference = F0096977995FF2F276E14F33 /* Pods-EVContactsPicker_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (

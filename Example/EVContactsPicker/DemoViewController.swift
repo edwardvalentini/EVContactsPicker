@@ -17,6 +17,10 @@ class DemoViewController: UIViewController, EVContactsPickerDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        let hh = NSBundle.evLocalizedStringForKey("Add Contacts")
+        print("hh is \(hh)")
+        
     }
 
     override func didReceiveMemoryWarning() {

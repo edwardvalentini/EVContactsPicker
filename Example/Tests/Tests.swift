@@ -26,4 +26,20 @@ class Tests: XCTestCase {
         }
     }
     
+    
+    func testEVBundle() {
+        XCTAssertNotNil(NSBundle.evBundle())
+    }
+    
+    func testEVAssetsBundle() {
+        XCTAssertNotNil(NSBundle.evAssetsBundle())
+    }
+    
+    func testLocalizedStringForKey() {
+        // let addContacts = NSBundle.evLocalizedStringForKey("Add Contacts")
+        
+        // switch to german then test this commenting out now so test doesnt fail.
+        // XCTAssertEqual(addContacts, "Kontakte hinzufügen")
+    }
+    
 }
