@@ -34,6 +34,16 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
     var barButton : UIBarButtonItem? = nil
     //var contactPickerMode : EVContactModeOption! = .Internal
     var useExternal : Bool = false
+    public var maxSelectedContacts : Int = -1 {
+        didSet {
+            singleSelection = maxSelectedContacts == 1;
+        }
+    }
+    var singleSelection : Bool = false {
+        didSet {
+            updateTitle()
+        }
+    }
     var externalDataSource : [EVContact]? = nil
     
     public var delegate : EVContactsPickerDelegate?
@@ -77,12 +87,32 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
     }
     
     func setup() -> Void {
-        self.title  = NSBundle.evLocalizedStringForKey("Selected Contacts") + "(0)"
+        updateTitle()
         self.curBundle = NSBundle(forClass: self.dynamicType)
         if( self.useExternal == false ) {
             self.store = CNContactStore()
         }
 
+    }
+    
+    func updateTitle() -> Void {
+        var contactsPresented = false
+        if let theContacts = self.selectedContacts {
+            contactsPresented = theContacts.isEmpty
+        }
+        if contactsPresented == false {
+            if singleSelection {
+                self.title  = NSBundle.evLocalizedStringForKey("Selected Contacts")
+            } else {
+                self.title  = NSBundle.evLocalizedStringForKey("Selected Contacts") + "(0)"
+            }
+        } else {
+            if singleSelection {
+                self.title  = NSBundle.evLocalizedStringForKey("Add Contacts")
+            } else {
+                self.title = String(NSBundle.evLocalizedStringForKey("Add Contacts") + "(\(self.selectedContacts!.count))")
+            }
+        }
     }
 
     override public func viewDidLoad() {
@@ -341,7 +371,11 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
 //                let imPath = self.curBundle?.pathForResource(kUnselectedCheckbox, ofType: "png", inDirectory: "EVContactsPicker.bundle")
 //                let im = UIImage(contentsOfFile: imPath!)
                 cell.checkImage?.image = self.unselectedCheckbox
-            } else {
+            } else if (canAddMoreContacts() || singleSelection) {
+                if singleSelection {
+                    self.selectedContacts?.removeAll();
+                    self.contactPickerView?.removeAllContacts();
+                }
                 self.selectedContacts?.append(user!)
                 self.contactPickerView?.addContact(user!, name: (user?.fullname())!)
 //                let imPath = self.curBundle?.pathForResource(kSelectedCheckbox, ofType: "png", inDirectory: "EVContactsPicker.bundle")
@@ -355,11 +389,15 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
             self.barButton?.enabled = false
         }
         
-        self.title = String(NSBundle.evLocalizedStringForKey("Add Contacts") + "(\(self.selectedContacts!.count))")
+        updateTitle()
         self.filteredContacts = self.contacts
         self.tableView?.reloadData()
         
         return indexPath
+    }
+    
+    private func canAddMoreContacts() -> Bool {
+        return maxSelectedContacts <= 0 || maxSelectedContacts > 0 && maxSelectedContacts > self.selectedContacts?.count;
     }
     
     // MARK: - EVPickedContactsViewDelegate
@@ -390,7 +428,7 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
         let imPath = self.curBundle?.pathForResource(kUnselectedCheckbox, ofType: "png", inDirectory: "EVContactsPicker.bundle")
         let im = UIImage(contentsOfFile: imPath!)
         cell.checkImage?.image = im
-        self.title = String(NSBundle.evLocalizedStringForKey("Add Contacts") + "(\(self.selectedContacts!.count))")
+        updateTitle()
     }
     
     func contactPickerDidResize(pickedContactView: EVPickedContactsView) -> Void {
