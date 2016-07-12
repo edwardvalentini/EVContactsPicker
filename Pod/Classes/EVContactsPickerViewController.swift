@@ -122,6 +122,12 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
         barButton?.enabled = false
         self.navigationItem.rightBarButtonItem = barButton
         
+        if self.navigationController?.viewControllers.first == self {
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Cancel,
+                                                                    target: self,
+                                                                    action: Selector("cancelTapped"))
+        }
+        
         self.contactPickerView = EVPickedContactsView(frame: CGRectMake(0, 0, self.view.frame.size.width, 100))
         self.contactPickerView?.delegate = self
         self.contactPickerView?.setPlaceHolderString(NSBundle.evLocalizedStringForKey("Type Contact Name"))
@@ -173,6 +179,10 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
         }
         self.contactPickerView?.frame.origin.y = topOffset
         self.adjustTableViewFrame(false)
+    }
+    
+    func cancelTapped() {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func adjustTableViewFrame(animated: Bool) -> Void {
