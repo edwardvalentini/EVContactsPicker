@@ -165,8 +165,7 @@
 			children = (
 				A2746886A4D60DC0151B2C51C44CAA58 /* Assets */,
 			);
-			name = EVContactsPicker;
-			path = ../..;
+			path = Pod;
 			sourceTree = "<group>";
 		};
 		146F4441864C9623CDC7673F7416201E /* EVContactsPicker */ = {
@@ -185,8 +184,7 @@
 			children = (
 				04D96FB9BAF4074A28F35AA2B82B13CF /* Classes */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/EVContactsPicker";
+			path = Pod;
 			sourceTree = "<group>";
 		};
 		2C5007B6A43F935FB94D99BE8101B37E /* Support Files */ = {
@@ -254,7 +252,8 @@
 				5079AC107DA9B43762BB633A2FC7A16E /* Pods-EVContactsPicker_Tests.debug.xcconfig */,
 				E4DA320C5CEC8FDA897345D9EAC8ADD1 /* Pods-EVContactsPicker_Tests.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = "Pods-EVContactsPicker_Tests";
+			path = "Target Support Files/Pods-EVContactsPicker_Tests";
 			sourceTree = "<group>";
 		};
 		A2746886A4D60DC0151B2C51C44CAA58 /* Assets */ = {
@@ -276,8 +275,7 @@
 			children = (
 				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
 			);
-			name = "Pods-EVContactsPicker_Example";
-			path = "Target Support Files/Pods-EVContactsPicker_Example";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		C6BBDF11BC7D27BD88116A2FB6D7FD54 /* Pods-EVContactsPicker_Example */ = {
@@ -407,17 +405,6 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
-				TargetAttributes = {
-					3BA19EE2BCC14EE1C7D67A05C10F8A29 = {
-						LastSwiftMigration = 0800;
-					};
-					D6F692F00E86831E28D71A619D8976C3 = {
-						LastSwiftMigration = 0800;
-					};
-					F7F039F88E99F34AF9DB7DE81B347326 = {
-						LastSwiftMigration = 0800;
-					};
-				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -512,13 +499,13 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1DF02C9B9CB24209AF5C07B8901FFBD3 /* Release */ = {
+		0AE6552D901C7311D487555B9C1B47F3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 809581CDBCA65EBEDD4C5E2B135F202F /* EVContactsPicker.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -531,16 +518,17 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/EVContactsPicker/EVContactsPicker.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = EVContactsPicker;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		59B042A655B7C20CBAB90E385BF4E4C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -562,6 +550,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -613,12 +602,11 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		9BBC508BF1CC285324E8AE8A9CB7C39F /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -647,7 +635,6 @@
 				PRODUCT_NAME = Pods_EVContactsPicker_Example;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -677,11 +664,11 @@
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Pods_EVContactsPicker_Tests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -755,20 +742,19 @@
 				PRODUCT_NAME = Pods_EVContactsPicker_Tests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		DE18630630E03F02D43F05569D6559A9 /* Debug */ = {
+		EFF48193DB0E6B1AB8376BE1274F8EA2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 809581CDBCA65EBEDD4C5E2B135F202F /* EVContactsPicker.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -781,17 +767,16 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/EVContactsPicker/EVContactsPicker.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = EVContactsPicker;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -808,8 +793,8 @@
 		548F695D45D48813938B94BA478E414D /* Build configuration list for PBXNativeTarget "EVContactsPicker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DE18630630E03F02D43F05569D6559A9 /* Debug */,
-				1DF02C9B9CB24209AF5C07B8901FFBD3 /* Release */,
+				0AE6552D901C7311D487555B9C1B47F3 /* Debug */,
+				EFF48193DB0E6B1AB8376BE1274F8EA2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
