@@ -16,8 +16,8 @@ import UIKit
     public var email : String?
     public var image : UIImage?
     var selected : Bool = false
-    var date : NSDate?
-    var dateUpdated : NSDate?
+    var date : Date?
+    var dateUpdated : Date?
     
     public override init() {
         super.init()
@@ -25,10 +25,10 @@ import UIKit
     
     public init(attributes: [String : AnyObject]) {
         super.init()
-        self.setValuesForKeysWithDictionary(attributes)
+        self.setValuesForKeys(attributes)
     }
     
-    override public func setValue(value: AnyObject?, forKey key: String) {
+    override public func setValue(_ value: AnyObject?, forKey key: String) {
         switch(key) {
             case "id" :
                 self.identifier = value as! String?
@@ -52,14 +52,14 @@ import UIKit
                 self.selected = value!.boolValue!
                 break
             case "date" :
-                let dateFormatter = NSDateFormatter()
+                let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "yyyy-MM-dd"
-                self.date = dateFormatter.dateFromString(value! as! String)
+                self.date = dateFormatter.date(from: value! as! String)
                 break
             case "dateUpdated" :
-                let dateFormatter = NSDateFormatter()
+                let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-                self.dateUpdated = dateFormatter.dateFromString(value! as! String)
+                self.dateUpdated = dateFormatter.date(from: value! as! String)
                 break
             default :
                 break

@@ -9,7 +9,7 @@
 import Foundation
 
 protocol EVPickedContactsViewDelegate : NSObjectProtocol {
-    func contactPickerTextViewDidChange(textViewText: String) -> Void
-    func contactPickerDidRemoveContact(contact: AnyObject) -> Void
-    func contactPickerDidResize(pickedContactView: EVPickedContactsView) -> Void
+    func contactPickerTextViewDidChange(_ textViewText: String) -> Void
+    func contactPickerDidRemoveContact(_ contact: AnyObject) -> Void
+    func contactPickerDidResize(_ pickedContactView: EVPickedContactsView) -> Void
 }
