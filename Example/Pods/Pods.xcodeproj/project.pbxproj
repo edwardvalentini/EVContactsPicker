@@ -165,7 +165,8 @@
 			children = (
 				A2746886A4D60DC0151B2C51C44CAA58 /* Assets */,
 			);
-			path = Pod;
+			name = EVContactsPicker;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		146F4441864C9623CDC7673F7416201E /* EVContactsPicker */ = {
@@ -184,7 +185,8 @@
 			children = (
 				04D96FB9BAF4074A28F35AA2B82B13CF /* Classes */,
 			);
-			path = Pod;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/EVContactsPicker";
 			sourceTree = "<group>";
 		};
 		2C5007B6A43F935FB94D99BE8101B37E /* Support Files */ = {
@@ -252,8 +254,7 @@
 				5079AC107DA9B43762BB633A2FC7A16E /* Pods-EVContactsPicker_Tests.debug.xcconfig */,
 				E4DA320C5CEC8FDA897345D9EAC8ADD1 /* Pods-EVContactsPicker_Tests.release.xcconfig */,
 			);
-			name = "Pods-EVContactsPicker_Tests";
-			path = "Target Support Files/Pods-EVContactsPicker_Tests";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		A2746886A4D60DC0151B2C51C44CAA58 /* Assets */ = {
@@ -275,7 +276,8 @@
 			children = (
 				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
 			);
-			name = Frameworks;
+			name = "Pods-EVContactsPicker_Example";
+			path = "Target Support Files/Pods-EVContactsPicker_Example";
 			sourceTree = "<group>";
 		};
 		C6BBDF11BC7D27BD88116A2FB6D7FD54 /* Pods-EVContactsPicker_Example */ = {
@@ -560,7 +562,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
-				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -617,7 +618,7 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		9BBC508BF1CC285324E8AE8A9CB7C39F /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -676,7 +677,6 @@
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = Pods_EVContactsPicker_Tests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
