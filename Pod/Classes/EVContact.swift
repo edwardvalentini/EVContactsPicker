@@ -28,7 +28,7 @@ import UIKit
         self.setValuesForKeys(attributes)
     }
     
-    override public func setValue(_ value: AnyObject?, forKey key: String) {
+    override public func setValue(_ value: Any?, forKey key: String) {
         switch(key) {
             case "id" :
                 self.identifier = value as! String?
@@ -49,7 +49,7 @@ import UIKit
                 self.image = value as! UIImage?
                 break
             case "isSelected" :
-                self.selected = value!.boolValue!
+                self.selected = (value! as AnyObject).boolValue!
                 break
             case "date" :
                 let dateFormatter = DateFormatter()

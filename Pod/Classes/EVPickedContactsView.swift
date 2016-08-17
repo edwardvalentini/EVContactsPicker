@@ -220,7 +220,11 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
         }
         
         if(( self.delegate?.responds(to: Selector("contactPickerDidRemoveContact:"))) != nil) {
-            self.delegate?.contactPickerDidRemoveContact((contact?.nonretainedObjectValue)!)
+            if let contact = contact as? AnyObject {
+                if let nonretainedValue = contact.nonretainedObjectValue as? AnyObject {
+                    self.delegate?.contactPickerDidRemoveContact(nonretainedValue)
+                }
+            }
         }
         
         self.removeContactByKey(contact!)
@@ -313,7 +317,7 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
             self.scrollView?.addSubview(self.textView!)
         }
         
-        if (self.limitToOne && self.contacts?.count >= 1){
+        if (self.limitToOne && (self.contacts?.count)! >= 1){
             self.textView?.isHidden = true;
             lineCount = 0;
         }

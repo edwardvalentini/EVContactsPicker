@@ -78,7 +78,7 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
     
     func setup() -> Void {
         self.title  = Bundle.evLocalizedStringForKey("Selected Contacts") + "(0)"
-        self.curBundle = Bundle(for: self.dynamicType)
+        self.curBundle = Bundle(for: type(of: self))
         if( self.useExternal == false ) {
             self.store = CNContactStore()
         }
@@ -173,7 +173,7 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
         self.contacts = []
         var mutableContacts : [EVContact] = []
         
-        let req : CNContactFetchRequest = CNContactFetchRequest(keysToFetch: [CNContactEmailAddressesKey,CNContactGivenNameKey,CNContactFamilyNameKey,CNContactImageDataAvailableKey,CNContactThumbnailImageDataKey,CNContactImageDataKey,CNContactPhoneNumbersKey])
+        let req : CNContactFetchRequest = CNContactFetchRequest(keysToFetch: [CNContactEmailAddressesKey as CNKeyDescriptor,CNContactGivenNameKey as CNKeyDescriptor,CNContactFamilyNameKey as CNKeyDescriptor,CNContactImageDataAvailableKey as CNKeyDescriptor,CNContactThumbnailImageDataKey as CNKeyDescriptor,CNContactImageDataKey as CNKeyDescriptor,CNContactPhoneNumbersKey as CNKeyDescriptor])
         
         do {
             try self.store?.enumerateContacts(with: req, usingBlock: { (contact: CNContact, boolprop : UnsafeMutablePointer<ObjCBool> ) -> Void in
@@ -225,7 +225,7 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
     func refreshContact(_ contact: EVContact) {
         if( self.useExternal == false ) {
             do {
-                if let tmpContact = try self.store?.unifiedContact(withIdentifier: contact.identifier!, keysToFetch: [CNContactEmailAddressesKey,CNContactGivenNameKey,CNContactFamilyNameKey,CNContactImageDataAvailableKey,CNContactThumbnailImageDataKey,CNContactImageDataKey,CNContactPhoneNumbersKey]) {
+                if let tmpContact = try self.store?.unifiedContact(withIdentifier: contact.identifier!, keysToFetch: [CNContactEmailAddressesKey as CNKeyDescriptor,CNContactGivenNameKey as CNKeyDescriptor,CNContactFamilyNameKey as CNKeyDescriptor,CNContactImageDataAvailableKey as CNKeyDescriptor,CNContactThumbnailImageDataKey as CNKeyDescriptor,CNContactImageDataKey as CNKeyDescriptor,CNContactPhoneNumbersKey as CNKeyDescriptor]) {
                     contact.identifier = tmpContact.identifier
                     contact.firstName = tmpContact.givenName
                     contact.lastName = tmpContact.familyName
@@ -349,7 +349,7 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
                 cell.checkImage?.image = self.selectedCheckbox
             }
         
-        if(self.selectedContacts?.count > 0) {
+        if((self.selectedContacts?.count)! > 0) {
             self.barButton?.isEnabled = true
         } else {
             self.barButton?.isEnabled = false
@@ -382,7 +382,7 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
         self.selectedContacts?.remove(at: ind!)
         let indexPath = IndexPath(row: ind!, section: 0)
         let cell = self.tableView?.cellForRow(at: indexPath) as! EVContactsPickerTableViewCell
-        if(self.selectedContacts?.count > 0) {
+        if((self.selectedContacts?.count)! > 0) {
             self.barButton?.isEnabled = true
         } else {
             self.barButton?.isEnabled = false
