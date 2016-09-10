@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
   s.source_files = 'Pod/Classes/**/*'
 
   s.pod_target_xcconfig = {
-                 'SWIFT_VERSION ' => '3.0'
+                 'SWIFT_VERSION' => '3.0'
                }
 
   s.resources = ['Pod/Assets/EVContactsPickerAssets.bundle', 'Pod/Assets/*.{png,gif,jpg}']
