@@ -5,10 +5,10 @@
 [![License](https://img.shields.io/cocoapods/l/EVContactsPicker.svg?style=flat)](http://cocoapods.org/pods/EVContactsPicker)
 [![Platform](https://img.shields.io/cocoapods/p/EVContactsPicker.svg?style=flat)](http://cocoapods.org/pods/EVContactsPicker)
 
-## DISCLAIMER
 
-This is a work in progress... Use at your own risk.
+## Swift 3
 
+Swift 3 support on master until Xcode8 out of beta
 
 ## Screenshots
 
@@ -17,6 +17,10 @@ This is a work in progress... Use at your own risk.
 ## Usage
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
+```swift
+import EVContactsPicker
+```
 
 ## Requirements
 
@@ -33,10 +37,36 @@ it, simply add the following line to your Podfile:
 pod "EVContactsPicker"
 ```
 
-## Examples
+## Example
 
-```
-coming soon, for now look in the Example folder.
+```swift
+
+import UIKit
+import EVContactsPicker
+
+class DemoController: UIViewController, EVContactsPickerDelegate {
+
+    ...
+
+    func showPicker() {
+        let contactPicker = EVContactsPickerViewController()
+        contactPicker.delegate = self
+        self.navigationController?.pushViewController(contactPicker, animated: true)
+    }
+
+    func didChooseContacts(contacts: [EVContact]?) {
+        if let cons = contacts {
+            for con in cons {
+                print("\(con.fullname()")
+            }
+        }
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+
+    ...
+    
+}
+
 ```
 
 

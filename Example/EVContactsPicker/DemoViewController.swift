@@ -18,7 +18,7 @@ class DemoViewController: UIViewController, EVContactsPickerDelegate {
 
         // Do any additional setup after loading the view.
         
-        let hh = NSBundle.evLocalizedStringForKey("Add Contacts")
+        let hh = Bundle.evLocalizedStringForKey("Add Contacts")
         print("hh is \(hh)")
         
     }
@@ -28,7 +28,7 @@ class DemoViewController: UIViewController, EVContactsPickerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func showDemo(sender: AnyObject?) -> Void {
+    @IBAction func showDemo(_ sender: AnyObject?) -> Void {
         
 //        let c1 : EVContact = EVContact()
 //        c1.identifier = "a12332"
@@ -52,7 +52,7 @@ class DemoViewController: UIViewController, EVContactsPickerDelegate {
         self.navigationController?.pushViewController(contactPicker, animated: true)
     }
     
-    func didChooseContacts(contacts: [EVContact]?) {
+    func didChooseContacts(_ contacts: [EVContact]?) {
         var conlist : String = ""
         if let cons = contacts {
             for con in cons {
@@ -62,7 +62,7 @@ class DemoViewController: UIViewController, EVContactsPickerDelegate {
         } else {
             print("I got nothing")
         }
-        self.navigationController?.popViewControllerAnimated(true)
+        let _ = self.navigationController?.popViewController(animated: true)
 
     }
     

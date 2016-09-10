@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "EVContactsPicker"
-  s.version          = "0.1.23"
+  s.version          = "0.2.0"
   s.summary          = "A Contact Picker using Contacts Framework that allows any input source not just the Apple Contacts."
 
   s.description      = <<-DESC
@@ -29,9 +29,12 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'EVContactsPicker' => ['Pod/Assets/**/*']
-  }
+
+  s.resources = ['Pod/Assets/EVContactsPickerAssets.bundle', 'Pod/Assets/*.{png,gif,jpg}']
+
+  #s.resource_bundles = {
+  #    'EVContactsPicker' => ['Pod/Assets/**/*']
+  #  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
