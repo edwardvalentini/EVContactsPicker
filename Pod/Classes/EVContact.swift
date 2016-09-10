@@ -8,13 +8,13 @@
 
 import UIKit
 
-@objc public class EVContact: NSObject {
-    public var identifier : String?
-    public var firstName : String?
-    public var lastName : String?
-    public var phone : String?
-    public var email : String?
-    public var image : UIImage?
+@objc open class EVContact: NSObject {
+    open var identifier : String?
+    open var firstName : String?
+    open var lastName : String?
+    open var phone : String?
+    open var email : String?
+    open var image : UIImage?
     var selected : Bool = false
     var date : Date?
     var dateUpdated : Date?
@@ -28,7 +28,7 @@ import UIKit
         self.setValuesForKeys(attributes)
     }
     
-    override public func setValue(_ value: Any?, forKey key: String) {
+    override open func setValue(_ value: Any?, forKey key: String) {
         switch(key) {
             case "id" :
                 self.identifier = value as! String?
@@ -69,7 +69,7 @@ import UIKit
 
     }
     
-    public func fullname() -> String {
+    open func fullname() -> String {
         if(self.firstName != nil && self.lastName != nil) {
             return String(self.firstName! + " " + self.lastName!)
         } else if (self.firstName != nil) {

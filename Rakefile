@@ -66,7 +66,7 @@ task :release do
   sh "git push origin #{branch}"
   sh "git push origin --tags"
   #sh "pod repo push #{PODREPO} #{podspec_path} --allow-warnings"
-  sh "pod trunk push #{podspec_path} --allow-warnings"
+  sh "pod trunk push #{podspec_path} --allow-warnings --verbose"
 end
 
 # @return [Pod::Version] The version as reported by the Podspec.

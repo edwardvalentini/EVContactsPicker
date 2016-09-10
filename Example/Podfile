@@ -7,6 +7,4 @@ end
 
 target 'EVContactsPicker_Tests' do
   pod "EVContactsPicker", :path => "../"
-
-  
 end

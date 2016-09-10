@@ -21,7 +21,7 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
 
 
 @available(iOS 9.0, *)
-@objc public class EVContactsPickerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,  EVPickedContactsViewDelegate, CNContactViewControllerDelegate {
+@objc open class EVContactsPickerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,  EVPickedContactsViewDelegate, CNContactViewControllerDelegate {
     
     let kKeyboardHeight : CGFloat = 0.0
     
@@ -40,7 +40,8 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
     public var showPhone = true
     
     public var delegate : EVContactsPickerDelegate?
-    private var curBundle : Bundle?
+    fileprivate var curBundle : Bundle?
+
     
     
     lazy var avatarImage : UIImage = {
@@ -88,10 +89,10 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
 
     }
 
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         
-        barButton = UIBarButtonItem(title: Bundle.evLocalizedStringForKey("Done"), style: .done, target: self, action: Selector("done:"))
+        barButton = UIBarButtonItem(title: Bundle.evLocalizedStringForKey("Done"), style: .done, target: self, action: #selector(EVContactsPickerViewController.done(_:)))
         barButton?.isEnabled = false
         self.navigationItem.rightBarButtonItem = barButton
         
@@ -131,14 +132,14 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
         }
     }
     
-    override public func viewWillAppear(_ animated: Bool) -> Void {
+    override open func viewWillAppear(_ animated: Bool) -> Void {
         super.viewWillAppear(animated)
         DispatchQueue.main.async { () -> Void in
             self.refreshContacts()
         }
     }
     
-    override public func viewDidLayoutSubviews() -> Void {
+    override open func viewDidLayoutSubviews() -> Void {
         super.viewDidLayoutSubviews()
         var topOffset : CGFloat = 0.0
         if( self.responds(to: #selector(getter: UIViewController.topLayoutGuide))) {
@@ -164,7 +165,7 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
         }
     }
 
-    override public func didReceiveMemoryWarning() {
+    override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -269,17 +270,17 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
         }
     }
     
-    public func contactViewController(_ viewController: CNContactViewController, shouldPerformDefaultActionFor property: CNContactProperty) -> Bool {
+    open func contactViewController(_ viewController: CNContactViewController, shouldPerformDefaultActionFor property: CNContactProperty) -> Bool {
         return true
     }
     
     // MARK: - TableView
     
-    public func numberOfSections(in tableView: UITableView) -> Int {
+    open func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if( self.filteredContacts == nil ) {
             return 0
         } else {
@@ -287,19 +288,19 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
         }
     }
     
-    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
     }
     
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "contactCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! EVContactsPickerTableViewCell
         let contact = self.filteredContacts?[(indexPath as NSIndexPath).row]
         
         cell.fullName?.text = contact?.fullname()
         
-        cell.email?.hidden = (contact?.email == nil || contact?.email?.isEmpty == true || showEmail == false)
-        cell.phone?.hidden = (contact?.phone == nil || contact?.phone?.isEmpty == true || showPhone == false)
+        cell.email?.isHidden = (contact?.email == nil || contact?.email?.isEmpty == true || showEmail == false)
+        cell.phone?.isHidden = (contact?.phone == nil || contact?.phone?.isEmpty == true || showPhone == false)
         
         cell.phone?.text = contact?.phone
         cell.email?.text = contact?.email
@@ -337,7 +338,7 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
         return cell
     }
     
-    public func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+    open func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
 
         self.contactPickerView?.resignKeyboard()
         
@@ -411,12 +412,12 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
     
     // MARK: - Miscellaneous
 
-    public func done(_ sender: AnyObject) -> Void {
+    open func done(_ sender: AnyObject) -> Void {
         let delayTime = DispatchTime.now() + Double(Int64(0.01 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
 
         DispatchQueue.main.asyncAfter(deadline: delayTime, execute: { () -> Void in
             if let del = self.delegate {
-                if(del.responds(to: Selector("didChooseContacts:"))) {
+                if(del.responds(to: #selector(EVContactsPickerDelegate.didChooseContacts(_:)))) {
                     if let selcontacts = self.selectedContacts {
                         del.didChooseContacts(selcontacts)
                     } else {
