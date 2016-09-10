@@ -214,19 +214,10 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
     }
     
     func removeContactBubble(_ contactBubble : EVContactBubble) -> Void {
-        let contact = self.contactForContactBubble(contactBubble)
-        if(contact == nil) {
-            return
+        if let contact = self.contactForContactBubble(contactBubble) {
+            self.delegate?.contactPickerDidRemoveContact(contact.nonretainedObjectValue as AnyObject)
+            self.removeContactByKey(contact)
         }
-        
-        if let contact = contact as AnyObject {
-            if let nonretainedValue = contact.nonretainedObjectValue as AnyObject {
-                self.delegate?.contactPickerDidRemoveContact(nonretainedValue)
-            }
-        }
-
-        
-        self.removeContactByKey(contact!)
     }
     
     func removeContactByKey(_ contactKey : AnyObject) -> Void {
