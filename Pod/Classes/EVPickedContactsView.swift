@@ -92,7 +92,7 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
             if let contacts = self.contacts {
                 if let contactBubble = contacts[contactKey] as? EVContactBubble {
                     contactBubble.removeFromSuperview()
-                    self.contacts?.removeValue(forKey: contactKey)
+                    let _ = self.contacts?.removeValue(forKey: contactKey)
                     
                     if let foundIndex = self.contactKeys?.index(of: contactKey) {
                         self.contactKeys?.remove(at: foundIndex)
@@ -219,13 +219,12 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
             return
         }
         
-        if(( self.delegate?.responds(to: Selector("contactPickerDidRemoveContact:"))) != nil) {
-            if let contact = contact as? AnyObject {
-                if let nonretainedValue = contact.nonretainedObjectValue as? AnyObject {
-                    self.delegate?.contactPickerDidRemoveContact(nonretainedValue)
-                }
+        if let contact = contact as AnyObject {
+            if let nonretainedValue = contact.nonretainedObjectValue as AnyObject {
+                self.delegate?.contactPickerDidRemoveContact(nonretainedValue)
             }
         }
+
         
         self.removeContactByKey(contact!)
     }
