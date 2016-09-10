@@ -40,6 +40,9 @@ import ContactsUI
     var useExternal : Bool = false
     var externalDataSource : [EVContact]? = nil
     
+    public var showEmail = true
+    public var showPhone = true
+    
     public var delegate : EVContactsPickerDelegate?
     private var curBundle : NSBundle?
     
@@ -273,6 +276,10 @@ import ContactsUI
         let contact = self.filteredContacts?[indexPath.row]
         
         cell.fullName?.text = contact?.fullname()
+        
+        cell.email?.hidden = (contact?.email == nil || contact?.email?.isEmpty == true || showEmail == false)
+        cell.phone?.hidden = (contact?.phone == nil || contact?.phone?.isEmpty == true || showPhone == false)
+        
         cell.phone?.text = contact?.phone
         cell.email?.text = contact?.email
         if((contact?.image) != nil) {
