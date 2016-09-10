@@ -188,7 +188,12 @@ import ContactsUI
                     tmpContact.image = im
                 }
                 
-                mutableContacts.append(tmpContact)
+                let showContact = self.delegate?.shouldShowContact?(tmpContact)
+                
+                if showContact == nil || showContact == true {
+                    mutableContacts.append(tmpContact)
+                }
+                
                 self.contacts = mutableContacts
                 self.selectedContacts = []
                 self.filteredContacts = self.contacts
