@@ -22,5 +22,6 @@ before_install:
  - gem install xcpretty-travis-formatter --no-rdoc --no-ri --no-document --quiet
  - pod install --project-directory=Example
 script:
+ - bundle exec danger
  - pod lib lint --quick
  - set -o pipefail && xcodebuild clean build -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO | xcpretty -f `xcpretty-travis-formatter` -c;
