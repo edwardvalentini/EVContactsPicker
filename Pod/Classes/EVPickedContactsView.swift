@@ -224,7 +224,7 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
         let contactBubble = self.contacts?[contactKey as! NSObject] as! EVContactBubble
         contactBubble.removeFromSuperview()
         
-        self.contacts?.removeValue(forKey: contactKey as! NSObject)
+        let _ = self.contacts?.removeValue(forKey: contactKey as! NSObject)
         
         if let foundIndex = self.contactKeys?.index(of: contactKey as! NSObject) {
             self.contactKeys?.remove(at: foundIndex)
@@ -243,7 +243,7 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
         let keys = self.contacts?.keys
         
         for contact in keys! {
-            if(((self.contacts?[contact] as AnyObject).isEqual(contactBubble)) != nil) {
+            if((self.contacts?[contact] as AnyObject).isEqual(contactBubble)) {
                 return contact as AnyObject?
             }
         }
@@ -329,9 +329,7 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
             frame.size.height = newHeight
             self.scrollView?.frame = frame
             
-            if(( self.delegate?.responds(to: Selector("contactPickerDidResize:"))) != nil) {
-                self.delegate?.contactPickerDidResize(self)
-            }
+            self.delegate?.contactPickerDidResize(self)
 
         }
         
@@ -364,9 +362,7 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        if(( self.delegate?.responds(to: Selector("contactPickerTextViewDidChange:"))) != nil) {
-            self.delegate?.contactPickerTextViewDidChange(textView.text)
-        }
+        self.delegate?.contactPickerTextViewDidChange(textView.text)
         
         if( textView.text == "" && self.contacts?.count == 0) {
             self.placeholderLabel?.isHidden = false
