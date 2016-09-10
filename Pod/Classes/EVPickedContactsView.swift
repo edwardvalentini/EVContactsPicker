@@ -137,27 +137,27 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
     
     // MARK: - Private Variables
     
-    private var _shouldSelectTextView = false
-    private var scrollView : UIScrollView?
-    private var contacts : [NSObject : AnyObject]?
-    private var contactKeys : [NSObject]?
-    private var placeholderLabel : UILabel?
-    private var lineHeight : CGFloat?
-    private var textView : UITextView?
+    fileprivate var _shouldSelectTextView = false
+    fileprivate var scrollView : UIScrollView?
+    fileprivate var contacts : [AnyHashable: Any]?
+    fileprivate var contactKeys : [NSObject]?
+    fileprivate var placeholderLabel : UILabel?
+    fileprivate var lineHeight : CGFloat?
+    fileprivate var textView : UITextView?
     
-    private var bubbleColor : EVBubbleColor?
-    private var bubbleSelectedColor : EVBubbleColor?
+    fileprivate var bubbleColor : EVBubbleColor?
+    fileprivate var bubbleSelectedColor : EVBubbleColor?
     
-    private let kViewPadding = CGFloat(5.0)
-    private let kHorizontalPadding = CGFloat(2.0)
-    private let kVerticalPadding = CGFloat(4.0)
-    private let kTextViewMinWidth = CGFloat(130.0)
+    fileprivate let kViewPadding = CGFloat(5.0)
+    fileprivate let kHorizontalPadding = CGFloat(2.0)
+    fileprivate let kVerticalPadding = CGFloat(4.0)
+    fileprivate let kTextViewMinWidth = CGFloat(130.0)
     
     
 
     // MARK: - Private Methods
     
-    private func setup() -> Void {
+    fileprivate func setup() -> Void {
         self.viewPadding = kViewPadding
         
         self.contacts = [:]
@@ -253,8 +253,8 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
         let keys = self.contacts?.keys
         
         for contact in keys! {
-            if((self.contacts?[contact]?.isEqual(contactBubble)) != nil) {
-                return contact
+            if(((self.contacts?[contact] as AnyObject).isEqual(contactBubble)) != nil) {
+                return contact as AnyObject?
             }
         }
         return nil
