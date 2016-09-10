@@ -1,5 +1,5 @@
 PODS:
-  - EVContactsPicker (0.2.10)
+  - EVContactsPicker (0.2.11)
 
 DEPENDENCIES:
   - EVContactsPicker (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  EVContactsPicker: 62f7093096be30b2bd1f44c1ebd0f8eadc75e3b7
+  EVContactsPicker: df464f6755a92f8ec3ea08adbfb0f020363bad21
 
 PODFILE CHECKSUM: 7efe058df86bfffb13f625edbb1e613eb95cd8d0
 
