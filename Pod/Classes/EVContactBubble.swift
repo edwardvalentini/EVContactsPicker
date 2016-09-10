@@ -30,7 +30,7 @@ class EVContactBubble: UIView, UITextViewDelegate {
     }
     
     init(name: String, color: EVBubbleColor?, selectedColor: EVBubbleColor?) {
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
         self.name = name
         self.color = color ?? EVBubbleColor(gradientTop: kBubbleColor, gradientBottom: kBubbleColor, border: kBubbleColor)
         self.selectedColor = selectedColor ?? EVBubbleColor(gradientTop: kBubbleColorSelected, gradientBottom: kBubbleColorSelected, border: kBubbleColorSelected)
@@ -41,23 +41,23 @@ class EVContactBubble: UIView, UITextViewDelegate {
         super.init(coder: aDecoder)
     }
 
-    func setFont(font: UIFont) -> Void {
+    func setFont(_ font: UIFont) -> Void {
         self.label?.font = font
         
     }
     
     func setupView() -> Void {
         self.label = UILabel()
-        self.label?.backgroundColor = UIColor.clearColor()
+        self.label?.backgroundColor = UIColor.clear
         self.label?.text = self.name!
         self.addSubview(self.label!)
         
         self.textView = UITextView()
         self.textView?.delegate = self
-        self.textView?.hidden = true
+        self.textView?.isHidden = true
         self.addSubview(self.textView!)
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: Selector("handleTapGesture"))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(EVContactBubble.handleTapGesture))
         tapGesture.numberOfTapsRequired = 1
         tapGesture.numberOfTouchesRequired = 1
         self.addGestureRecognizer(tapGesture)
@@ -74,11 +74,11 @@ class EVContactBubble: UIView, UITextViewDelegate {
         
         self.label?.frame = frame!
         
-        self.bounds = CGRectMake(0, 0,  frame!.size.width + 2 * kHorizontalPadding, frame!.size.height + 2 * kVerticalPadding)
+        self.bounds = CGRect(x: 0, y: 0,  width: frame!.size.width + 2 * kHorizontalPadding, height: frame!.size.height + 2 * kVerticalPadding)
         
         if(self.gradientLayer == nil ) {
             self.gradientLayer = CAGradientLayer()
-            self.layer.insertSublayer(self.gradientLayer!, atIndex: 0)
+            self.layer.insertSublayer(self.gradientLayer!, at: 0)
         }
         self.gradientLayer?.frame = self.bounds
         
@@ -89,22 +89,22 @@ class EVContactBubble: UIView, UITextViewDelegate {
     }
     
     func select() -> Void {
-        if ((self.delegate?.respondsToSelector(Selector("contactBubbleWasSelected:"))) != nil) {
+        if ((self.delegate?.responds(to: Selector("contactBubbleWasSelected:"))) != nil) {
             self.delegate?.contactBubbleWasSelected(self)
         }
         
         let viewLayer = self.layer
         
-        viewLayer.borderColor = self.selectedColor?.border?.CGColor
+        viewLayer.borderColor = self.selectedColor?.border?.cgColor
         
-        let xxx = self.selectedColor?.gradientTop?.CGColor
-        let yyy = self.selectedColor?.gradientBottom?.CGColor
+        let xxx = self.selectedColor?.gradientTop?.cgColor
+        let yyy = self.selectedColor?.gradientBottom?.cgColor
         
         let arr2 = NSArray(arrayLiteral: xxx!,yyy!)
         
         self.gradientLayer?.colors = arr2 as [AnyObject]
     
-        self.label?.textColor = UIColor.whiteColor()
+        self.label?.textColor = UIColor.white
         
         self.isSelected = true
         
@@ -115,17 +115,17 @@ class EVContactBubble: UIView, UITextViewDelegate {
     func unSelect() -> Void {
         let viewLayer = self.layer
         
-        viewLayer.borderColor = self.color?.border?.CGColor
+        viewLayer.borderColor = self.color?.border?.cgColor
         
         
-        let xxx = self.color?.gradientTop?.CGColor
-        let yyy = self.color?.gradientBottom?.CGColor
+        let xxx = self.color?.gradientTop?.cgColor
+        let yyy = self.color?.gradientBottom?.cgColor
         
         let arr2 = NSArray(arrayLiteral: xxx!,yyy!)
 
         self.gradientLayer?.colors = arr2 as [AnyObject]
 
-        self.label?.textColor = UIColor.whiteColor()
+        self.label?.textColor = UIColor.white
         
         self.isSelected = false
         
@@ -145,15 +145,15 @@ class EVContactBubble: UIView, UITextViewDelegate {
     
     // MARK: - UITextViewDelegate
     
-    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-        self.textView?.hidden = false
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        self.textView?.isHidden = false
         
         if(text == "\n") {
             return false
         }
         
         if(textView.text == "" && text == "") {
-            if ((self.delegate?.respondsToSelector(Selector("contactBubbleShouldBeRemoved:"))) != nil) {
+            if ((self.delegate?.responds(to: Selector("contactBubbleShouldBeRemoved:"))) != nil) {
                 self.delegate?.contactBubbleShouldBeRemoved(self)
             }
         }
@@ -161,7 +161,7 @@ class EVContactBubble: UIView, UITextViewDelegate {
         if( self.isSelected ) {
             self.textView?.text = ""
             self.unSelect()
-            if ((self.delegate?.respondsToSelector(Selector("contactBubbleWasUnSelected:"))) != nil) {
+            if ((self.delegate?.responds(to: Selector("contactBubbleWasUnSelected:"))) != nil) {
                 self.delegate?.contactBubbleWasUnSelected(self)
             }
         }

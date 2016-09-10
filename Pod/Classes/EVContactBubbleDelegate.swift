@@ -9,7 +9,7 @@
 import Foundation
 
 protocol EVContactBubbleDelegate : NSObjectProtocol {
-    func contactBubbleWasSelected(contactBubble: EVContactBubble) -> Void
-    func contactBubbleWasUnSelected(contactBubble: EVContactBubble) -> Void
-    func contactBubbleShouldBeRemoved(contactBubble: EVContactBubble) -> Void
+    func contactBubbleWasSelected(_ contactBubble: EVContactBubble) -> Void
+    func contactBubbleWasUnSelected(_ contactBubble: EVContactBubble) -> Void
+    func contactBubbleShouldBeRemoved(_ contactBubble: EVContactBubble) -> Void
 }
