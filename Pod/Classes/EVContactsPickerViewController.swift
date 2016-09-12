@@ -129,7 +129,7 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
         if self.navigationController?.viewControllers.first == self {
             self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel,
                                                                     target: self,
-                                                                    action: Selector("cancelTapped"))
+                                                                    action: #selector(cancelTapped))
         }
         
         self.contactPickerView = EVPickedContactsView(frame: CGRect(origin: CGPoint.zero, size: CGSize(width:self.view.frame.size.width, height: 100)))
