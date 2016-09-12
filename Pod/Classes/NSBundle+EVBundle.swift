@@ -8,20 +8,20 @@
 
 import Foundation
 
-public extension NSBundle {
-    public class func evBundle() -> NSBundle {
-        return NSBundle(forClass: EVContactsPickerViewController.self)
+public extension Bundle {
+    public class func evBundle() -> Bundle {
+        return Bundle(for: EVContactsPickerViewController.self)
     }
     
     
-    public class func evAssetsBundle() -> NSBundle {
-        let path : NSString = NSBundle.evBundle().resourcePath! as NSString
-        let assetPath = path.stringByAppendingPathComponent("EVContactsPickerAssets.bundle")
-        return NSBundle(path: assetPath)!
+    public class func evAssetsBundle() -> Bundle {
+        let path : NSString = Bundle.evBundle().resourcePath! as NSString
+        let assetPath = path.appendingPathComponent("EVContactsPickerAssets.bundle")
+        return Bundle(path: assetPath)!
 
     }
     
-    public class func evLocalizedStringForKey(key: String) -> String {
-        return NSLocalizedString(key, tableName: "EVContactsPicker", bundle: NSBundle.evAssetsBundle(), comment: "")
+    public class func evLocalizedStringForKey(_ key: String) -> String {
+        return NSLocalizedString(key, tableName: "EVContactsPicker", bundle: Bundle.evAssetsBundle(), comment: "")
     }
 }
