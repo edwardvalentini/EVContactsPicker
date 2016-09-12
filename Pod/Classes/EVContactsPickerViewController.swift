@@ -34,6 +34,16 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
     var barButton : UIBarButtonItem? = nil
     //var contactPickerMode : EVContactModeOption! = .Internal
     var useExternal : Bool = false
+    public var maxSelectedContacts : Int = -1 {
+        didSet {
+            singleSelection = maxSelectedContacts == 1;
+        }
+    }
+    var singleSelection : Bool = false {
+        didSet {
+            updateTitle()
+        }
+    }
     var externalDataSource : [EVContact]? = nil
     
     public var showEmail = true
@@ -81,12 +91,32 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
     }
     
     func setup() -> Void {
-        self.title  = Bundle.evLocalizedStringForKey("Selected Contacts") + "(0)"
+        updateTitle()
         self.curBundle = Bundle(for: type(of: self))
         if( self.useExternal == false ) {
             self.store = CNContactStore()
         }
 
+    }
+    
+    func updateTitle() -> Void {
+        var contactsPresented = false
+        if let theContacts = self.selectedContacts {
+            contactsPresented = theContacts.isEmpty
+        }
+        if contactsPresented == false {
+            if singleSelection {
+                self.title  = Bundle.evLocalizedStringForKey("Selected Contacts")
+            } else {
+                self.title  = Bundle.evLocalizedStringForKey("Selected Contacts") + "(0)"
+            }
+        } else {
+            if singleSelection {
+                self.title  = Bundle.evLocalizedStringForKey("Add Contacts")
+            } else {
+                self.title = String(Bundle.evLocalizedStringForKey("Add Contacts") + "(\(self.selectedContacts!.count))")
+            }
+        }
     }
 
     override open func viewDidLoad() {
@@ -96,7 +126,13 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
         barButton?.isEnabled = false
         self.navigationItem.rightBarButtonItem = barButton
         
-        self.contactPickerView = EVPickedContactsView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 100))
+        if self.navigationController?.viewControllers.first == self {
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel,
+                                                                    target: self,
+                                                                    action: Selector("cancelTapped"))
+        }
+        
+        self.contactPickerView = EVPickedContactsView(frame: CGRect(origin: CGPoint.zero, size: CGSize(width:self.view.frame.size.width, height: 100)))
         self.contactPickerView?.delegate = self
         self.contactPickerView?.setPlaceHolderString(Bundle.evLocalizedStringForKey("Type Contact Name"))
         self.view.addSubview(self.contactPickerView!)
@@ -147,6 +183,10 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
         }
         self.contactPickerView?.frame.origin.y = topOffset
         self.adjustTableViewFrame(false)
+    }
+    
+    func cancelTapped() {
+        self.dismiss(animated: true, completion: nil)
     }
     
     func adjustTableViewFrame(_ animated: Bool) -> Void {
@@ -354,7 +394,11 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
 //                let imPath = self.curBundle?.pathForResource(kUnselectedCheckbox, ofType: "png", inDirectory: "EVContactsPicker.bundle")
 //                let im = UIImage(contentsOfFile: imPath!)
                 cell.checkImage?.image = self.unselectedCheckbox
-            } else {
+            } else if (canAddMoreContacts() || singleSelection) {
+                if singleSelection {
+                    self.selectedContacts?.removeAll();
+                    self.contactPickerView?.removeAllContacts();
+                }
                 self.selectedContacts?.append(user!)
                 self.contactPickerView?.addContact(user!, name: (user?.fullname())!)
 //                let imPath = self.curBundle?.pathForResource(kSelectedCheckbox, ofType: "png", inDirectory: "EVContactsPicker.bundle")
@@ -373,6 +417,10 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
         self.tableView?.reloadData()
         
         return indexPath
+    }
+    
+    private func canAddMoreContacts() -> Bool {
+        return maxSelectedContacts <= 0 || maxSelectedContacts > 0 && maxSelectedContacts > (self.selectedContacts?.count)!;
     }
     
     // MARK: - EVPickedContactsViewDelegate
