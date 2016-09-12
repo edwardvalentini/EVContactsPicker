@@ -194,7 +194,7 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
         self.placeholderLabel?.textColor = UIColor.grayColor()
         self.addSubview(self.placeholderLabel!)
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: Selector("handleTapGesture"))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(EVPickedContactsView.handleTapGesture))
         tapGesture.numberOfTapsRequired = 1
         tapGesture.numberOfTouchesRequired = 1
         self.addGestureRecognizer(tapGesture)
@@ -275,7 +275,7 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
                     bubbleFrame.origin.x = frameOfLastBubble.origin.x + frameOfLastBubble.size.width + kHorizontalPadding * 2
                     bubbleFrame.origin.y = frameOfLastBubble.origin.y
                 } else {
-                    lineCount++
+                    lineCount += 1
                     bubbleFrame.origin.x = kHorizontalPadding
                     bubbleFrame.origin.y = (CGFloat(lineCount) * self.lineHeight!) + kVerticalPadding + 	self.viewPadding!
                 }
@@ -296,7 +296,7 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
             textViewFrame.origin.x = frameOfLastBubble.origin.x + frameOfLastBubble.size.width + kHorizontalPadding
             textViewFrame.size.width = self.frame.size.width - textViewFrame.origin.x
         } else { // place text view on the next line
-            lineCount++
+            lineCount += 1
             
             textViewFrame.origin.x = kHorizontalPadding
             textViewFrame.size.width = self.frame.size.width - 2 * kHorizontalPadding

@@ -57,7 +57,7 @@ class EVContactBubble: UIView, UITextViewDelegate {
         self.textView?.hidden = true
         self.addSubview(self.textView!)
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: Selector("handleTapGesture"))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(EVContactBubble.handleTapGesture))
         tapGesture.numberOfTapsRequired = 1
         tapGesture.numberOfTouchesRequired = 1
         self.addGestureRecognizer(tapGesture)
