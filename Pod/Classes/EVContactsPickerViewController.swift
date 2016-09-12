@@ -78,7 +78,7 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
     
     func setup() -> Void {
         self.title  = NSBundle.evLocalizedStringForKey("Selected Contacts") + "(0)"
-        self.curBundle = NSBundle(forClass: type(of: self))
+        self.curBundle = NSBundle(forClass: self.dynamicType)
         if( self.useExternal == false ) {
             self.store = CNContactStore()
         }
