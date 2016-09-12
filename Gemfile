@@ -1,8 +1,6 @@
 source "https://rubygems.org"
 
-gem 'cocoapods', '0.39.0'
-gem 'cocoapods-deintegrate'
+gem 'cocoapods', '~> 1.1.0.rc.1'
 gem 'fastlane'
 gem 'pilot'
-gem 'net-ssh', '2.10.1.rc1'
-gem 'xcpretty'
+gem 'danger'

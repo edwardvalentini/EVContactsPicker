@@ -8,16 +8,16 @@
 
 import UIKit
 
-@objc public class EVContact: NSObject {
-    public var identifier : String?
-    public var firstName : String?
-    public var lastName : String?
-    public var phone : String?
-    public var email : String?
-    public var image : UIImage?
+@objc open class EVContact: NSObject {
+    open var identifier : String?
+    open var firstName : String?
+    open var lastName : String?
+    open var phone : String?
+    open var email : String?
+    open var image : UIImage?
     var selected : Bool = false
-    var date : NSDate?
-    var dateUpdated : NSDate?
+    var date : Date?
+    var dateUpdated : Date?
     
     public override init() {
         super.init()
@@ -25,10 +25,10 @@ import UIKit
     
     public init(attributes: [String : AnyObject]) {
         super.init()
-        self.setValuesForKeysWithDictionary(attributes)
+        self.setValuesForKeys(attributes)
     }
     
-    override public func setValue(value: AnyObject?, forKey key: String) {
+    override open func setValue(_ value: Any?, forKey key: String) {
         switch(key) {
             case "id" :
                 self.identifier = value as! String?
@@ -49,17 +49,17 @@ import UIKit
                 self.image = value as! UIImage?
                 break
             case "isSelected" :
-                self.selected = value!.boolValue!
+                self.selected = (value! as AnyObject).boolValue!
                 break
             case "date" :
-                let dateFormatter = NSDateFormatter()
+                let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "yyyy-MM-dd"
-                self.date = dateFormatter.dateFromString(value! as! String)
+                self.date = dateFormatter.date(from: value! as! String)
                 break
             case "dateUpdated" :
-                let dateFormatter = NSDateFormatter()
+                let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-                self.dateUpdated = dateFormatter.dateFromString(value! as! String)
+                self.dateUpdated = dateFormatter.date(from: value! as! String)
                 break
             default :
                 break
@@ -69,7 +69,7 @@ import UIKit
 
     }
     
-    public func fullname() -> String {
+    open func fullname() -> String {
         if(self.firstName != nil && self.lastName != nil) {
             return String(self.firstName! + " " + self.lastName!)
         } else if (self.firstName != nil) {

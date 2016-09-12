@@ -36,7 +36,7 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
         layer.shadowOpacity = 0.0
     }
     
-    func addContact(contact : EVContact, name: String) -> Void {
+    func addContact(_ contact : EVContact, name: String) -> Void {
         let contactKey = NSValue(nonretainedObject: contact)
         
         
@@ -60,7 +60,7 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
         
         self.layoutView()
         
-        self.textView?.hidden = false
+        self.textView?.isHidden = false
         self.textView?.text = ""
         
         self.scrollToBottomWithAnimation(false)
@@ -68,7 +68,7 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
     }
     
     func selectTextView() -> Void {
-        self.textView?.hidden = false
+        self.textView?.isHidden = false
     }
     
     func removeAllContacts() -> Void {
@@ -82,25 +82,25 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
         
         self.layoutView()
         
-        self.textView?.hidden = false
+        self.textView?.isHidden = false
         self.textView?.text = ""
     }
     
-    func removeContact(contact : EVContact) -> Void {
+    func removeContact(_ contact : EVContact) -> Void {
          let contactKey = NSValue(nonretainedObject: contact)
 
             if let contacts = self.contacts {
                 if let contactBubble = contacts[contactKey] as? EVContactBubble {
                     contactBubble.removeFromSuperview()
-                    self.contacts?.removeValueForKey(contactKey)
+                    let _ = self.contacts?.removeValue(forKey: contactKey)
                     
-                    if let foundIndex = self.contactKeys?.indexOf(contactKey) {
-                        self.contactKeys?.removeAtIndex(foundIndex)
+                    if let foundIndex = self.contactKeys?.index(of: contactKey) {
+                        self.contactKeys?.remove(at: foundIndex)
                     }
                     
                     self.layoutView()
                     
-                    self.textView?.hidden = false
+                    self.textView?.isHidden = false
                     self.textView?.text = ""
                     
                     self.scrollToBottomWithAnimation(false)
@@ -109,7 +109,7 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
     }
     
     
-    func setPlaceHolderString(placeHolderString: String) -> Void {
+    func setPlaceHolderString(_ placeHolderString: String) -> Void {
         self.placeholderLabel?.text = placeHolderString
         self.layoutView()
     }
@@ -118,7 +118,7 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
         self.textView?.resignFirstResponder()
     }
     
-    func setBubbleColor(color: EVBubbleColor, selectedColor:EVBubbleColor) -> Void {
+    func setBubbleColor(_ color: EVBubbleColor, selectedColor:EVBubbleColor) -> Void {
         self.bubbleColor = color
         self.bubbleSelectedColor = selectedColor
         
@@ -137,27 +137,27 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
     
     // MARK: - Private Variables
     
-    private var _shouldSelectTextView = false
-    private var scrollView : UIScrollView?
-    private var contacts : [NSObject : AnyObject]?
-    private var contactKeys : [NSObject]?
-    private var placeholderLabel : UILabel?
-    private var lineHeight : CGFloat?
-    private var textView : UITextView?
+    fileprivate var _shouldSelectTextView = false
+    fileprivate var scrollView : UIScrollView?
+    fileprivate var contacts : [AnyHashable: Any]?
+    fileprivate var contactKeys : [NSObject]?
+    fileprivate var placeholderLabel : UILabel?
+    fileprivate var lineHeight : CGFloat?
+    fileprivate var textView : UITextView?
     
-    private var bubbleColor : EVBubbleColor?
-    private var bubbleSelectedColor : EVBubbleColor?
+    fileprivate var bubbleColor : EVBubbleColor?
+    fileprivate var bubbleSelectedColor : EVBubbleColor?
     
-    private let kViewPadding = CGFloat(5.0)
-    private let kHorizontalPadding = CGFloat(2.0)
-    private let kVerticalPadding = CGFloat(4.0)
-    private let kTextViewMinWidth = CGFloat(130.0)
+    fileprivate let kViewPadding = CGFloat(5.0)
+    fileprivate let kHorizontalPadding = CGFloat(2.0)
+    fileprivate let kVerticalPadding = CGFloat(4.0)
+    fileprivate let kTextViewMinWidth = CGFloat(130.0)
     
     
 
     // MARK: - Private Methods
     
-    private func setup() -> Void {
+    fileprivate func setup() -> Void {
         self.viewPadding = kViewPadding
         
         self.contacts = [:]
@@ -174,36 +174,36 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
         self.textView = UITextView()
         self.textView?.delegate = self
         self.textView?.font = contactBubble.label?.font
-        self.textView?.backgroundColor = UIColor.clearColor()
+        self.textView?.backgroundColor = UIColor.clear
         self.textView?.contentInset = UIEdgeInsetsMake(-4.0, -2.0, 0, 0)
-        self.textView?.scrollEnabled = false
+        self.textView?.isScrollEnabled = false
         self.textView?.scrollsToTop = false
         self.textView?.clipsToBounds = false
-        self.textView?.autocorrectionType = UITextAutocorrectionType.No
+        self.textView?.autocorrectionType = UITextAutocorrectionType.no
         
-        self.backgroundColor = UIColor.whiteColor()
+        self.backgroundColor = UIColor.white
         let layer = self.layer
-        layer.shadowColor = UIColor(red: 225.0/255.0, green: 226.0/255.0, blue: 228.0/255.0, alpha: 1.0).CGColor
-        layer.shadowOffset = CGSizeMake(0, 2)
+        layer.shadowColor = UIColor(red: 225.0/255.0, green: 226.0/255.0, blue: 228.0/255.0, alpha: 1.0).cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 2)
         layer.shadowOpacity = 1.0
         layer.shadowRadius = 1.0
         
-        self.placeholderLabel = UILabel(frame: CGRectMake(8, self.viewPadding!, self.frame.size.width, self.lineHeight!))
+        self.placeholderLabel = UILabel(frame: CGRect(x: 8, y: self.viewPadding!, width: self.frame.size.width, height: self.lineHeight!))
         self.placeholderLabel?.font = contactBubble.label?.font
-        self.placeholderLabel?.backgroundColor = UIColor.clearColor()
-        self.placeholderLabel?.textColor = UIColor.grayColor()
+        self.placeholderLabel?.backgroundColor = UIColor.clear
+        self.placeholderLabel?.textColor = UIColor.gray
         self.addSubview(self.placeholderLabel!)
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: Selector("handleTapGesture"))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(EVPickedContactsView.handleTapGesture))
         tapGesture.numberOfTapsRequired = 1
         tapGesture.numberOfTouchesRequired = 1
         self.addGestureRecognizer(tapGesture)
     }
     
-    func scrollToBottomWithAnimation(animated : Bool) -> Void {
+    func scrollToBottomWithAnimation(_ animated : Bool) -> Void {
         if(animated) {
             let size = self.scrollView?.contentSize
-            let frame = CGRectMake(0, size!.height - (self.scrollView?.frame.size.height)!, size!.width, (self.scrollView?.frame.size.height)!)
+            let frame = CGRect(x: 0, y: size!.height - (self.scrollView?.frame.size.height)!, width: size!.width, height: (self.scrollView?.frame.size.height)!)
             
             self.scrollView?.scrollRectToVisible(frame, animated: animated)
         } else {
@@ -213,44 +213,38 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
         }
     }
     
-    func removeContactBubble(contactBubble : EVContactBubble) -> Void {
-        let contact = self.contactForContactBubble(contactBubble)
-        if(contact == nil) {
-            return
+    func removeContactBubble(_ contactBubble : EVContactBubble) -> Void {
+        if let contact = self.contactForContactBubble(contactBubble) {
+            self.delegate?.contactPickerDidRemoveContact(contact.nonretainedObjectValue as AnyObject)
+            self.removeContactByKey(contact)
         }
-        
-        if(( self.delegate?.respondsToSelector(Selector("contactPickerDidRemoveContact:"))) != nil) {
-            self.delegate?.contactPickerDidRemoveContact((contact?.nonretainedObjectValue)!)
-        }
-        
-        self.removeContactByKey(contact!)
     }
     
-    func removeContactByKey(contactKey : AnyObject) -> Void {
+    func removeContactByKey(_ contactKey : AnyObject) -> Void {
         let contactBubble = self.contacts?[contactKey as! NSObject] as! EVContactBubble
         contactBubble.removeFromSuperview()
         
-        self.contacts?.removeValueForKey(contactKey as! NSObject)
+        let _ = self.contacts?.removeValue(forKey: contactKey as! NSObject)
         
-        if let foundIndex = self.contactKeys?.indexOf(contactKey as! NSObject) {
-            self.contactKeys?.removeAtIndex(foundIndex)
+        if let foundIndex = self.contactKeys?.index(of: contactKey as! NSObject) {
+            self.contactKeys?.remove(at: foundIndex)
         }
         
         self.layoutView()
         
-        self.textView?.hidden = false
+        self.textView?.isHidden = false
         self.textView?.text = ""
         
         self.scrollToBottomWithAnimation(false)
     }
     
-    func contactForContactBubble(contactBubble : EVContactBubble) -> AnyObject? {
+    func contactForContactBubble(_ contactBubble : EVContactBubble) -> AnyObject? {
         
         let keys = self.contacts?.keys
         
         for contact in keys! {
-            if((self.contacts?[contact]?.isEqual(contactBubble)) != nil) {
-                return contact
+            if((self.contacts?[contact] as AnyObject).isEqual(contactBubble)) {
+                return contact as AnyObject?
             }
         }
         return nil
@@ -258,14 +252,14 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
     
     
     func layoutView() -> Void {
-        var frameOfLastBubble = CGRectNull
+        var frameOfLastBubble = CGRect.null
         var lineCount = 0
         
         for contactKey in self.contactKeys! {
             let contactBubble = self.contacts?[contactKey] as! EVContactBubble
             var bubbleFrame = contactBubble.frame
             
-            if(CGRectIsNull(frameOfLastBubble)) {
+            if(frameOfLastBubble.isNull) {
                 bubbleFrame.origin.x = kHorizontalPadding
                 bubbleFrame.origin.y = kVerticalPadding + self.viewPadding!
             } else {
@@ -275,7 +269,7 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
                     bubbleFrame.origin.x = frameOfLastBubble.origin.x + frameOfLastBubble.size.width + kHorizontalPadding * 2
                     bubbleFrame.origin.y = frameOfLastBubble.origin.y
                 } else {
-                    lineCount++
+                    lineCount += 1
                     bubbleFrame.origin.x = kHorizontalPadding
                     bubbleFrame.origin.y = (CGFloat(lineCount) * self.lineHeight!) + kVerticalPadding + 	self.viewPadding!
                 }
@@ -290,13 +284,13 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
         }
         
         let minWidth = kTextViewMinWidth + 2 * kHorizontalPadding
-        var textViewFrame = CGRectMake(0, 0, (self.textView?.frame.size.width)!, self.lineHeight!)
+        var textViewFrame = CGRect(x: 0, y: 0, width: (self.textView?.frame.size.width)!, height: self.lineHeight!)
         
         if (self.frame.size.width - frameOfLastBubble.origin.x - frameOfLastBubble.size.width - minWidth >= 0){ // add to the same line
             textViewFrame.origin.x = frameOfLastBubble.origin.x + frameOfLastBubble.size.width + kHorizontalPadding
             textViewFrame.size.width = self.frame.size.width - textViewFrame.origin.x
         } else { // place text view on the next line
-            lineCount++
+            lineCount += 1
             
             textViewFrame.origin.x = kHorizontalPadding
             textViewFrame.size.width = self.frame.size.width - 2 * kHorizontalPadding
@@ -313,8 +307,8 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
             self.scrollView?.addSubview(self.textView!)
         }
         
-        if (self.limitToOne && self.contacts?.count >= 1){
-            self.textView?.hidden = true;
+        if (self.limitToOne && (self.contacts?.count)! >= 1){
+            self.textView?.isHidden = true;
             lineCount = 0;
         }
         
@@ -322,7 +316,7 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
         let maxFrameHeight = 2 * self.lineHeight! + 2 * self.viewPadding!
         var newHeight = (CGFloat(lineCount) + 1.0) * self.lineHeight! + 2 * self.viewPadding!
         
-        self.scrollView?.contentSize = CGSizeMake((self.scrollView?.frame.size.width)!, newHeight)
+        self.scrollView?.contentSize = CGSize(width: (self.scrollView?.frame.size.width)!, height: newHeight)
         
         newHeight = (newHeight > maxFrameHeight) ? maxFrameHeight : newHeight;
         if (self.frame.size.height != newHeight){
@@ -335,26 +329,24 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
             frame.size.height = newHeight
             self.scrollView?.frame = frame
             
-            if(( self.delegate?.respondsToSelector(Selector("contactPickerDidResize:"))) != nil) {
-                self.delegate?.contactPickerDidResize(self)
-            }
+            self.delegate?.contactPickerDidResize(self)
 
         }
         
         // Show placeholder if no there are no contacts
         if (self.contacts?.count == 0){
-            self.placeholderLabel?.hidden = false
+            self.placeholderLabel?.isHidden = false
         } else {
-            self.placeholderLabel?.hidden = true
+            self.placeholderLabel?.isHidden = true
         }
     }
     
     
     // MARK: - UITextViewDelegate
     
-    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         
-        self.textView?.hidden = false
+        self.textView?.isHidden = false
         if( text == "\n" ) {
             return false
         }
@@ -369,22 +361,20 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
         return true
     }
     
-    func textViewDidChange(textView: UITextView) {
-        if(( self.delegate?.respondsToSelector(Selector("contactPickerTextViewDidChange:"))) != nil) {
-            self.delegate?.contactPickerTextViewDidChange(textView.text)
-        }
+    func textViewDidChange(_ textView: UITextView) {
+        self.delegate?.contactPickerTextViewDidChange(textView.text)
         
         if( textView.text == "" && self.contacts?.count == 0) {
-            self.placeholderLabel?.hidden = false
+            self.placeholderLabel?.isHidden = false
         } else {
-            self.placeholderLabel?.hidden = true
+            self.placeholderLabel?.isHidden = true
         }
         
     }
     
     // MARK: - EVContactBubbleDelegate Methods
     
-    func contactBubbleWasSelected(contactBubble: EVContactBubble) -> Void {
+    func contactBubbleWasSelected(_ contactBubble: EVContactBubble) -> Void {
         if( self.selectedContactBubble != nil ) {
             self.selectedContactBubble?.unSelect()
         }
@@ -392,16 +382,16 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
         self.selectedContactBubble = contactBubble
         self.textView?.resignFirstResponder()
         self.textView?.text = ""
-        self.textView?.hidden = true
+        self.textView?.isHidden = true
     }
     
-    func contactBubbleWasUnSelected(contactBubble: EVContactBubble) -> Void {
+    func contactBubbleWasUnSelected(_ contactBubble: EVContactBubble) -> Void {
         self.textView?.becomeFirstResponder()
         self.textView?.text = ""
-        self.textView?.hidden = false
+        self.textView?.isHidden = false
     }
     
-    func contactBubbleShouldBeRemoved(contactBubble: EVContactBubble) -> Void {
+    func contactBubbleShouldBeRemoved(_ contactBubble: EVContactBubble) -> Void {
         self.removeContactBubble(contactBubble)
     }
     
@@ -414,7 +404,7 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
         
         self.scrollToBottomWithAnimation(true)
         
-        self.textView?.hidden = false
+        self.textView?.isHidden = false
         self.textView?.becomeFirstResponder()
         
         self.selectedContactBubble?.unSelect()
@@ -424,7 +414,7 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
     
     // MARK: - UIScrollViewDelegate
     
-    func scrollViewDidEndScrollingAnimation(scrollView: UIScrollView) {
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         if(_shouldSelectTextView) {
             _shouldSelectTextView = false
             self.selectTextView()
