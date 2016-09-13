@@ -6,9 +6,10 @@
 [![Platform](https://img.shields.io/cocoapods/p/EVContactsPicker.svg?style=flat)](http://cocoapods.org/pods/EVContactsPicker)
 
 
-## Swift 3
+## Swift Versions
 
-Swift 3 support on master until Xcode8 out of beta
+Releases for Xcode 8 / Swift 2.3 and Xcode 8 / Swift 3.0
+
 
 ## Screenshots
 
