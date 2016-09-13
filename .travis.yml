@@ -12,8 +12,7 @@ env:
    - IOS_SDK=iphonesimulator10.0
 
    matrix:
-   - DESTINATION="OS=10.0,name=iPhone 7 Plus" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"
-   - DESTINATION="OS=10.0,name=iPhone 5" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"
+   - DESTINATION="OS=10.0,name=iPhone 6 Plus" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"
 before_install:
  - rvm install ruby-2.3.1
  - gem install bundler
@@ -22,6 +21,5 @@ before_install:
  - gem install xcpretty-travis-formatter --no-rdoc --no-ri --no-document --quiet
  - pod install --project-directory=Example
 script:
- - bundle exec danger
  - pod lib lint --quick
  - set -o pipefail && xcodebuild clean build -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO | xcpretty -f `xcpretty-travis-formatter` -c;
