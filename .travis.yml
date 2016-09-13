@@ -14,6 +14,12 @@ env:
 
    matrix:
    - DESTINATION="OS=10.0,name=iPhone 7 Plus" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"
+   - DESTINATION="OS=10.0,name=iPhone 7" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"
+   - DESTINATION="OS=10.0,name=iPhone 6s Plus" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"
+   - DESTINATION="OS=10.0,name=iPhone 6s" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"
+   - DESTINATION="OS=10.0,name=iPhone 6 Plus" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"
+   - DESTINATION="OS=10.0,name=iPhone 6" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"
+   - DESTINATION="OS=10.0,name=iPhone 5s" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"
    - DESTINATION="OS=10.0,name=iPhone 5" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"
 before_install:
  - rvm install ruby-2.3.1
