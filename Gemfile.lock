@@ -312,6 +312,8 @@ DEPENDENCIES
   danger
   fastlane
   pilot
+  xcpretty
+  xcpretty-travis-formatter
 
 BUNDLED WITH
    1.13.0

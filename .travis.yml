@@ -25,9 +25,10 @@ env:
 before_install:
  - rvm install ruby-2.3.1
  - gem install bundler
- - gem install cocoapods --pre # Since Travis is not always on latest version
- - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
- - gem install xcpretty-travis-formatter --no-rdoc --no-ri --no-document --quiet
+ - bundle install
+ # - gem install cocoapods --pre # Since Travis is not always on latest version
+ # - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
+ # - gem install xcpretty-travis-formatter --no-rdoc --no-ri --no-document --quiet
  - bundle exec pod install --project-directory=Example
 script:
  - bundle exec danger
