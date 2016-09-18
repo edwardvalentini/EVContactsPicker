@@ -14,23 +14,24 @@ env:
 
    matrix:
    - DESTINATION="OS=10.0,name=iPhone 7 Plus" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"
-   - DESTINATION="OS=10.0,name=iPhone 7" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"
-   - DESTINATION="OS=10.0,name=iPhone 6s Plus" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"
-   - DESTINATION="OS=10.0,name=iPhone 6s" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"
-   - DESTINATION="OS=10.0,name=iPhone 6 Plus" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"
-   - DESTINATION="OS=10.0,name=iPhone 6" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"
-   - DESTINATION="OS=10.0,name=iPhone 5s" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"
-   - DESTINATION="OS=10.0,name=iPhone 5" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"
+  #  - DESTINATION="OS=10.0,name=iPhone 7" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"
+  #  - DESTINATION="OS=10.0,name=iPhone 6s Plus" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"
+  #  - DESTINATION="OS=10.0,name=iPhone 6s" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"
+  #  - DESTINATION="OS=10.0,name=iPhone 6 Plus" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"
+  #  - DESTINATION="OS=10.0,name=iPhone 6" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"
+  #  - DESTINATION="OS=10.0,name=iPhone 5s" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"
+  #  - DESTINATION="OS=10.0,name=iPhone 5" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"
+
 before_install:
  - rvm install ruby-2.3.1
  - gem install bundler
  - gem install cocoapods --pre # Since Travis is not always on latest version
  - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
  - gem install xcpretty-travis-formatter --no-rdoc --no-ri --no-document --quiet
- - pod install --project-directory=Example
+ - bundle exec pod install --project-directory=Example
 script:
  - bundle exec danger
  - pod lib lint --quick
- - set -o pipefail && xcodebuild clean build -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO | xcpretty -f `xcpretty-travis-formatter` -c;
+ - set -o pipefail && xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" build test | xcpretty -f `xcpretty-travis-formatter` -c;
 after_success:
  - bash <(curl -s https://codecov.io/bash)
