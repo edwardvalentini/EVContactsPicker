@@ -8,12 +8,12 @@ podfile: Example/Podfile
 env:
    global:
    - LANG=en_US.UTF-8
-   - WORKSPACE="Example/EVContactsPicker.xcworkspace"
-   - IOS_SCHEME="EVContactsPicker-Example"
-   - IOS_SDK=iphonesimulator10.0
-
-   matrix:
-   - DESTINATION="OS=10.0,name=iPhone 7 Plus" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"
+  #  - WORKSPACE="Example/EVContactsPicker.xcworkspace"
+  #  - IOS_SCHEME="EVContactsPicker-Example"
+  #  - IOS_SDK=iphonesimulator10.0
+   #
+  #  matrix:
+  #  - DESTINATION="OS=10.0,name=iPhone 7 Plus" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"
   #  - DESTINATION="OS=10.0,name=iPhone 7" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"
   #  - DESTINATION="OS=10.0,name=iPhone 6s Plus" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"
   #  - DESTINATION="OS=10.0,name=iPhone 6s" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME"
@@ -33,6 +33,7 @@ before_install:
 script:
  - bundle exec danger
  - pod lib lint --quick
- - set -o pipefail && xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug build test | xcpretty -f `xcpretty-travis-formatter` -c;
+ - bundle exec rake test
+ # - set -o pipefail && xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug build test | xcpretty -f `xcpretty-travis-formatter` -c;
 after_success:
  - bash <(curl -s https://codecov.io/bash)

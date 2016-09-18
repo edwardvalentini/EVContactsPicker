@@ -152,3 +152,61 @@ def replace_version_number(new_version_number)
   text.gsub!(/(s.version( )*= ")#{spec_version}(")/, "\\1#{new_version_number}\\3")
   File.open(podspec_path, "w") { |file| file.puts text }
 end
+
+def workspace
+  return 'EVContactsPicker.xcworkspace'
+end
+
+def configuration
+  return 'Debug'
+end
+
+def targets
+  return [
+    :ios,
+  ]
+end
+
+def schemes
+  return {
+    ios: 'EVContactsPicker-Example'
+  }
+end
+
+def sdks
+  return {
+    ios: 'iphonesimulator10.0'
+  }
+end
+
+def devices
+  return {
+    ios: "name='iPhone 7 Plus'"
+  }
+end
+
+def xcodebuild_in_demo_dir(tasks, platform, xcpretty_args: '')
+  sdk = sdks[platform]
+  scheme = schemes[platform]
+  destination = devices[platform]
+
+  Dir.chdir('Example') do
+    sh "set -o pipefail && xcodebuild -workspace '#{workspace}' -scheme '#{scheme}' -configuration '#{configuration}' -sdk #{sdk} -destination #{destination} #{tasks} | xcpretty -f `xcpretty-travis-formatter` -c #{xcpretty_args}"
+  end
+end
+
+desc 'Build the Example app.'
+task :build do
+  xcodebuild_in_demo_dir 'build', :ios
+end
+
+desc 'Clean build directory.'
+task :clean do
+  xcodebuild_in_demo_dir 'clean', :ios
+end
+
+desc 'Build, then run tests.'
+task :test do
+  targets.map { |platform| xcodebuild_in_demo_dir 'build test', platform, xcpretty_args: '--test' }
+  sh "killall Simulator"
+end
