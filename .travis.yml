@@ -33,6 +33,6 @@ before_install:
 script:
  - bundle exec danger
  - pod lib lint --quick
- - set -o pipefail && xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" build test | xcpretty -f `xcpretty-travis-formatter` -c;
+ - set -o pipefail && xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" -configuration Debug build test | xcpretty -f `xcpretty-travis-formatter` -c;
 after_success:
  - bash <(curl -s https://codecov.io/bash)
