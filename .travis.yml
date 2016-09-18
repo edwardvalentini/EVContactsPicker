@@ -9,7 +9,7 @@ env:
    global:
    - LANG=en_US.UTF-8
    - WORKSPACE="Example/EVContactsPicker.xcworkspace"
-   - IOS_SCHEME="EVContactsPicker"
+   - IOS_SCHEME="EVContactsPicker_Tests"
    - IOS_SDK=iphonesimulator10.0
 
    matrix:
