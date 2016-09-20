@@ -8,6 +8,35 @@
 
 import UIKit
 
+public protocol EVContactProtocol {
+    var identifier : String { get set }
+    var firstName : String { get set }
+    var lastName : String { get set }
+    var phone : String { get set }
+    var email : String { get set }
+    var image : UIImage { get set }
+    var selected : Bool { get }
+    var date : Date { get }
+    var dateUpdated : Date { get }
+    
+    func fullName() -> String
+}
+
+extension EVContactProtocol {
+    func fullName() -> String {
+        if(self.firstName != nil && self.lastName != nil) {
+            return String(firstName + " " + lastName)
+        } else if (Self.self.firstName != nil) {
+            return Self.firstName!
+        } else if (Self.lastName != nil) {
+            return Self.lastName!
+        } else {
+            return ""
+        }
+    }
+}
+
+
 @objc open class EVContact: NSObject {
     open var identifier : String?
     open var firstName : String?
@@ -28,46 +57,44 @@ import UIKit
         self.setValuesForKeys(attributes)
     }
     
-    override open func setValue(_ value: Any?, forKey key: String) {
-        switch(key) {
-            case "id" :
-                self.identifier = value as! String?
-                break
-            case "firstName" :
-                self.firstName = value as! String?
-                break
-            case "lastName" :
-                self.lastName = value as! String?
-                break
-            case "phone":
-                self.phone = value as! String?
-                break
-            case "email" :
-                self.email = value as! String?
-                break
-            case "image":
-                self.image = value as! UIImage?
-                break
-            case "isSelected" :
-                self.selected = (value! as AnyObject).boolValue!
-                break
-            case "date" :
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd"
-                self.date = dateFormatter.date(from: value! as! String)
-                break
-            case "dateUpdated" :
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-                self.dateUpdated = dateFormatter.date(from: value! as! String)
-                break
-            default :
-                break
-            
-        }
-
-
-    }
+//    override open func setValue(_ value: Any?, forKey key: String) {
+//        switch(key) {
+//            case "id" :
+//                self.identifier = value as! String?
+//                break
+//            case "firstName" :
+//                self.firstName = value as! String?
+//                break
+//            case "lastName" :
+//                self.lastName = value as! String?
+//                break
+//            case "phone":
+//                self.phone = value as! String?
+//                break
+//            case "email" :
+//                self.email = value as! String?
+//                break
+//            case "image":
+//                self.image = value as! UIImage?
+//                break
+//            case "isSelected" :
+//                self.selected = (value! as AnyObject).boolValue!
+//                break
+//            case "date" :
+//                let dateFormatter = DateFormatter()
+//                dateFormatter.dateFormat = "yyyy-MM-dd"
+//                self.date = dateFormatter.date(from: value! as! String)
+//                break
+//            case "dateUpdated" :
+//                let dateFormatter = DateFormatter()
+//                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+//                self.dateUpdated = dateFormatter.date(from: value! as! String)
+//                break
+//            default :
+//                break
+//            
+//        }
+//    }
     
     open func fullname() -> String {
         if(self.firstName != nil && self.lastName != nil) {
