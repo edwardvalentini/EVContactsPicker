@@ -5,7 +5,7 @@
 [![Code Climate](https://codeclimate.com/github/edwardvalentini/EVContactsPicker/badges/gpa.svg)](https://codeclimate.com/github/edwardvalentini/EVContactsPicker)
 [![Version](https://img.shields.io/cocoapods/v/EVContactsPicker.svg?style=flat)](http://cocoapods.org/pods/EVContactsPicker)
 [![License](https://img.shields.io/cocoapods/l/EVContactsPicker.svg?style=flat)](http://cocoapods.org/pods/EVContactsPicker)
-[![Platform](https://img.shields.io/cocoapods/p/EVContactsPicker.svg?style=flat)](http://cocoapods.org/pods/EVContactsPicker)
+[![Platform](http://img.shields.io/badge/platform-ios-blue.svg?style=flat)](http://cocoapods.org/pods/EVContactsPicker)
 [![Downloads](https://img.shields.io/cocoapods/dt/EVContactsPicker.svg?style=flat)](http://cocoapods.org/pods/EVContactsPicker)
 
 
