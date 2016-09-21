@@ -1,5 +1,5 @@
 PODS:
-  - EVContactsPicker (0.2.17)
+  - EVContactsPicker (0.5.0)
   - Nimble (5.0.0)
   - Quick (0.9.3)
 
@@ -21,7 +21,7 @@ CHECKOUT OPTIONS:
     :git: https://github.com/Quick/Quick.git
 
 SPEC CHECKSUMS:
-  EVContactsPicker: 486353df8f6b17ecc494ce7ff8ae904ebf6b94c6
+  EVContactsPicker: 6e6e149440c391f2c210766ea44e03e7bf6a2eee
   Nimble: 56fc9f5020effa2206de22c3dd910f4fb011b92f
   Quick: 31fb576b6cbb6b028cc5e0016e4366accbb346f5
 
