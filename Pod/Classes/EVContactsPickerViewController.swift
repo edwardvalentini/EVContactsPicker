@@ -7,32 +7,23 @@
 //
 
 import UIKit
-//import AddressBook
-//import AddressBookUI
 import Contacts
 import ContactsUI
 
 
-/*
-let kAvatarImage =  "icon-avatar-60x60"
-let kSelectedCheckbox = "icon-checkbox-selected-green-25x25"
-let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
-*/
-
-
 @available(iOS 9.0, *)
 @objc open class EVContactsPickerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,  EVPickedContactsViewDelegate, CNContactViewControllerDelegate {
+    
     
     let kKeyboardHeight : CGFloat = 0.0
     
     var contactPickerView : EVPickedContactsView? = nil
     var store : CNContactStore? = nil
     var tableView : UITableView? = nil
-    var contacts : [EVContact]? = nil
-    var selectedContacts : [EVContact]? = nil
-    var filteredContacts : [EVContact]? = nil
+    var contacts : [EVContactProtocol]? = nil
+    var selectedContacts : [EVContactProtocol]? = nil
+    var filteredContacts : [EVContactProtocol]? = nil
     var barButton : UIBarButtonItem? = nil
-    //var contactPickerMode : EVContactModeOption! = .Internal
     var useExternal : Bool = false
     public var maxSelectedContacts : Int = -1 {
         didSet {
@@ -44,7 +35,7 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
             updateTitle()
         }
     }
-    var externalDataSource : [EVContact]? = nil
+    var externalDataSource : [EVContactProtocol]? = nil
     
     public var showEmail = true
     public var showPhone = true
@@ -77,7 +68,7 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
         self.setup()
     }
     
-    public init(externalDataSource: [EVContact]!) {
+    public init(externalDataSource: [EVContactProtocol]!) {
         self.init()
         self.useExternal = true
         self.externalDataSource = externalDataSource
@@ -222,8 +213,7 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
         do {
             try self.store?.enumerateContacts(with: req, usingBlock: { (contact: CNContact, boolprop : UnsafeMutablePointer<ObjCBool> ) -> Void in
                 
-                let tmpContact = EVContact()
-                tmpContact.identifier = contact.identifier
+                var tmpContact = EVContact(identifier: contact.identifier)
                 tmpContact.firstName = contact.givenName
                 tmpContact.lastName = contact.familyName
                 if (contact.phoneNumbers.count > 0) {
@@ -239,12 +229,10 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
                     let img = UIImage(data: imgData!)
                     tmpContact.image = img
                 } else {
-//                    let imPath = self.curBundle?.pathForResource(kAvatarImage, ofType: "png", inDirectory: "EVContactsPicker.bundle")
-//                    let im = UIImage(contentsOfFile: imPath!)
                     tmpContact.image = self.avatarImage
                 }
                 
-                let showContact = self.delegate?.shouldShowContact?(tmpContact)
+                let showContact = self.delegate?.shouldShowContact(tmpContact)
                 
                 if showContact == nil || showContact == true {
                     mutableContacts.append(tmpContact)
@@ -271,41 +259,38 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
         self.tableView?.reloadData()
     }
 
-    func refreshContact(_ contact: EVContact) {
+    func refreshContact(_ contact: EVContactProtocol) {
         if( self.useExternal == false ) {
             do {
-                if let tmpContact = try self.store?.unifiedContact(withIdentifier: contact.identifier!, keysToFetch: [CNContactEmailAddressesKey as CNKeyDescriptor,CNContactGivenNameKey as CNKeyDescriptor,CNContactFamilyNameKey as CNKeyDescriptor,CNContactImageDataAvailableKey as CNKeyDescriptor,CNContactThumbnailImageDataKey as CNKeyDescriptor,CNContactImageDataKey as CNKeyDescriptor,CNContactPhoneNumbersKey as CNKeyDescriptor]) {
-                    contact.identifier = tmpContact.identifier
-                    contact.firstName = tmpContact.givenName
-                    contact.lastName = tmpContact.familyName
+                if let tmpContact = try self.store?.unifiedContact(withIdentifier: contact.identifier, keysToFetch: [CNContactEmailAddressesKey as CNKeyDescriptor,CNContactGivenNameKey as CNKeyDescriptor,CNContactFamilyNameKey as CNKeyDescriptor,CNContactImageDataAvailableKey as CNKeyDescriptor,CNContactThumbnailImageDataKey as CNKeyDescriptor,CNContactImageDataKey as CNKeyDescriptor,CNContactPhoneNumbersKey as CNKeyDescriptor]) {
+                    var mutableContact = contact
+                    mutableContact.identifier = tmpContact.identifier
+                    mutableContact.firstName = tmpContact.givenName
+                    mutableContact.lastName = tmpContact.familyName
                     if (tmpContact.phoneNumbers.count > 0) {
-                        contact.phone = (tmpContact.phoneNumbers[0].value ).stringValue
+                        mutableContact.phone = (tmpContact.phoneNumbers[0].value ).stringValue
                         
                     }
                     if (tmpContact.emailAddresses.count > 0) {
-                        contact.email = (tmpContact.emailAddresses[0].value as String)
+                        mutableContact.email = (tmpContact.emailAddresses[0].value as String)
                     }
 
                     
                     if(tmpContact.imageDataAvailable) {
                         let imgData = tmpContact.imageData
                         let img = UIImage(data: imgData!)
-                        contact.image = img
+                        mutableContact.image = img
                     } else {
-//                        let imPath = self.curBundle?.pathForResource(kAvatarImage, ofType: "png", inDirectory: "EVContactsPicker.bundle")
-//                        let im = UIImage(contentsOfFile: imPath!)
-                        
-                        contact.image = self.avatarImage
+                        mutableContact.image = self.avatarImage
                     }
                 }
             } catch {
                 print("error")
             }
         } else {
-            if(contact.image == nil) {
-//                let imPath = self.curBundle?.pathForResource(kAvatarImage, ofType: "png", inDirectory: "EVContactsPicker.bundle")
-//                let im = UIImage(contentsOfFile: imPath!)
-                contact.image = self.avatarImage
+            var mutableContact = contact
+            if(mutableContact.image == nil) {
+                mutableContact.image = self.avatarImage
             }
         }
     }
@@ -335,38 +320,40 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "contactCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! EVContactsPickerTableViewCell
-        let contact = self.filteredContacts?[(indexPath as NSIndexPath).row]
         
-        cell.fullName?.text = contact?.fullname()
+        guard let selectedContacts = self.selectedContacts, let filteredContacts = self.filteredContacts else {
+            cell.checkImage?.image = self.unselectedCheckbox
+            return cell
+        }
         
-        cell.email?.isHidden = (contact?.email == nil || contact?.email?.isEmpty == true || showEmail == false)
-        cell.phone?.isHidden = (contact?.phone == nil || contact?.phone?.isEmpty == true || showPhone == false)
+        var contact = filteredContacts[indexPath.row]
         
-        cell.phone?.text = contact?.phone
-        cell.email?.text = contact?.email
-        if((contact?.image) != nil) {
-            cell.contactImage?.image = contact?.image
+        cell.fullName?.text = contact.fullname()
+        
+        cell.email?.isHidden = (contact.email == nil || contact.email?.isEmpty == true || showEmail == false)
+        cell.phone?.isHidden = (contact.phone == nil || contact.phone?.isEmpty == true || showPhone == false)
+        
+        cell.phone?.text = contact.phone
+        cell.email?.text = contact.email
+        
+        if let cImage = contact.image {
+            cell.contactImage?.image = cImage
         }
         
         cell.contactImage?.layer.masksToBounds = true
         cell.contactImage?.layer.cornerRadius = 20
         
-        if(self.selectedContacts == nil) {
-//            let imPath = self.curBundle?.pathForResource(kUnselectedCheckbox, ofType: "png", inDirectory: "EVContactsPicker.bundle")
-//            let im = UIImage(contentsOfFile: imPath!)
-            cell.checkImage?.image = self.unselectedCheckbox
+ 
+            
+        if selectedContacts.contains(where: { (evcontact) -> Bool in
+            return evcontact.identifier == contact.identifier
+        }) {
+            cell.checkImage?.image = self.selectedCheckbox
         } else {
-            if (self.selectedContacts!.contains(contact!)) {
-//                let imPath = self.curBundle?.pathForResource(kSelectedCheckbox, ofType: "png", inDirectory: "EVContactsPicker.bundle")
-//                let im = UIImage(contentsOfFile: imPath!)
-                cell.checkImage?.image = self.selectedCheckbox
-            } else {
-//                let imPath = self.curBundle?.pathForResource(kUnselectedCheckbox, ofType: "png", inDirectory: "EVContactsPicker.bundle")
-//                let im = UIImage(contentsOfFile: imPath!)
-                cell.checkImage?.image = self.unselectedCheckbox
-            }
+            cell.checkImage?.image = self.unselectedCheckbox
         }
-        if (self.useExternal == false ) {
+
+        if !self.useExternal {
             cell.accessoryView = UIButton(type: .detailDisclosure)
             let but = cell.accessoryView as! UIButton
             but.addTarget(self, action: #selector(EVContactsPickerViewController.viewContactDetail(_:)), for: UIControlEvents.touchUpInside)
@@ -374,36 +361,45 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
             cell.accessoryType = .none
             cell.accessoryView?.isHidden = true
         }
-
+        
         return cell
     }
     
     open func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
 
+        guard let filteredContacts = self.filteredContacts else {
+            return nil
+        }
+        
+        guard let selectedContacts = self.selectedContacts else {
+            return nil
+        }
+        
         self.contactPickerView?.resignKeyboard()
         
         
         let cell = tableView.cellForRow(at: indexPath) as! EVContactsPickerTableViewCell
         
-        let user = self.filteredContacts?[(indexPath as NSIndexPath).row]
+        let user = filteredContacts[indexPath.row]
         
-            if (self.selectedContacts!.contains(user!)) {
-                let ind = selectedContacts?.index(of: user!)
-                self.selectedContacts?.remove(at: ind!)
-                self.contactPickerView?.removeContact(user!)
-//                let imPath = self.curBundle?.pathForResource(kUnselectedCheckbox, ofType: "png", inDirectory: "EVContactsPicker.bundle")
-//                let im = UIImage(contentsOfFile: imPath!)
-                cell.checkImage?.image = self.unselectedCheckbox
+            if selectedContacts.contains(where: { (evcontact) -> Bool in
+                return evcontact.identifier == user.identifier
+            }) {
+                if let ind = selectedContacts.index(where: { $0.identifier == user.identifier }) {
+                    self.selectedContacts?.remove(at: ind)
+                    self.contactPickerView?.removeContact(user)
+                    cell.checkImage?.image = self.unselectedCheckbox
+                }
             } else if (canAddMoreContacts() || singleSelection) {
                 if singleSelection {
                     self.selectedContacts?.removeAll();
                     self.contactPickerView?.removeAllContacts();
                 }
-                self.selectedContacts?.append(user!)
-                self.contactPickerView?.addContact(user!, name: (user?.fullname())!)
-//                let imPath = self.curBundle?.pathForResource(kSelectedCheckbox, ofType: "png", inDirectory: "EVContactsPicker.bundle")
-//                let im = UIImage(contentsOfFile: imPath!)
-                cell.checkImage?.image = self.selectedCheckbox
+                self.selectedContacts?.append(user)
+                if let fullname = user.fullname() {
+                    self.contactPickerView?.addContact(user, name: fullname)
+                    cell.checkImage?.image = self.selectedCheckbox
+                }
             }
         
         if((self.selectedContacts?.count)! > 0) {
@@ -437,21 +433,27 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
         
      }
     
-    func contactPickerDidRemoveContact(_ contact: AnyObject) -> Void {
-        let c = contact as! EVContact
-        let ind = self.selectedContacts?.index(of: c)
-        self.selectedContacts?.remove(at: ind!)
-        let indexPath = IndexPath(row: ind!, section: 0)
-        let cell = self.tableView?.cellForRow(at: indexPath) as! EVContactsPickerTableViewCell
-        if((self.selectedContacts?.count)! > 0) {
-            self.barButton?.isEnabled = true
-        } else {
-            self.barButton?.isEnabled = false
+    func contactPickerDidRemoveContact(_ contact: EVContactProtocol) -> Void {
+        guard var selectedContacts = self.selectedContacts else {
+            return
         }
-        let imPath = self.curBundle?.path(forResource: kUnselectedCheckbox, ofType: "png", inDirectory: "EVContactsPicker.bundle")
-        let im = UIImage(contentsOfFile: imPath!)
-        cell.checkImage?.image = im
-        self.title = String(Bundle.evLocalizedStringForKey("Add Contacts") + "(\(self.selectedContacts!.count))")
+        
+        if let ind = selectedContacts.index(where: { (evcontact) -> Bool in
+            return  evcontact.identifier == contact.identifier
+        }) {
+            selectedContacts.remove(at: ind)
+            let indexPath = IndexPath(row: ind, section: 0)
+            let cell = self.tableView?.cellForRow(at: indexPath) as! EVContactsPickerTableViewCell
+            if((self.selectedContacts?.count)! > 0) {
+                self.barButton?.isEnabled = true
+            } else {
+                self.barButton?.isEnabled = false
+            }
+            let imPath = self.curBundle?.path(forResource: kUnselectedCheckbox, ofType: "png", inDirectory: "EVContactsPicker.bundle")
+            let im = UIImage(contentsOfFile: imPath!)
+            cell.checkImage?.image = im
+            self.title = String(Bundle.evLocalizedStringForKey("Add Contacts") + "(\(self.selectedContacts!.count))")
+        }
     }
     
     func contactPickerDidResize(_ pickedContactView: EVPickedContactsView) -> Void {
@@ -464,13 +466,11 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
         let delayTime = DispatchTime.now() + Double(Int64(0.01 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
 
         DispatchQueue.main.asyncAfter(deadline: delayTime, execute: { () -> Void in
-            if let del = self.delegate {
-                if(del.responds(to: #selector(EVContactsPickerDelegate.didChooseContacts(_:)))) {
-                    if let selcontacts = self.selectedContacts {
-                        del.didChooseContacts(selcontacts)
-                    } else {
-                        del.didChooseContacts(nil)
-                    }
+            if let del = self.delegate, del is EVContactsPickerDelegate {
+                if let selcontacts = self.selectedContacts {
+                    del.didChooseContacts(selcontacts)
+                } else {
+                    del.didChooseContacts(nil)
                 }
             }
         });
@@ -484,7 +484,7 @@ let kUnselectedCheckbox = "icon-checkbox-unselected-25x25"
             
             let c =    self.filteredContacts?[(indexp as NSIndexPath).row]
             do {
-                let appconact = try self.store?.unifiedContact(withIdentifier: (c?.identifier!)!, keysToFetch: [CNContactViewController.descriptorForRequiredKeys()] )
+                let appconact = try self.store?.unifiedContact(withIdentifier: (c?.identifier)!, keysToFetch: [CNContactViewController.descriptorForRequiredKeys()] )
                 let vc = CNContactViewController(for: appconact!)
                 CNContactViewController.descriptorForRequiredKeys()
                 self.navigationController?.pushViewController(vc, animated: true)

@@ -8,7 +8,13 @@
 
 import Foundation
 
-@objc public protocol EVContactsPickerDelegate : NSObjectProtocol {
-    @objc func didChooseContacts(_ contacts: [EVContact]? ) -> Void
-    @objc optional func shouldShowContact(_ contact: EVContact) -> Bool
+public protocol EVContactsPickerDelegate  {
+    func didChooseContacts(_ contacts: [EVContactProtocol]? ) -> Void
+    func shouldShowContact(_ contact: EVContactProtocol) -> Bool
+}
+
+extension EVContactsPickerDelegate {
+    public func shouldShowContact(_ contact: EVContactProtocol) -> Bool {
+        return true
+    }
 }

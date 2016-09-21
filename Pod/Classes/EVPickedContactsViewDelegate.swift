@@ -8,8 +8,8 @@
 
 import Foundation
 
-protocol EVPickedContactsViewDelegate : NSObjectProtocol {
+protocol EVPickedContactsViewDelegate {
     func contactPickerTextViewDidChange(_ textViewText: String) -> Void
-    func contactPickerDidRemoveContact(_ contact: AnyObject) -> Void
+    func contactPickerDidRemoveContact(_ contact: EVContactProtocol) -> Void
     func contactPickerDidResize(_ pickedContactView: EVPickedContactsView) -> Void
 }
