@@ -44,8 +44,8 @@ def perform_release
     puts "You are about to release `#{spec_version}`"
   end
 
-  puts "* Running tests"
-  sh "rake test"
+  # puts "* Running tests"
+  # sh "rake test"
 
   branch = `git rev-parse --abbrev-ref HEAD`.chomp
 
