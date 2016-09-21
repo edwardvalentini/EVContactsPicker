@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BB123FE1D91EFB9009E0FA0 /* QuickTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB123FD1D91EFB9009E0FA0 /* QuickTests.swift */; };
 		2BB4F84B1BAE1A9C00E28CB0 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB4F84A1BAE1A9C00E28CB0 /* DemoViewController.swift */; };
 		4DB2EF8E0D78DF5A7AFA017E /* Pods_EVContactsPicker_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAD23A3A1E3CE2AD464406DE /* Pods_EVContactsPicker_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
@@ -31,6 +32,7 @@
 		02318C824993B0232A4E25C9 /* Pods-EVContactsPicker_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EVContactsPicker_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EVContactsPicker_Tests/Pods-EVContactsPicker_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		20327C1958198E5849B35C43 /* EVContactsPicker.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = EVContactsPicker.podspec; path = ../EVContactsPicker.podspec; sourceTree = "<group>"; };
 		28E3E54644A427DE84BC53DF /* Pods-EVContactsPicker_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EVContactsPicker_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-EVContactsPicker_Example/Pods-EVContactsPicker_Example.release.xcconfig"; sourceTree = "<group>"; };
+		2BB123FD1D91EFB9009E0FA0 /* QuickTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickTests.swift; sourceTree = "<group>"; };
 		2BB4F84A1BAE1A9C00E28CB0 /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		4890B9939CE4267C8E0BF77E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		5AE6828520FC64CFC5D1705C /* Pods_EVContactsPicker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EVContactsPicker_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				2BB123FD1D91EFB9009E0FA0 /* QuickTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -374,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				2BB123FE1D91EFB9009E0FA0 /* QuickTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

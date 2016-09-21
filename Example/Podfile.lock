@@ -1,16 +1,30 @@
 PODS:
-  - EVContactsPicker (0.2.14)
+  - EVContactsPicker (0.2.17)
+  - Nimble (5.0.0)
+  - Quick (0.9.3)
 
 DEPENDENCIES:
   - EVContactsPicker (from `../`)
+  - Nimble (~> 5.0.0)
+  - Quick (from `https://github.com/Quick/Quick.git`, branch `swift-3.0`)
 
 EXTERNAL SOURCES:
   EVContactsPicker:
     :path: "../"
+  Quick:
+    :branch: swift-3.0
+    :git: https://github.com/Quick/Quick.git
+
+CHECKOUT OPTIONS:
+  Quick:
+    :commit: 36ebbc75e093c7553a5145ed5dd21484364cd78d
+    :git: https://github.com/Quick/Quick.git
 
 SPEC CHECKSUMS:
-  EVContactsPicker: 3b9557818520c5f4b0b9865d2f4743ce868dabfa
+  EVContactsPicker: 486353df8f6b17ecc494ce7ff8ae904ebf6b94c6
+  Nimble: 56fc9f5020effa2206de22c3dd910f4fb011b92f
+  Quick: 31fb576b6cbb6b028cc5e0016e4366accbb346f5
 
-PODFILE CHECKSUM: 7efe058df86bfffb13f625edbb1e613eb95cd8d0
+PODFILE CHECKSUM: 01f61ffd0e83a6a8990e8d22a048de7f9073ff7b
 
-COCOAPODS: 1.1.0.rc.1
+COCOAPODS: 1.1.0.rc.2

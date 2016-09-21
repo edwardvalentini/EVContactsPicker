@@ -9,7 +9,25 @@
 import UIKit
 
 class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate, UIScrollViewDelegate {
-
+    // MARK: - Private Variables
+    
+    fileprivate var _shouldSelectTextView = false
+    fileprivate var scrollView : UIScrollView?
+    fileprivate var contacts : [AnyHashable: EVContactBubble]?
+    fileprivate var keyContacts : [AnyHashable : EVContactProtocol]?
+    fileprivate var contactKeys : [AnyHashable]?
+    fileprivate var placeholderLabel : UILabel?
+    fileprivate var lineHeight : CGFloat?
+    fileprivate var textView : UITextView?
+    
+    fileprivate var bubbleColor : EVBubbleColor?
+    fileprivate var bubbleSelectedColor : EVBubbleColor?
+    
+    fileprivate let kViewPadding = CGFloat(5.0)
+    fileprivate let kHorizontalPadding = CGFloat(2.0)
+    fileprivate let kVerticalPadding = CGFloat(4.0)
+    fileprivate let kTextViewMinWidth = CGFloat(130.0)
+    
     // MARK: - Properties
     
     var selectedContactBubble : EVContactBubble?
@@ -36,11 +54,15 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
         layer.shadowOpacity = 0.0
     }
     
-    func addContact(_ contact : EVContact, name: String) -> Void {
-        let contactKey = NSValue(nonretainedObject: contact)
+    func addContact(_ contact : EVContactProtocol, name: String) -> Void {
+
+        guard let contactKeys = self.contactKeys else {
+            return
+        }
         
-        
-        if(self.contactKeys!.contains(contactKey)) {
+        let contactKey = contact.identifier
+
+        if contactKeys.contains(contactKey) {
             return
         }
         
@@ -57,6 +79,7 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
         self.contacts?[contactKey] = contactBubble
         
         self.contactKeys?.append(contactKey)
+        self.keyContacts?[contactKey] = contact
         
         self.layoutView()
         
@@ -86,13 +109,15 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
         self.textView?.text = ""
     }
     
-    func removeContact(_ contact : EVContact) -> Void {
-         let contactKey = NSValue(nonretainedObject: contact)
+    func removeContact(_ contact : EVContactProtocol) -> Void {
+        // let contactKey = NSValue(nonretainedObject: contact)
+            let contactKey = contact.identifier
 
             if let contacts = self.contacts {
-                if let contactBubble = contacts[contactKey] as? EVContactBubble {
+                if let contactBubble = contacts[contactKey] {
                     contactBubble.removeFromSuperview()
-                    let _ = self.contacts?.removeValue(forKey: contactKey)
+                    self.contacts?.removeValue(forKey: contactKey)
+                    self.keyContacts?.removeValue(forKey: contactKey)
                     
                     if let foundIndex = self.contactKeys?.index(of: contactKey) {
                         self.contactKeys?.remove(at: foundIndex)
@@ -123,35 +148,22 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
         self.bubbleSelectedColor = selectedColor
         
         for contactKey in self.contactKeys! {
-            let contactBubble = self.contacts?[contactKey] as! EVContactBubble
-            contactBubble.color = color
-            contactBubble.selectedColor = selectedColor
-            if(contactBubble.isSelected) {
-                contactBubble.select()
-            } else {
-                contactBubble.unSelect()
+            if let contacts = contacts {
+                if let contactBubble = contacts[contactKey] {
+                    contactBubble.color = color
+                    contactBubble.selectedColor = selectedColor
+                    if(contactBubble.isSelected) {
+                        contactBubble.select()
+                    } else {
+                        contactBubble.unSelect()
+                    }
+                }
             }
         }
     }
     
     
-    // MARK: - Private Variables
-    
-    fileprivate var _shouldSelectTextView = false
-    fileprivate var scrollView : UIScrollView?
-    fileprivate var contacts : [AnyHashable: Any]?
-    fileprivate var contactKeys : [NSObject]?
-    fileprivate var placeholderLabel : UILabel?
-    fileprivate var lineHeight : CGFloat?
-    fileprivate var textView : UITextView?
-    
-    fileprivate var bubbleColor : EVBubbleColor?
-    fileprivate var bubbleSelectedColor : EVBubbleColor?
-    
-    fileprivate let kViewPadding = CGFloat(5.0)
-    fileprivate let kHorizontalPadding = CGFloat(2.0)
-    fileprivate let kVerticalPadding = CGFloat(4.0)
-    fileprivate let kTextViewMinWidth = CGFloat(130.0)
+
     
     
 
@@ -162,6 +174,7 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
         
         self.contacts = [:]
         self.contactKeys = []
+        self.keyContacts = [:]
         
         let contactBubble = EVContactBubble(name: "Sample")
         self.lineHeight = contactBubble.frame.size.height + 2 + kVerticalPadding
@@ -214,40 +227,51 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
     }
     
     func removeContactBubble(_ contactBubble : EVContactBubble) -> Void {
-        if let contact = self.contactForContactBubble(contactBubble) {
-            self.delegate?.contactPickerDidRemoveContact(contact.nonretainedObjectValue as AnyObject)
-            self.removeContactByKey(contact)
+        if let contactKey = self.contactForContactBubble(contactBubble), let keyContacts = self.keyContacts, let contact = keyContacts[contactKey] {
+            self.delegate?.contactPickerDidRemoveContact(contact)
+            self.removeContactByKey(contactKey)
         }
     }
     
-    func removeContactByKey(_ contactKey : AnyObject) -> Void {
-        let contactBubble = self.contacts?[contactKey as! NSObject] as! EVContactBubble
-        contactBubble.removeFromSuperview()
+    func removeContactByKey(_ contactKey : AnyHashable) -> Void {
         
-        let _ = self.contacts?.removeValue(forKey: contactKey as! NSObject)
-        
-        if let foundIndex = self.contactKeys?.index(of: contactKey as! NSObject) {
-            self.contactKeys?.remove(at: foundIndex)
+        guard let contacts = self.contacts else {
+            return
         }
         
-        self.layoutView()
-        
-        self.textView?.isHidden = false
-        self.textView?.text = ""
-        
-        self.scrollToBottomWithAnimation(false)
+        if let contactBubble = contacts[contactKey] {
+            contactBubble.removeFromSuperview()
+            
+            let _ = self.contacts?.removeValue(forKey: contactKey as! NSObject)
+            
+            if let foundIndex = self.contactKeys?.index(of: contactKey as! NSObject) {
+                self.contactKeys?.remove(at: foundIndex)
+            }
+            
+            self.layoutView()
+            
+            self.textView?.isHidden = false
+            self.textView?.text = ""
+            
+            self.scrollToBottomWithAnimation(false)
+        }
     }
     
-    func contactForContactBubble(_ contactBubble : EVContactBubble) -> AnyObject? {
+    func contactForContactBubble(_ contactBubble : EVContactBubble) -> AnyHashable? {
         
-        let keys = self.contacts?.keys
+        guard let contacts = self.contacts else {
+            return nil
+        }
         
-        for contact in keys! {
-            if((self.contacts?[contact] as AnyObject).isEqual(contactBubble)) {
-                return contact as AnyObject?
+        var returnKey : AnyHashable? = nil
+        
+        contacts.forEach { (key: AnyHashable, value: EVContactBubble) in
+            if let valueForKey = contacts[key], valueForKey.isEqual(contactBubble) {
+                returnKey = key
             }
         }
-        return nil
+    
+        return returnKey
     }
     
     
@@ -256,30 +280,32 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
         var lineCount = 0
         
         for contactKey in self.contactKeys! {
-            let contactBubble = self.contacts?[contactKey] as! EVContactBubble
-            var bubbleFrame = contactBubble.frame
+            if let contacts = self.contacts, let contactBubble = contacts[contactKey] { // as EVContactBubble {
             
-            if(frameOfLastBubble.isNull) {
-                bubbleFrame.origin.x = kHorizontalPadding
-                bubbleFrame.origin.y = kVerticalPadding + self.viewPadding!
-            } else {
-                let width = bubbleFrame.size.width + 2 * kHorizontalPadding
-                if( self.frame.size.width - frameOfLastBubble.origin.x - frameOfLastBubble.size.width - width >= 0) {
-                    
-                    bubbleFrame.origin.x = frameOfLastBubble.origin.x + frameOfLastBubble.size.width + kHorizontalPadding * 2
-                    bubbleFrame.origin.y = frameOfLastBubble.origin.y
-                } else {
-                    lineCount += 1
+                var bubbleFrame = contactBubble.frame
+                
+                if(frameOfLastBubble.isNull) {
                     bubbleFrame.origin.x = kHorizontalPadding
-                    bubbleFrame.origin.y = (CGFloat(lineCount) * self.lineHeight!) + kVerticalPadding + 	self.viewPadding!
+                    bubbleFrame.origin.y = kVerticalPadding + self.viewPadding!
+                } else {
+                    let width = bubbleFrame.size.width + 2 * kHorizontalPadding
+                    if( self.frame.size.width - frameOfLastBubble.origin.x - frameOfLastBubble.size.width - width >= 0) {
+                        
+                        bubbleFrame.origin.x = frameOfLastBubble.origin.x + frameOfLastBubble.size.width + kHorizontalPadding * 2
+                        bubbleFrame.origin.y = frameOfLastBubble.origin.y
+                    } else {
+                        lineCount += 1
+                        bubbleFrame.origin.x = kHorizontalPadding
+                        bubbleFrame.origin.y = (CGFloat(lineCount) * self.lineHeight!) + kVerticalPadding + 	self.viewPadding!
+                    }
                 }
-            }
-            
-            frameOfLastBubble = bubbleFrame
-            contactBubble.frame = bubbleFrame
-            
-            if (contactBubble.superview == nil){
-                self.scrollView?.addSubview(contactBubble)
+                
+                frameOfLastBubble = bubbleFrame
+                contactBubble.frame = bubbleFrame
+                
+                if (contactBubble.superview == nil){
+                    self.scrollView?.addSubview(contactBubble)
+                }
             }
         }
         
@@ -353,8 +379,10 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
         
         if( textView.text == "" && text == "" ) {
             if let contactKey = self.contactKeys?.last {
-                self.selectedContactBubble = (self.contacts?[contactKey] as! EVContactBubble)
-                self.selectedContactBubble?.select()
+                if let contacts = self.contacts {
+                    self.selectedContactBubble = (contacts[contactKey])
+                    self.selectedContactBubble?.select()
+                }
             }
         }
         

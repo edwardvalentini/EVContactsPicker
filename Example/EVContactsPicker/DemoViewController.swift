@@ -29,34 +29,18 @@ class DemoViewController: UIViewController, EVContactsPickerDelegate {
     }
     
     @IBAction func showDemo(_ sender: AnyObject?) -> Void {
-        
-//        let c1 : EVContact = EVContact()
-//        c1.identifier = "a12332"
-//        c1.firstName = "Mr. "
-//        c1.lastName = "T"
-//        
-//        let c2 : EVContact = EVContact()
-//        c2.identifier = "a93898"
-//        c2.firstName = "Mrs. "
-//        c2.lastName = "Q"
-//        
-//        
-//        let c3 = EVContact(attributes: ["id":"gh2798932","firstName": "Jack", "lastName": "Smith", "image" : UIImage(named: "jacksmith")! ])
-//        
-//        let cArr : [EVContact] = [ c1,c2, c3 ]
-
-        
-        //let contactPicker = EVContactsPickerViewController(externalDataSource: cArr)
         let contactPicker = EVContactsPickerViewController()
         contactPicker.delegate = self
         self.navigationController?.pushViewController(contactPicker, animated: true)
     }
     
-    func didChooseContacts(_ contacts: [EVContact]?) {
+    func didChooseContacts(_ contacts: [EVContactProtocol]?) {
         var conlist : String = ""
         if let cons = contacts {
             for con in cons {
-                conlist += con.fullname() + "\n"
+                if let fullname = con.fullname() {
+                    conlist += fullname + "\n"
+                }
             }
             self.textView?.text = conlist
         } else {
@@ -65,15 +49,5 @@ class DemoViewController: UIViewController, EVContactsPickerDelegate {
         let _ = self.navigationController?.popViewController(animated: true)
 
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

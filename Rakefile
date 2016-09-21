@@ -1,10 +1,5 @@
 PODREPO = "trunk"
 
-desc "Runs the specs [EMPTY]"
-task :spec do
-  # Provide your own implementation
-end
-
 task :version do
   git_remotes = `git remote`.strip.split("\n")
 
@@ -23,27 +18,24 @@ task :version do
     version = suggested_version_number
   end
 
-#  puts "Enter the version you want to release (" + version + ") "
-#  new_version_number = $stdin.gets.strip
-#  if new_version_number == ""
-    new_version_number = version
-#  end
-
+  new_version_number = version
   replace_version_number(new_version_number)
+end
+
+desc "Release a new version of the Pod without replacing version number"
+task :release_no_version do
+  perform_release
 end
 
 desc "Release a new version of the Pod"
 task :release do
-
   puts "* Running version"
   sh "rake version"
+  perform_release
+end
 
+def perform_release
   unless ENV['SKIP_CHECKS']
-    #if `git symbolic-ref HEAD 2>/dev/null`.strip.split('/').last != 'master'
-    #  $stderr.puts "[!] You need to be on the `master' branch in order to be able to do a release."
-    #  exit 1
-    #end
-
     if `git tag`.strip.split("\n").include?(spec_version)
       $stderr.puts "[!] A tag for version `#{spec_version}' already exists. Change the version in the podspec"
       exit 1
@@ -52,11 +44,8 @@ task :release do
     puts "You are about to release `#{spec_version}`"
   end
 
-  puts "* Running specs"
-  sh "rake spec"
-
- # puts "* Linting the podspec"
- # sh "pod lib lint"
+  puts "* Running tests"
+  sh "rake test"
 
   branch = `git rev-parse --abbrev-ref HEAD`.chomp
 
