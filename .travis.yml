@@ -9,6 +9,7 @@ before_install:
  - rvm install ruby-2.3.1
  - gem install bundler
  - bundle install
+ - bundle exec pod repo update
  - bundle exec pod install --project-directory=Example
 
 script:
