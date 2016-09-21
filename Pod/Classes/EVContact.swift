@@ -55,7 +55,7 @@ public struct EVContact: EVContactProtocol {
     public var lastName: String? = nil
     public var firstName: String? = nil
     
-    init(identifier: String) {
+    public init(identifier: String) {
         self.identifier = identifier
     }
 }
