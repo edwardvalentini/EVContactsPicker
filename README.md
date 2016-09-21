@@ -6,6 +6,7 @@
 [![Version](https://img.shields.io/cocoapods/v/EVContactsPicker.svg?style=flat)](http://cocoapods.org/pods/EVContactsPicker)
 [![License](https://img.shields.io/cocoapods/l/EVContactsPicker.svg?style=flat)](http://cocoapods.org/pods/EVContactsPicker)
 [![Platform](https://img.shields.io/cocoapods/p/EVContactsPicker.svg?style=flat)](http://cocoapods.org/pods/EVContactsPicker)
+[![Downloads](https://img.shields.io/cocoapods/dt/EVContactsPicker.svg?style=flat)](http://cocoapods.org/pods/EVContactsPicker)
 
 
 ## Swift Versions
@@ -29,6 +30,7 @@ import EVContactsPicker
 
 * iOS 9.0+
 * ARC
+* Swift 3.0
 
 
 ## Installation
@@ -57,10 +59,10 @@ class DemoController: UIViewController, EVContactsPickerDelegate {
         self.navigationController?.pushViewController(contactPicker, animated: true)
     }
 
-    func didChooseContacts(contacts: [EVContact]?) {
+    func didChooseContacts(contacts: [EVContactProtocol]?) {
         if let cons = contacts {
             for con in cons {
-                print("\(con.fullname()")
+                print("\(con.fullname())")
             }
         }
         self.navigationController?.popViewControllerAnimated(true)
