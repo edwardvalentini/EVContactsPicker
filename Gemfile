@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem 'cocoapods', '~> 1.1.0'
+gem 'cocoapods', '~> 1.1.1'
 gem 'rake'
 gem 'fastlane'
 gem 'pilot'

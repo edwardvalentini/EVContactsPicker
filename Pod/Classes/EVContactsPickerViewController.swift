@@ -466,7 +466,7 @@ import ContactsUI
         let delayTime = DispatchTime.now() + Double(Int64(0.01 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
 
         DispatchQueue.main.asyncAfter(deadline: delayTime, execute: { () -> Void in
-            if let del = self.delegate, del is EVContactsPickerDelegate {
+            if let del = self.delegate {
                 if let selcontacts = self.selectedContacts {
                     del.didChooseContacts(selcontacts)
                 } else {
