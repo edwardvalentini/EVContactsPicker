@@ -164,7 +164,7 @@ end
 
 def sdks
   return {
-    ios: 'iphonesimulator10.0'
+    ios: 'iphonesimulator10.1'
   }
 end
 
