@@ -3,58 +3,74 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 47;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00375E2D749A84551ABBDD5AB0026AF0 /* EVPickedContactsViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166DF0893F80C7D78E0DD8DD7076C65E /* EVPickedContactsViewDelegate.swift */; };
 		01DFE70F2327471ACE69859AF5350622 /* World+DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E91C9F03B300B9E0D4F68951A4228DE /* World+DSL.swift */; };
 		04B10F97A41E083C6364B0FF0C36B502 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AECEA2EDA41473899EE391CA038EDC38 /* XCTest.framework */; };
+		0595106A8DA4062301AD52F22EACDA97 /* EVContactBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7169C79B76954860A8F4BB4964520FA2 /* EVContactBubble.swift */; };
 		06DE8B18CF1F4E5410E78B637FAE59DF /* NimbleXCTestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30815AFA113F42006B3966F34139B6C /* NimbleXCTestHandler.swift */; };
 		0712CF1320EF8C6B9916F42E33FA748D /* BeAnInstanceOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5F222BA29A6E2092852EC0969CF8D7 /* BeAnInstanceOf.swift */; };
 		085750FA638A7972C85DCA85B1C37A87 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3396BFC8EAF6B0871C63C0410EC4F2F /* Errors.swift */; };
 		0ABECE09A17DA230B1B4A93FBD8D7887 /* Nimble-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7263154B631BBF37B7EBCDA130CFA7B4 /* Nimble-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0CB91F9FB0DC2BBD30E458A9E5B928F9 /* SatisfyAnyOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86F9796696539ADD8B0331A63393C40 /* SatisfyAnyOf.swift */; };
 		0CD35BDA3180A88DBF05197D02A2ABEF /* BeCloseTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4610D6C60983CF61CA2F4FA53A7B4ED /* BeCloseTo.swift */; };
-		1113E5EB902EA9C818AAF161B53FB941 /* EVContactsPickerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07351841912DE3297A396BB16A63981D /* EVContactsPickerConstants.swift */; };
+		14F17DBBDEC09BA7A748E59D7FC067B4 /* fr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E2464C8025048CAC83471901FB1C2391 /* fr.lproj */; };
+		16AB3E42214CC819288CEBA72E0F57D9 /* EVContactsPickerTableViewCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 9BF42A2599F58AB1EE2437CF3FA3B387 /* EVContactsPickerTableViewCell.xib */; };
+		172009167E33979C64E15389C8392918 /* Bundle+EVBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497AACCA7CB4D5159E6C816864052BED /* Bundle+EVBundle.swift */; };
 		1761B5C391C1555029416B3D7BC1106F /* PostNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2924A23B93CE2EE3F172F9114D77AB /* PostNotification.swift */; };
+		17E0BAF5392F1F9AA1623562365D082E /* vi.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 34C1CE57471C869917F8D8791E63BFE9 /* vi.lproj */; };
 		19034D2EE2CC26A4A0EAEB82C95AE008 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD53BE4DBD443958F98C361BF7B45650 /* Configuration.swift */; };
-		22B0DA141CA07CEF51D54C8DADAEACC0 /* EVBubbleColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FDA5611B439E830D2EF8B6627E74856 /* EVBubbleColor.swift */; };
+		24CF40A56B8371C14A00E1E057AAD564 /* icon-checkbox-unselected-25x25.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F1864E077D27F347E694F21F946E27C /* icon-checkbox-unselected-25x25.png */; };
+		269433FB93123321A88D05FF4944FBE1 /* EVContactsPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 81FDC9FC261C8B42DDAFE390FA50E797 /* EVContactsPicker.bundle */; };
 		29B81D538C5C0120DBD244CC092E8294 /* String+FileName.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8C576A89D948680C5AA438114266FC /* String+FileName.swift */; };
 		2E187594E20196747289C5C3C2C518AD /* BeginWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EB4EA90D1C07AC840F8432F4EDE7F6 /* BeginWith.swift */; };
 		3066FF5FCA8013ABE085E6D96AA1918B /* World+DSL.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E748E9F710BCA6D1F04B7B71BEFB4E4 /* World+DSL.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		31E6C27A7E966CD69C7F2927965E6323 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF21EF8268E32D359CD23F2CF3EFE3 /* Foundation.framework */; };
+		324AA3AC29DE3E56B5D90C30C80F0DBA /* ar.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 07C4408BE707C791DE675ADB58C9DB93 /* ar.lproj */; };
 		347A37C7B60FC5612E5465A333195CD5 /* Pods-EVContactsPicker_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C37A2D0A95FC2F25EF53C7CE25B6A1D /* Pods-EVContactsPicker_Tests-dummy.m */; };
+		36FB40B9CFA3E0397C887C8BB23D6FFF /* EVContactsPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF11F16D90EC6699C8403A474515695C /* EVContactsPickerDelegate.swift */; };
 		37D99F1A3878DAFEEB24363F75EDF0A6 /* Pods-EVContactsPicker_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B8AA4568B8658ECF9CB84C31D26D78E /* Pods-EVContactsPicker_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		39E001A66EC2D92AA16AA7D9034ACDE7 /* QCKDSL.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A3917934E45B102C825B48D72854BE /* QCKDSL.m */; };
 		3A3BAC860555FCC23053116E0692561E /* ThrowError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C7E9F063000B004BCB218F18B209FD /* ThrowError.swift */; };
 		3A6D8D832C1829B365CAF52A8F5A5C27 /* QuickConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 36ACC79BCB17EA84D522FD965A8481F5 /* QuickConfiguration.m */; };
 		3CD216AA62460995E34B178CF72A6041 /* NMBExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B196F4C4AC8DB18D97751A9526F6FE4 /* NMBExpectation.swift */; };
+		3E1CF7B394617542C58A0FF8160EE8DB /* icon-checkbox-unselected-25x25@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2302E77F14F690BEC2F90E4B3640288 /* icon-checkbox-unselected-25x25@2x.png */; };
+		408495257DFF7CCBA9F59D2E95BB5362 /* de.lproj in Resources */ = {isa = PBXBuildFile; fileRef = B3BED455CEDD1088D2C5FFEB8B500995 /* de.lproj */; };
 		41A91E86D77973EB2663C9843E76B94C /* NSBundle+CurrentTestBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23FC1B26014CE28426C23CFE7BF4B04A /* NSBundle+CurrentTestBundle.swift */; };
+		47966FE1596F3A0997B9674FE4FF69A0 /* EVContactsPickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7813289DCA92F67B2AADABA745CB5F /* EVContactsPickerTableViewCell.swift */; };
 		47FF072E4D2BDE2759931B0B846BD5D0 /* DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936D0E6360F5879FA9408D6392D73B5E /* DSL.swift */; };
-		485DCD5EB439A7CE28DF443BEBCA68ED /* EVContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623319EFBE08D07CCF26A9BF6DC1FBE4 /* EVContact.swift */; };
 		49D16EF0930E87C7FED18D088DD3666C /* DSL+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137E96807DA4EB6CAEDAF1D57ED5E96A /* DSL+Wait.swift */; };
+		4A098B8EB93CB1646B9FC11263640DDC /* EVBubbleColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F12A2475B606B9F9CB14B3C394EF2F8 /* EVBubbleColor.swift */; };
 		4B9722F3F52940EE991F239A735180CE /* BeAKindOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC18533F85C82B54F02A539F8FC61436 /* BeAKindOf.swift */; };
+		4F2DCD576560221FCACB6CA8A4DBE8F0 /* he.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 73E164841C62E17C600BC05A7A5BF563 /* he.lproj */; };
 		4FD7C2E7318711C1FD1D19AF82AA976E /* ErrorUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02AB34BFB682F03843DF8032F3D7FA33 /* ErrorUtility.swift */; };
+		557D3149B865A1F499EB99DB86FF0EC0 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = D09BF2D55730AFE7057532FDAF36B3AC /* Images */; };
 		569C16B54691ACDAEBCB6F10EA3782B2 /* QuickSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F57F6238DD8E65A2E507CDCF1ED792C2 /* QuickSpec.m */; };
-		56B26E0FDC98673D9E4E29C50FB2450F /* icon-checkbox-unselected-25x25.png in Resources */ = {isa = PBXBuildFile; fileRef = 599EF4D5C127B72F623A63841233751D /* icon-checkbox-unselected-25x25.png */; };
-		5A6C506EADE518E5150C965515C9CA06 /* icon-avatar-60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 21E101B659E920D394A60CAB48B72C9A /* icon-avatar-60x60@2x.png */; };
+		56F0A1D8BB0892807B8F6EDE1B11F530 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF21EF8268E32D359CD23F2CF3EFE3 /* Foundation.framework */; };
 		5BA6EEB1778C99EB28B526417C49D1BA /* RaisesException.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7938A701C05690B7E68B3A114C07D0 /* RaisesException.swift */; };
-		5DD660A6366DADDBF10BABA7FD61593A /* EVPickedContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB06C88F9443912F3EB424253E2523D /* EVPickedContactsView.swift */; };
+		5EC34EA7FAE9B710706002D3AAA8B604 /* ru.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 0C8CD518011F0E290098D985466DABE7 /* ru.lproj */; };
 		5EC9599AAAB126FE7C80B17304A73AC7 /* Nimble-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C13F92151E2D3C87BD102DB9CDA296 /* Nimble-dummy.m */; };
 		5FAEB3E046F15BFA1FD307119C21715C /* NMBExceptionCapture.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B1BBCCC57699A3FCD4043D96AC0E1AD /* NMBExceptionCapture.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		624489B6AFAFE5E5D82672558A1CB2C9 /* DSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B92FECB6771935EA3B4537171CBCE4 /* DSL.swift */; };
 		658A362085851005F94B296DF66E50C4 /* Pods-EVContactsPicker_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A45DE1BAF708123A5281D3B79328643 /* Pods-EVContactsPicker_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6787528579EF7B9394A8D2117BD03039 /* EVContactsPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4BADB4FFD2D02912B5BC166E98D1F0 /* EVContactsPickerViewController.swift */; };
 		67D3CABBA323788F39D43C9CF63F76B5 /* FailureMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81DD63CE9E429B1826241FD1B8859D1D /* FailureMessage.swift */; };
+		68F9D6B882A886BA61FCCDF81834610A /* template in Resources */ = {isa = PBXBuildFile; fileRef = 2093C7230A1BA8B31BE0D2A947F89EB3 /* template */; };
 		6963769DE6F87F620C6840738EA106DB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF21EF8268E32D359CD23F2CF3EFE3 /* Foundation.framework */; };
 		6E3F7871414CF127F7132462933841FD /* Pods-EVContactsPicker_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E6B4EF5126103B3FB9AAF157C68D4C7F /* Pods-EVContactsPicker_Example-dummy.m */; };
 		6F09E39A00B50255E848F6D5539B1B0E /* BeNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB792EB92B266C62D2E1A3E796509C /* BeNil.swift */; };
-		707C17A3DECEB90705899711E4992785 /* NSBundle+EVBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D9D363F764DC746D7DCFD98F48AF83D /* NSBundle+EVBundle.swift */; };
+		6F9DB2674CAEB9C50582FF374C359876 /* zh-Hans.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 1BEF02715F0B0D51FBEC0E2F31678AAE /* zh-Hans.lproj */; };
+		71B040C24090777FB7832FB5C4596EA2 /* icon-avatar-60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = EB8042A0D5ADB498D51171103FEA5556 /* icon-avatar-60x60.png */; };
 		72D3A1C6058B13C825B26852191F6B2D /* BeGreaterThanOrEqualTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279BE6E3C37A283E4B6CF245D2BA87FF /* BeGreaterThanOrEqualTo.swift */; };
+		74E14407161618AECB918249990C8EB8 /* th.lproj in Resources */ = {isa = PBXBuildFile; fileRef = BDD9415CC7E82192B8AD7F720BF2B560 /* th.lproj */; };
+		750F8344B6C73F3491CEAA1339DB85AA /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C3CFE416AAEE0D4A2478ED4C1908FF6A /* Base.lproj */; };
 		77FEE8FCC6BF798871177A0753A0EB74 /* BeVoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C68EBB8E1AA009644526A1E43172EC /* BeVoid.swift */; };
 		79F435EB5ED8AD4DFCAB16B6BB736D8E /* HaveCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3D894D8922C73EFEDF5AF5DC0B5431 /* HaveCount.swift */; };
 		7B1B2A7C73D497C9C825EA5A5BEB0AF6 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93E2C6637C540C46FF98481B4277CE73 /* Match.swift */; };
-		7B290E22FA4C7E54452F4AE529680E08 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF21EF8268E32D359CD23F2CF3EFE3 /* Foundation.framework */; };
+		7B87411683735289B3CD889F704CF313 /* zh-Hant.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 037DB43492CF500AA3C5414C318331A5 /* zh-Hant.lproj */; };
+		7D0F59F5D5331155D860FFF04CB0D232 /* es.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 1BFC5F4F00AC6567E6A74FF49121A79F /* es.lproj */; };
 		82FB8C7FBCF598C043F7D549F04FFE33 /* NMBStringify.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBA9ED0D27145BA04E5BB9DDDA3EF30 /* NMBStringify.m */; };
 		85A2F22B46638CE538825890A317DB68 /* Functional.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB293DD748964D20041A48D0616DFC6B /* Functional.swift */; };
 		8611B3D5816A05AD9551BB85ABE1332F /* ExampleGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B348700F797B59D6D113E9B112230BFB /* ExampleGroup.swift */; };
@@ -62,12 +78,15 @@
 		8947B7FB2553CF66DD958D9644973B4C /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC0A98C6227B14F9E55A7AB921D51579 /* World.swift */; };
 		8A2C8478DFB04040750E79A6A860F10C /* QuickSpec.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DF32783790F019A5F94A41ABE00A907 /* QuickSpec.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8CAA51ECEA7DA4B0EED72A4E5B131E1F /* QCKDSL.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F13CDB5E2FBA53F6844FF5408E37ECC /* QCKDSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8E335CB6F162E316012A3E31170B3066 /* icon-checkbox-unselected-25x25@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 733B7DA50005585A06C1181BE242F98D /* icon-checkbox-unselected-25x25@2x.png */; };
 		9093FCD3B4DE4768C95B102296D88FAB /* DSL.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D9761155E78557DCEC669BFB2D8918F /* DSL.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		909576C8AD50EA54B1E175E33E72E8F0 /* icon-checkbox-selected-green-25x25@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2086E50F0CC08B7610E77FDF921A7C08 /* icon-checkbox-selected-green-25x25@2x.png */; };
 		90D4F4BD0AC00966BCA49F0838A4D7D5 /* Quick-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4193A743121452E0221FC947C021EA /* Quick-dummy.m */; };
-		9117FE0C81FE02D3C2AF7CB95FA4E945 /* EVContactsPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3086BBF49CF5C1D3FBDA5E54CC96C6 /* EVContactsPickerDelegate.swift */; };
+		911DA60A65AA0B5E8F00ECC3604FB8B0 /* icon-checkbox-selected-green-25x25.png in Resources */ = {isa = PBXBuildFile; fileRef = EB33A4C9209D671151E74A787CAE3C94 /* icon-checkbox-selected-green-25x25.png */; };
 		9228B125911B5B3E02C7303B6BAC4FF3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF21EF8268E32D359CD23F2CF3EFE3 /* Foundation.framework */; };
+		9363DA58D33CBEE79FFF5527E68BB8C7 /* EVContactsPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9BF06C0143B16934F74180422FBC4E /* EVContactsPickerViewController.swift */; };
 		94A655FA2037B8FD5E7E587C5C31743C /* ExampleHooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5534B166ADA90C35DF6DEFE93EEA6CA8 /* ExampleHooks.swift */; };
+		96A13CB565C2A45ABFDE9E7C67160264 /* ko.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 7AD752ADCBD6FA4976AC27FC708066F7 /* ko.lproj */; };
+		97E0F5F961678CF4706C79274A01F208 /* fa.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 06BC29BD50182EC8D98370AC7E874D2C /* fa.lproj */; };
 		98CD96D1031E7400AAAF90AAE0402C96 /* BeLessThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6778B35F731CACE8A16DE3FB29296715 /* BeLessThan.swift */; };
 		990B9256D3C4EB684AA3E921CBDD3C81 /* XCTestSuite+QuickTestSuiteBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4927062CFEE82AD9E83CD9BF2FE507 /* XCTestSuite+QuickTestSuiteBuilder.m */; };
 		99418B51F642EFE2E0D0635F097DAF3A /* Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF2C70EE3305025DD20F95F693E7596 /* Equal.swift */; };
@@ -75,26 +94,31 @@
 		99DB5B21AF5CC1F51B7C5237764BB22C /* QuickSelectedTestSuiteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E9CD0D0763712CAB16EB2EC0322261 /* QuickSelectedTestSuiteBuilder.swift */; };
 		9A3DC2914C1835ACBEEE0B1A525CBBF3 /* DSL.m in Sources */ = {isa = PBXBuildFile; fileRef = AB0BDED72A5ACB90AC028C457FFA6A49 /* DSL.m */; };
 		9A634556177803D5B3CF14DA2A4076B6 /* Quick.h in Headers */ = {isa = PBXBuildFile; fileRef = 9411E9345F4B51EBC4DDEE269B9711E6 /* Quick.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9AE715AA15878799C7409E693D5CB6BE /* EVContactsPickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D15EFCC40B9832A05F43AD01175327 /* EVContactsPickerTableViewCell.swift */; };
+		9AAC7D03724C2FDFBBE5E0861E3BDEDA /* ro.lproj in Resources */ = {isa = PBXBuildFile; fileRef = E32B5EA230585831F469C7101837FD8F /* ro.lproj */; };
 		9D40DBAC43370B9AE3CB7B6909A38710 /* BeEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1965B93D61DAC1B951AB135F685199F9 /* BeEmpty.swift */; };
-		A09687435FB983F6B3F57D393D757705 /* EVCContactsPickerDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69287BC7DCBDEF88F349670224CBDBB1 /* EVCContactsPickerDataSourceProtocol.swift */; };
 		A274138513EFA91404DACB43052038AF /* NMBObjCMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE134C970257401B63634789F76E1D99 /* NMBObjCMatcher.swift */; };
-		A30A435DCC90B06EDFDBB176039223E1 /* EVContactBubbleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A028CA242D4B23C67CBF08062AA1A804 /* EVContactBubbleDelegate.swift */; };
 		A3C0FD5FDF76FB88E5FB17900CD68259 /* Expectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFAA47FEE273F84E23522875FEDDF10 /* Expectation.swift */; };
 		A545F1CA06810930BD92C8702BDE68EB /* NSString+QCKSelectorName.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F0CF1CE5B94B840EAE1E96F1F28C39B /* NSString+QCKSelectorName.m */; };
-		A6B7FEB3E53AC8404DC476F892BE279A /* icon-checkbox-selected-green-25x25@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BD3D1014AFE8BA3874EDCA991CDBF4E4 /* icon-checkbox-selected-green-25x25@2x.png */; };
+		A6ECDFCE7B65D22A333EECEE3121998C /* EVCContactsPickerDataSourceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243BB542A065B27F80C114453FA85A9C /* EVCContactsPickerDataSourceProtocol.swift */; };
 		A7FFE9A06078AAD6EF3919F1615F20A5 /* AllPass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9500C4B2D679A577A204643C21E3208A /* AllPass.swift */; };
 		AA74ADA557CF9A7629A8D9F8BE5C7926 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A63DBE12D65F6DA499276B30AA6E95D /* Example.swift */; };
+		AF636CE307A844B47D075E9B18BECCB9 /* EVContactsPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBEC26EE756B32229CCDA5854C5CC31 /* EVContactsPicker-dummy.m */; };
 		AFA02B96D4AF0717A2C8CA3BFADD65AD /* BeGreaterThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8B28CC39ED24A310D148721E98E478 /* BeGreaterThan.swift */; };
-		B3B3100E3C399AA457E6ADE4CB289F21 /* EVContactsPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A7DBCEDAD5564C818FCA9707EAA99C7F /* EVContactsPicker-dummy.m */; };
 		B53514DF18915732B7226E11006D5524 /* World.h in Headers */ = {isa = PBXBuildFile; fileRef = 855FF8EB3332F34F55581BF6A865D81B /* World.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B63EAC3628267660F5620B1F2D254856 /* ja.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 9B7234DD5599B49945EC5BA12C71D977 /* ja.lproj */; };
 		B6DBA685FCDF2C17C08DA9DE3BEC90A0 /* ExampleMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C4F085290C0D2DF45DFCB1EDE20913 /* ExampleMetadata.swift */; };
 		B6FCB01A419C3FF7D9DFBF3A875FBA26 /* MatcherProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CF8DE94169987612C63723676E7BE9 /* MatcherProtocols.swift */; };
 		B71A72DADC211C789CC0101DF292E73A /* AsyncMatcherWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8688D4D3AB41BF86798B09F014F3CE39 /* AsyncMatcherWrapper.swift */; };
+		B7415F82E285E45EBD9928E3C1DE9474 /* icon-avatar-60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B737225163FA9C029E3844EC2BB0F77 /* icon-avatar-60x60@2x.png */; };
+		B87389722D76EA0314B7C3287B9B753A /* nl.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 3F2E23134DF6127526D3BD875D517AD1 /* nl.lproj */; };
+		B9333202ACF2AC5C81A905D4DE21485C /* EVContactBubbleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696A815EBD202B8630CADAD44DC3AFCF /* EVContactBubbleDelegate.swift */; };
 		B9CE2637D12BFADB95EC758B8F1C9DBB /* AssertionRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D655CD33ADCB3EDB1C48AC476F315F8A /* AssertionRecorder.swift */; };
+		BBD6F323A7751622584BEE22920FF955 /* pl.lproj in Resources */ = {isa = PBXBuildFile; fileRef = BB1D38050CAA197B4F0832B6CB51BD74 /* pl.lproj */; };
 		BC652CF111B8901516236A6F1F227241 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32DF21EF8268E32D359CD23F2CF3EFE3 /* Foundation.framework */; };
+		BCA636D3854B9F277B35A137556BB148 /* EVContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75F3D7CCD05DCA7F0191C50914249AD /* EVContact.swift */; };
 		BCA66D5092C701C884FB9DAE52BC37B9 /* BeLogical.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD865047A234F8BF597FF232BE3FD058 /* BeLogical.swift */; };
-		BCF8FA14A62A1C15CFC5C4813A5509D8 /* icon-avatar-60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = 46C6126C1C0F3B0202F3B17BEEADE530 /* icon-avatar-60x60.png */; };
+		BE37FB3EDC727D4150EA76AC8D263EFA /* EVContactsPicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 82352C61D7C6E513A23998197C9851A6 /* EVContactsPicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF0D12C76F489C5F34979AC103B3383E /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 4C89C0F1F9950AC08B0A0E1DB6503AB3 /* en.lproj */; };
 		BF5E880EE21EE6D32A4E5814BA8DDEE1 /* NimbleEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B773C45B4E385D8CF4345279ACC679 /* NimbleEnvironment.swift */; };
 		BFB6C742608F11CD5EAD6D5FFA1E8EB2 /* SourceLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFD142E366265060C7305FA73FFE05C /* SourceLocation.swift */; };
 		BFEEEBC7A535F1A6D35CEB5E4C1DAFA1 /* HooksPhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EA60637D0EA97227967FE015A3A0FD /* HooksPhase.swift */; };
@@ -102,46 +126,54 @@
 		C23D6CB3B46A61D1E0164FB3263E111C /* BeLessThanOrEqual.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8779AD2B6A72B845AC08BA800A966FC /* BeLessThanOrEqual.swift */; };
 		C56101329B301E4879C6610ACAAD07DC /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F88D3827CC4AEE39397E1F761A2C0D3 /* Filter.swift */; };
 		C647205CC527454C320ADC102A6AB2D6 /* MatcherFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB452465EAB1D4C7C5532DE2F8CCBAA /* MatcherFunc.swift */; };
-		C7D33B108729CD33DAB44B4084C4A12C /* EVContactsPickerAssets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8A02F9FF8AA29E63BB2AF8EA6B86AE39 /* EVContactsPickerAssets.bundle */; };
-		C9BD9DAC55CD6B58E0166004BB6BC95A /* EVPickedContactsViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EACA79DEB968D56FD72E75EED72B512 /* EVPickedContactsViewDelegate.swift */; };
+		C78ECB18918D4846AD2A459FCDA45F3A /* EVContactsPickerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A180EBB8B829F72E21E70F85253EFD6 /* EVContactsPickerConstants.swift */; };
 		C9E0D2F88DC7811192C678828BBCBE90 /* Nimble.h in Headers */ = {isa = PBXBuildFile; fileRef = CF76C77090DF51D2A45CD69CBEFBFFF0 /* Nimble.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CD1B6367B105460B507EB782BCFA3B94 /* AdapterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FCD2114BB3916E797131165B4033B8 /* AdapterProtocols.swift */; };
-		D04A7579827112DF9E1DB08CB9F28DDD /* EVContactsPickerTableViewCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 0DA65499F69F2AFE2ECE5601A0CEF1DC /* EVContactsPickerTableViewCell.xib */; };
-		D3D2628175B937DF9ACE2E6459014FDD /* EVContactsPickerViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = 4B35D169563F54419661B836DCED3AE8 /* EVContactsPickerViewController.xib */; };
+		CD4DD83C2E671A44AED7ECC44EC417F7 /* it.lproj in Resources */ = {isa = PBXBuildFile; fileRef = FB4401482363A48D44EC9EC830731D86 /* it.lproj */; };
+		CE2515404166F757370EBBE7D888B739 /* EVContactsPickerViewController.xib in Sources */ = {isa = PBXBuildFile; fileRef = B3D32F983BF9A192DC65FE677EE6F870 /* EVContactsPickerViewController.xib */; };
 		D581E663BAF757F13E13B5F52680E415 /* NSString+QCKSelectorName.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C6B3017F53936E25BA623FC38E73C38 /* NSString+QCKSelectorName.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		D6488BEC2B3DD48D1742BCB589B11214 /* icon-checkbox-selected-green-25x25.png in Resources */ = {isa = PBXBuildFile; fileRef = A4BECC4230A1386A9B6E7EA34B514EC9 /* icon-checkbox-selected-green-25x25.png */; };
 		D7FDA163DB91F5F6766F43F98744AA39 /* EndWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C59D565AD18A85D00741A4C198C2000 /* EndWith.swift */; };
-		DC6673BF1C4CB4BEAE7AAD89F55F223F /* EVContactBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B22FF13544FE4789FB8B9021CDA0F4 /* EVContactBubble.swift */; };
+		DED379F4691B5A1E7CC9CCFA8EFB70E7 /* hy.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 15E0F4F51EBE863B66B7FAF88832CF4E /* hy.lproj */; };
 		DF6F3D5355EDC175DA7860B5FD578E1F /* Quick-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 930C5B858D5F840B586218B010238B40 /* Quick-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DF9959BDD69207F86753817625A8FA6A /* QuickConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = F3E44BFC1B7F53F6964669C69A936FB0 /* QuickConfiguration.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E6665310AB922153C4B6DFC0EF44C0A3 /* BeIdenticalTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A47A406166A6BD00305A757D5AAD6FA /* BeIdenticalTo.swift */; };
-		E7E705DA5296783D64509B056295AF6B /* EVContactsPicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D325FC0D2CD2A8A7640AF837E75B1694 /* EVContactsPicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E8CD377DD7E127F703F44DF4E7F53579 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D8CADDEEC53F662D4B06C4A227B7C3 /* Async.swift */; };
+		E9BC7A2F02F008CB75C86B739C9674D1 /* pt.lproj in Resources */ = {isa = PBXBuildFile; fileRef = DE198A921777FC0FB86544E063E56C37 /* pt.lproj */; };
 		EAA3E2CC82BC1B4330E939CD77B38E62 /* Stringers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CFE6A9EC3BF50E062F6AEBCF0A1040 /* Stringers.swift */; };
 		EB68CB702558A22DE76E8FA5DBF77F6A /* XCTestObservationCenter+Register.m in Sources */ = {isa = PBXBuildFile; fileRef = 889C9B5D4D813D6EE8BD3131D4F7AD5D /* XCTestObservationCenter+Register.m */; };
 		EF0FAAE7FA9F825F8D0C59872C31A12F /* NMBExceptionCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F286DAD587194DB02FB86046511758E /* NMBExceptionCapture.m */; };
 		F2F1F2ED5C79837C7ACC031999C586C9 /* SuiteHooks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E69B8A93FF8FF4F27B01D2146E962E /* SuiteHooks.swift */; };
+		F4CDF48CAE70BFCB6D7114E268C10D0A /* fi.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 3D49C14812E9C3A2274CAC76B9698A09 /* fi.lproj */; };
 		F705BEA6162DEF89020A508D9D55004C /* MatchError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B10587E876B2D228A97FE5A41EC654 /* MatchError.swift */; };
 		F78C37A0585BB9F52999500AE20C3962 /* CurrentTestCaseTracker.h in Headers */ = {isa = PBXBuildFile; fileRef = FFD5B9B618EF5CC0BA7FA33BF89A8382 /* CurrentTestCaseTracker.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		FB12B3F7A629503558684C0B613AC3E0 /* EVPickedContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE92FA282C2C2580A032309AB453E3E /* EVPickedContactsView.swift */; };
 		FC87FE583D3024EA44A26BCFC9BE248B /* Contain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7F7A0F8C62C4604F1171567DDDCC1B /* Contain.swift */; };
+		FD207E1C0836DD45E15A703863E076EF /* tr.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 3DE6978FD5919BEFEC8473FA38E91104 /* tr.lproj */; };
 		FD2D2617430C2E94C8CFE3BFCC87F8D4 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E9BB3FF9FF1E2AA09D544D166C73BA /* Expression.swift */; };
 		FE8ACD83AE3E27D3D7746503773D1EE9 /* Callsite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A7ADD722D321979FD7D64C31167947 /* Callsite.swift */; };
 		FFD6AEA5D66E6520C1C879C64D0393F1 /* Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942BD99070DF457A24467A12BDC720AA /* Closures.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1D54984F30849EEDE031AE0A4E5B43FD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 14CD81203D303D2E2983979D8E8631D4;
+			remoteInfo = "EVContactsPicker-EVContactsPicker";
+		};
 		1E0755200443CB7DC20A5F2E0C572BF9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1E0BEE6BAB87A66D72D22DBF0C0895A7;
+			remoteGlobalIDString = 8CD53177C1355C41662ADBA153C2DD4A;
 			remoteInfo = EVContactsPicker;
 		};
 		20ABEA3563FF7B238689A8FE0C858A50 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1E0BEE6BAB87A66D72D22DBF0C0895A7;
+			remoteGlobalIDString = 8CD53177C1355C41662ADBA153C2DD4A;
 			remoteInfo = EVContactsPicker;
 		};
 		59012F105981982F2B805262D56FD8AF /* PBXContainerItemProxy */ = {
@@ -161,159 +193,192 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		006959F37E0B765AB0D28029E7F372A5 /* EVContactsPicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EVContactsPicker.xcconfig; sourceTree = "<group>"; };
 		02AB34BFB682F03843DF8032F3D7FA33 /* ErrorUtility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ErrorUtility.swift; path = Sources/Quick/ErrorUtility.swift; sourceTree = "<group>"; };
+		037DB43492CF500AA3C5414C318331A5 /* zh-Hant.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = "zh-Hant.lproj"; sourceTree = "<group>"; };
 		04E9CD0D0763712CAB16EB2EC0322261 /* QuickSelectedTestSuiteBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuickSelectedTestSuiteBuilder.swift; path = Sources/Quick/QuickSelectedTestSuiteBuilder.swift; sourceTree = "<group>"; };
-		07351841912DE3297A396BB16A63981D /* EVContactsPickerConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVContactsPickerConstants.swift; sourceTree = "<group>"; };
+		06BC29BD50182EC8D98370AC7E874D2C /* fa.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = fa.lproj; sourceTree = "<group>"; };
+		07C4408BE707C791DE675ADB58C9DB93 /* ar.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = ar.lproj; sourceTree = "<group>"; };
 		09FCD2114BB3916E797131165B4033B8 /* AdapterProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdapterProtocols.swift; path = Sources/Nimble/Adapters/AdapterProtocols.swift; sourceTree = "<group>"; };
 		0A45DE1BAF708123A5281D3B79328643 /* Pods-EVContactsPicker_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EVContactsPicker_Tests-umbrella.h"; sourceTree = "<group>"; };
 		0A47A406166A6BD00305A757D5AAD6FA /* BeIdenticalTo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeIdenticalTo.swift; path = Sources/Nimble/Matchers/BeIdenticalTo.swift; sourceTree = "<group>"; };
 		0B4D8FE6B468B1D1E68A0B05FA2AE955 /* Pods-EVContactsPicker_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EVContactsPicker_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		0D9D363F764DC746D7DCFD98F48AF83D /* NSBundle+EVBundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "NSBundle+EVBundle.swift"; sourceTree = "<group>"; };
-		0DA65499F69F2AFE2ECE5601A0CEF1DC /* EVContactsPickerTableViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = EVContactsPickerTableViewCell.xib; sourceTree = "<group>"; };
+		0C8CD518011F0E290098D985466DABE7 /* ru.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = ru.lproj; sourceTree = "<group>"; };
 		0DC128ABEC08B899B1B373CD62264338 /* QuickTestSuite.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = QuickTestSuite.swift; path = Sources/Quick/QuickTestSuite.swift; sourceTree = "<group>"; };
 		0E748E9F710BCA6D1F04B7B71BEFB4E4 /* World+DSL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "World+DSL.h"; path = "Sources/QuickObjectiveC/DSL/World+DSL.h"; sourceTree = "<group>"; };
-		0EB06C88F9443912F3EB424253E2523D /* EVPickedContactsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVPickedContactsView.swift; sourceTree = "<group>"; };
 		0EED9BD0EDFE77B74DE706B13E7AB2B1 /* Pods-EVContactsPicker_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EVContactsPicker_Example-frameworks.sh"; sourceTree = "<group>"; };
 		0F5F222BA29A6E2092852EC0969CF8D7 /* BeAnInstanceOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeAnInstanceOf.swift; path = Sources/Nimble/Matchers/BeAnInstanceOf.swift; sourceTree = "<group>"; };
 		10EA60637D0EA97227967FE015A3A0FD /* HooksPhase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HooksPhase.swift; path = Sources/Quick/Hooks/HooksPhase.swift; sourceTree = "<group>"; };
 		137E96807DA4EB6CAEDAF1D57ED5E96A /* DSL+Wait.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DSL+Wait.swift"; path = "Sources/Nimble/DSL+Wait.swift"; sourceTree = "<group>"; };
 		14B773C45B4E385D8CF4345279ACC679 /* NimbleEnvironment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NimbleEnvironment.swift; path = Sources/Nimble/Adapters/NimbleEnvironment.swift; sourceTree = "<group>"; };
 		14CFE6A9EC3BF50E062F6AEBCF0A1040 /* Stringers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stringers.swift; path = Sources/Nimble/Utils/Stringers.swift; sourceTree = "<group>"; };
+		15E0F4F51EBE863B66B7FAF88832CF4E /* hy.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = hy.lproj; sourceTree = "<group>"; };
+		166DF0893F80C7D78E0DD8DD7076C65E /* EVPickedContactsViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVPickedContactsViewDelegate.swift; sourceTree = "<group>"; };
 		17A3917934E45B102C825B48D72854BE /* QCKDSL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QCKDSL.m; path = Sources/QuickObjectiveC/DSL/QCKDSL.m; sourceTree = "<group>"; };
+		185CE1E7D395012C6619C761C6087667 /* Quick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Quick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1965B93D61DAC1B951AB135F685199F9 /* BeEmpty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeEmpty.swift; path = Sources/Nimble/Matchers/BeEmpty.swift; sourceTree = "<group>"; };
+		1BEF02715F0B0D51FBEC0E2F31678AAE /* zh-Hans.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = "zh-Hans.lproj"; sourceTree = "<group>"; };
+		1BFC5F4F00AC6567E6A74FF49121A79F /* es.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = es.lproj; sourceTree = "<group>"; };
 		1C6B3017F53936E25BA623FC38E73C38 /* NSString+QCKSelectorName.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+QCKSelectorName.h"; path = "Sources/QuickObjectiveC/NSString+QCKSelectorName.h"; sourceTree = "<group>"; };
+		1E17A4CA31DBA2D0785E25CC7BD838BC /* EVContactsPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EVContactsPicker-prefix.pch"; sourceTree = "<group>"; };
 		1FFA3BF7178C87470B21A4CE0C5BD4F0 /* Quick-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Quick-prefix.pch"; sourceTree = "<group>"; };
+		2086E50F0CC08B7610E77FDF921A7C08 /* icon-checkbox-selected-green-25x25@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "icon-checkbox-selected-green-25x25@2x.png"; sourceTree = "<group>"; };
+		2093C7230A1BA8B31BE0D2A947F89EB3 /* template */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = template; sourceTree = "<group>"; };
 		2168F8EA6760B7296FAB7BCA971E9F99 /* Pods-EVContactsPicker_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EVContactsPicker_Tests-resources.sh"; sourceTree = "<group>"; };
-		216E33DE2F6AC5B96928ABF2D3EBA3C4 /* EVContactsPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EVContactsPicker-prefix.pch"; sourceTree = "<group>"; };
 		21B10587E876B2D228A97FE5A41EC654 /* MatchError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatchError.swift; path = Sources/Nimble/Matchers/MatchError.swift; sourceTree = "<group>"; };
-		21E101B659E920D394A60CAB48B72C9A /* icon-avatar-60x60@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "icon-avatar-60x60@2x.png"; sourceTree = "<group>"; };
 		23FC1B26014CE28426C23CFE7BF4B04A /* NSBundle+CurrentTestBundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSBundle+CurrentTestBundle.swift"; path = "Sources/Quick/NSBundle+CurrentTestBundle.swift"; sourceTree = "<group>"; };
+		243BB542A065B27F80C114453FA85A9C /* EVCContactsPickerDataSourceProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVCContactsPickerDataSourceProtocol.swift; sourceTree = "<group>"; };
 		279BE6E3C37A283E4B6CF245D2BA87FF /* BeGreaterThanOrEqualTo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeGreaterThanOrEqualTo.swift; path = Sources/Nimble/Matchers/BeGreaterThanOrEqualTo.swift; sourceTree = "<group>"; };
 		27A7ADD722D321979FD7D64C31167947 /* Callsite.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Callsite.swift; path = Sources/Quick/Callsite.swift; sourceTree = "<group>"; };
 		2983357F49F0810E16CE62479894EB0A /* Pods-EVContactsPicker_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EVContactsPicker_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		2A63DBE12D65F6DA499276B30AA6E95D /* Example.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Example.swift; path = Sources/Quick/Example.swift; sourceTree = "<group>"; };
 		2B1BBCCC57699A3FCD4043D96AC0E1AD /* NMBExceptionCapture.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NMBExceptionCapture.h; path = Sources/NimbleObjectiveC/NMBExceptionCapture.h; sourceTree = "<group>"; };
+		2B737225163FA9C029E3844EC2BB0F77 /* icon-avatar-60x60@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "icon-avatar-60x60@2x.png"; sourceTree = "<group>"; };
 		2D4193A743121452E0221FC947C021EA /* Quick-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Quick-dummy.m"; sourceTree = "<group>"; };
+		2D77C74C1222C9BED3ACBAB95075BEC2 /* EVContactsPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EVContactsPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F4D681F99E511DF933B395DEB917AFD /* Nimble.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Nimble.xcconfig; sourceTree = "<group>"; };
-		2F82D57B1CC83C43959F7670F647EDEB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F88D3827CC4AEE39397E1F761A2C0D3 /* Filter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Sources/Quick/Filter.swift; sourceTree = "<group>"; };
+		312C7811DDB1BFAFE1855E77BF0D79C8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31AFFE69EFE609AADBFEA23AEC3BB7C0 /* Pods-EVContactsPicker_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EVContactsPicker_Example.release.xcconfig"; sourceTree = "<group>"; };
-		31B22FF13544FE4789FB8B9021CDA0F4 /* EVContactBubble.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVContactBubble.swift; sourceTree = "<group>"; };
 		32DF21EF8268E32D359CD23F2CF3EFE3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		34C1CE57471C869917F8D8791E63BFE9 /* vi.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = vi.lproj; sourceTree = "<group>"; };
 		36ACC79BCB17EA84D522FD965A8481F5 /* QuickConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QuickConfiguration.m; path = Sources/QuickObjectiveC/Configuration/QuickConfiguration.m; sourceTree = "<group>"; };
-		378E99DCAECC448C54251A2ABCB83E32 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Nimble.framework; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3AFBCC30980F68D670A118C4D904396D /* Pods-EVContactsPicker_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-EVContactsPicker_Example.modulemap"; sourceTree = "<group>"; };
+		3AFBCC30980F68D670A118C4D904396D /* Pods-EVContactsPicker_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-EVContactsPicker_Example.modulemap"; sourceTree = "<group>"; };
 		3CFAA47FEE273F84E23522875FEDDF10 /* Expectation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Expectation.swift; path = Sources/Nimble/Expectation.swift; sourceTree = "<group>"; };
+		3D49C14812E9C3A2274CAC76B9698A09 /* fi.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = fi.lproj; sourceTree = "<group>"; };
+		3DE6978FD5919BEFEC8473FA38E91104 /* tr.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = tr.lproj; sourceTree = "<group>"; };
+		3F2E23134DF6127526D3BD875D517AD1 /* nl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = nl.lproj; sourceTree = "<group>"; };
 		41E69B8A93FF8FF4F27B01D2146E962E /* SuiteHooks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SuiteHooks.swift; path = Sources/Quick/Hooks/SuiteHooks.swift; sourceTree = "<group>"; };
-		46C6126C1C0F3B0202F3B17BEEADE530 /* icon-avatar-60x60.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "icon-avatar-60x60.png"; sourceTree = "<group>"; };
+		497AACCA7CB4D5159E6C816864052BED /* Bundle+EVBundle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Bundle+EVBundle.swift"; sourceTree = "<group>"; };
 		49D8CADDEEC53F662D4B06C4A227B7C3 /* Async.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Async.swift; path = Sources/Nimble/Utils/Async.swift; sourceTree = "<group>"; };
-		4B35D169563F54419661B836DCED3AE8 /* EVContactsPickerViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = EVContactsPickerViewController.xib; sourceTree = "<group>"; };
 		4B7F7A0F8C62C4604F1171567DDDCC1B /* Contain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Contain.swift; path = Sources/Nimble/Matchers/Contain.swift; sourceTree = "<group>"; };
+		4BFBBD9F1A6104CE6D4CD2C5AA059BDC /* Pods_EVContactsPicker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EVContactsPicker_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C89C0F1F9950AC08B0A0E1DB6503AB3 /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = en.lproj; sourceTree = "<group>"; };
 		5079AC107DA9B43762BB633A2FC7A16E /* Pods-EVContactsPicker_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EVContactsPicker_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		51F878C0B42A039A1B5563E6114A030F /* EVContactsPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = EVContactsPicker.framework; path = EVContactsPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C68EBB8E1AA009644526A1E43172EC /* BeVoid.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeVoid.swift; path = Sources/Nimble/Matchers/BeVoid.swift; sourceTree = "<group>"; };
 		5534B166ADA90C35DF6DEFE93EEA6CA8 /* ExampleHooks.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExampleHooks.swift; path = Sources/Quick/Hooks/ExampleHooks.swift; sourceTree = "<group>"; };
-		599EF4D5C127B72F623A63841233751D /* icon-checkbox-unselected-25x25.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "icon-checkbox-unselected-25x25.png"; sourceTree = "<group>"; };
 		5B8AA4568B8658ECF9CB84C31D26D78E /* Pods-EVContactsPicker_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EVContactsPicker_Example-umbrella.h"; sourceTree = "<group>"; };
 		5D9761155E78557DCEC669BFB2D8918F /* DSL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DSL.h; path = Sources/NimbleObjectiveC/DSL.h; sourceTree = "<group>"; };
 		5EB452465EAB1D4C7C5532DE2F8CCBAA /* MatcherFunc.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatcherFunc.swift; path = Sources/Nimble/Matchers/MatcherFunc.swift; sourceTree = "<group>"; };
 		60EB4EA90D1C07AC840F8432F4EDE7F6 /* BeginWith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeginWith.swift; path = Sources/Nimble/Matchers/BeginWith.swift; sourceTree = "<group>"; };
 		60F5E1E31EE6993B411E615A3564AE63 /* AssertionDispatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssertionDispatcher.swift; path = Sources/Nimble/Adapters/AssertionDispatcher.swift; sourceTree = "<group>"; };
 		61202B7640993C4CFA721BAE2DF2C940 /* Pods-EVContactsPicker_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EVContactsPicker_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		623319EFBE08D07CCF26A9BF6DC1FBE4 /* EVContact.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVContact.swift; sourceTree = "<group>"; };
 		6778B35F731CACE8A16DE3FB29296715 /* BeLessThan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeLessThan.swift; path = Sources/Nimble/Matchers/BeLessThan.swift; sourceTree = "<group>"; };
-		69287BC7DCBDEF88F349670224CBDBB1 /* EVCContactsPickerDataSourceProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVCContactsPickerDataSourceProtocol.swift; sourceTree = "<group>"; };
+		696A815EBD202B8630CADAD44DC3AFCF /* EVContactBubbleDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVContactBubbleDelegate.swift; sourceTree = "<group>"; };
 		6BFD142E366265060C7305FA73FFE05C /* SourceLocation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SourceLocation.swift; path = Sources/Nimble/Utils/SourceLocation.swift; sourceTree = "<group>"; };
 		6C37A2D0A95FC2F25EF53C7CE25B6A1D /* Pods-EVContactsPicker_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EVContactsPicker_Tests-dummy.m"; sourceTree = "<group>"; };
+		6CFB94AA1CFCDFA64FDC4E8532534ED2 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DF32783790F019A5F94A41ABE00A907 /* QuickSpec.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuickSpec.h; path = Sources/QuickObjectiveC/QuickSpec.h; sourceTree = "<group>"; };
 		6E91C9F03B300B9E0D4F68951A4228DE /* World+DSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "World+DSL.swift"; path = "Sources/Quick/DSL/World+DSL.swift"; sourceTree = "<group>"; };
-		6EACA79DEB968D56FD72E75EED72B512 /* EVPickedContactsViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVPickedContactsViewDelegate.swift; sourceTree = "<group>"; };
 		6F0CF1CE5B94B840EAE1E96F1F28C39B /* NSString+QCKSelectorName.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+QCKSelectorName.m"; path = "Sources/QuickObjectiveC/NSString+QCKSelectorName.m"; sourceTree = "<group>"; };
+		6F12A2475B606B9F9CB14B3C394EF2F8 /* EVBubbleColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVBubbleColor.swift; sourceTree = "<group>"; };
 		6F13CDB5E2FBA53F6844FF5408E37ECC /* QCKDSL.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QCKDSL.h; path = Sources/QuickObjectiveC/DSL/QCKDSL.h; sourceTree = "<group>"; };
+		7169C79B76954860A8F4BB4964520FA2 /* EVContactBubble.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVContactBubble.swift; sourceTree = "<group>"; };
 		7263154B631BBF37B7EBCDA130CFA7B4 /* Nimble-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nimble-umbrella.h"; sourceTree = "<group>"; };
-		733B7DA50005585A06C1181BE242F98D /* icon-checkbox-unselected-25x25@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "icon-checkbox-unselected-25x25@2x.png"; sourceTree = "<group>"; };
+		73E164841C62E17C600BC05A7A5BF563 /* he.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = he.lproj; sourceTree = "<group>"; };
 		7493D08CF5C80BC4A8C13CB7F8B3255C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77C6E7390C3EB5E35ECE4605A0351D10 /* Pods-EVContactsPicker_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EVContactsPicker_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		78A5699DBCCDE07C2FB5432167C2E5C9 /* Nimble.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Nimble.modulemap; sourceTree = "<group>"; };
+		78A5699DBCCDE07C2FB5432167C2E5C9 /* Nimble.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Nimble.modulemap; sourceTree = "<group>"; };
+		7AD752ADCBD6FA4976AC27FC708066F7 /* ko.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = ko.lproj; sourceTree = "<group>"; };
+		7EE92FA282C2C2580A032309AB453E3E /* EVPickedContactsView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVPickedContactsView.swift; sourceTree = "<group>"; };
 		7F286DAD587194DB02FB86046511758E /* NMBExceptionCapture.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NMBExceptionCapture.m; path = Sources/NimbleObjectiveC/NMBExceptionCapture.m; sourceTree = "<group>"; };
-		809581CDBCA65EBEDD4C5E2B135F202F /* EVContactsPicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EVContactsPicker.xcconfig; sourceTree = "<group>"; };
 		81DD63CE9E429B1826241FD1B8859D1D /* FailureMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FailureMessage.swift; path = Sources/Nimble/FailureMessage.swift; sourceTree = "<group>"; };
+		81FDC9FC261C8B42DDAFE390FA50E797 /* EVContactsPicker.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EVContactsPicker.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		82352C61D7C6E513A23998197C9851A6 /* EVContactsPicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EVContactsPicker-umbrella.h"; sourceTree = "<group>"; };
 		855FF8EB3332F34F55581BF6A865D81B /* World.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = World.h; path = Sources/QuickObjectiveC/World.h; sourceTree = "<group>"; };
 		8688D4D3AB41BF86798B09F014F3CE39 /* AsyncMatcherWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AsyncMatcherWrapper.swift; path = Sources/Nimble/Matchers/AsyncMatcherWrapper.swift; sourceTree = "<group>"; };
 		889C9B5D4D813D6EE8BD3131D4F7AD5D /* XCTestObservationCenter+Register.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "XCTestObservationCenter+Register.m"; path = "Sources/NimbleObjectiveC/XCTestObservationCenter+Register.m"; sourceTree = "<group>"; };
-		8A02F9FF8AA29E63BB2AF8EA6B86AE39 /* EVContactsPickerAssets.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; path = EVContactsPickerAssets.bundle; sourceTree = "<group>"; };
+		8A180EBB8B829F72E21E70F85253EFD6 /* EVContactsPickerConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVContactsPickerConstants.swift; sourceTree = "<group>"; };
+		8B1112BC5957B089C349141B19FB4A88 /* Pods_EVContactsPicker_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EVContactsPicker_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B196F4C4AC8DB18D97751A9526F6FE4 /* NMBExpectation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NMBExpectation.swift; path = Sources/Nimble/Adapters/NMBExpectation.swift; sourceTree = "<group>"; };
 		8BF2C70EE3305025DD20F95F693E7596 /* Equal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Equal.swift; path = Sources/Nimble/Matchers/Equal.swift; sourceTree = "<group>"; };
 		8C59D565AD18A85D00741A4C198C2000 /* EndWith.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EndWith.swift; path = Sources/Nimble/Matchers/EndWith.swift; sourceTree = "<group>"; };
-		8FDA5611B439E830D2EF8B6627E74856 /* EVBubbleColor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVBubbleColor.swift; sourceTree = "<group>"; };
+		8F1864E077D27F347E694F21F946E27C /* icon-checkbox-unselected-25x25.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "icon-checkbox-unselected-25x25.png"; sourceTree = "<group>"; };
 		930C5B858D5F840B586218B010238B40 /* Quick-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Quick-umbrella.h"; sourceTree = "<group>"; };
 		936D0E6360F5879FA9408D6392D73B5E /* DSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DSL.swift; path = Sources/Nimble/DSL.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93E2C6637C540C46FF98481B4277CE73 /* Match.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Match.swift; path = Sources/Nimble/Matchers/Match.swift; sourceTree = "<group>"; };
 		9411E9345F4B51EBC4DDEE269B9711E6 /* Quick.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Quick.h; path = Sources/QuickObjectiveC/Quick.h; sourceTree = "<group>"; };
 		942BD99070DF457A24467A12BDC720AA /* Closures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Closures.swift; path = Sources/Quick/Hooks/Closures.swift; sourceTree = "<group>"; };
 		9500C4B2D679A577A204643C21E3208A /* AllPass.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AllPass.swift; path = Sources/Nimble/Matchers/AllPass.swift; sourceTree = "<group>"; };
 		99B92FECB6771935EA3B4537171CBCE4 /* DSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DSL.swift; path = Sources/Quick/DSL/DSL.swift; sourceTree = "<group>"; };
+		9A7813289DCA92F67B2AADABA745CB5F /* EVContactsPickerTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVContactsPickerTableViewCell.swift; sourceTree = "<group>"; };
+		9B7234DD5599B49945EC5BA12C71D977 /* ja.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = ja.lproj; sourceTree = "<group>"; };
+		9BF42A2599F58AB1EE2437CF3FA3B387 /* EVContactsPickerTableViewCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = EVContactsPickerTableViewCell.xib; sourceTree = "<group>"; };
 		9E4927062CFEE82AD9E83CD9BF2FE507 /* XCTestSuite+QuickTestSuiteBuilder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "XCTestSuite+QuickTestSuiteBuilder.m"; path = "Sources/QuickObjectiveC/XCTestSuite+QuickTestSuiteBuilder.m"; sourceTree = "<group>"; };
-		A028CA242D4B23C67CBF08062AA1A804 /* EVContactBubbleDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVContactBubbleDelegate.swift; sourceTree = "<group>"; };
-		A1D15EFCC40B9832A05F43AD01175327 /* EVContactsPickerTableViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVContactsPickerTableViewCell.swift; sourceTree = "<group>"; };
+		A1FD2F99A3F92833C1D041A44C4604B0 /* EVContactsPicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = EVContactsPicker.modulemap; sourceTree = "<group>"; };
 		A2DC84C8893B430CE2DE90C468830BB5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A4BECC4230A1386A9B6E7EA34B514EC9 /* icon-checkbox-selected-green-25x25.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "icon-checkbox-selected-green-25x25.png"; sourceTree = "<group>"; };
 		A686DC16EA88188538A022F1BAA703B8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A7DBCEDAD5564C818FCA9707EAA99C7F /* EVContactsPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EVContactsPicker-dummy.m"; sourceTree = "<group>"; };
 		AA8C576A89D948680C5AA438114266FC /* String+FileName.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+FileName.swift"; path = "Sources/Quick/String+FileName.swift"; sourceTree = "<group>"; };
 		AB0BDED72A5ACB90AC028C457FFA6A49 /* DSL.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DSL.m; path = Sources/NimbleObjectiveC/DSL.m; sourceTree = "<group>"; };
 		AB293DD748964D20041A48D0616DFC6B /* Functional.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Functional.swift; path = Sources/Nimble/Utils/Functional.swift; sourceTree = "<group>"; };
-		ABEAFF4509A674C5F43894BA85CBE2B9 /* Pods_EVContactsPicker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EVContactsPicker_Example.framework; path = "Pods-EVContactsPicker_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC0A98C6227B14F9E55A7AB921D51579 /* World.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = World.swift; path = Sources/Quick/World.swift; sourceTree = "<group>"; };
 		ADC4D2AAE12F34E1B4880C4437D23A62 /* Pods-EVContactsPicker_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EVContactsPicker_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		AE0DD46258DEEBB8C4D3C783B56F4AB9 /* Pods-EVContactsPicker_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-EVContactsPicker_Tests.modulemap"; sourceTree = "<group>"; };
+		AE0DD46258DEEBB8C4D3C783B56F4AB9 /* Pods-EVContactsPicker_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-EVContactsPicker_Tests.modulemap"; sourceTree = "<group>"; };
 		AE134C970257401B63634789F76E1D99 /* NMBObjCMatcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NMBObjCMatcher.swift; path = Sources/Nimble/Adapters/NMBObjCMatcher.swift; sourceTree = "<group>"; };
 		AECEA2EDA41473899EE391CA038EDC38 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		B2302E77F14F690BEC2F90E4B3640288 /* icon-checkbox-unselected-25x25@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "icon-checkbox-unselected-25x25@2x.png"; sourceTree = "<group>"; };
 		B348700F797B59D6D113E9B112230BFB /* ExampleGroup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExampleGroup.swift; path = Sources/Quick/ExampleGroup.swift; sourceTree = "<group>"; };
-		B544F5C0BD56B74636057C0A70364D4D /* EVContactsPicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = EVContactsPicker.modulemap; sourceTree = "<group>"; };
+		B3BED455CEDD1088D2C5FFEB8B500995 /* de.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = de.lproj; sourceTree = "<group>"; };
+		B3D32F983BF9A192DC65FE677EE6F870 /* EVContactsPickerViewController.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = EVContactsPickerViewController.xib; sourceTree = "<group>"; };
 		B5C7E9F063000B004BCB218F18B209FD /* ThrowError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThrowError.swift; path = Sources/Nimble/Matchers/ThrowError.swift; sourceTree = "<group>"; };
 		B8779AD2B6A72B845AC08BA800A966FC /* BeLessThanOrEqual.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeLessThanOrEqual.swift; path = Sources/Nimble/Matchers/BeLessThanOrEqual.swift; sourceTree = "<group>"; };
-		BB16ADC346F77492B59D3AF77906044E /* Pods_EVContactsPicker_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EVContactsPicker_Tests.framework; path = "Pods-EVContactsPicker_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB1D38050CAA197B4F0832B6CB51BD74 /* pl.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = pl.lproj; sourceTree = "<group>"; };
 		BB8B28CC39ED24A310D148721E98E478 /* BeGreaterThan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeGreaterThan.swift; path = Sources/Nimble/Matchers/BeGreaterThan.swift; sourceTree = "<group>"; };
 		BC1D555CF419AA2C7FAA7E8B0AD7F833 /* NMBStringify.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NMBStringify.h; path = Sources/NimbleObjectiveC/NMBStringify.h; sourceTree = "<group>"; };
-		BD3D1014AFE8BA3874EDCA991CDBF4E4 /* icon-checkbox-selected-green-25x25@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "icon-checkbox-selected-green-25x25@2x.png"; sourceTree = "<group>"; };
+		BDD9415CC7E82192B8AD7F720BF2B560 /* th.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = th.lproj; sourceTree = "<group>"; };
+		BF11F16D90EC6699C8403A474515695C /* EVContactsPickerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVContactsPickerDelegate.swift; sourceTree = "<group>"; };
+		C3CFE416AAEE0D4A2478ED4C1908FF6A /* Base.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
+		C45D5359FCE895135985CFCD6A6C85EC /* ResourceBundle-EVContactsPicker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-EVContactsPicker-Info.plist"; sourceTree = "<group>"; };
 		C5C13F92151E2D3C87BD102DB9CDA296 /* Nimble-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Nimble-dummy.m"; sourceTree = "<group>"; };
 		C8C4DC85DCC2EBD89D8517FE45CE4588 /* Pods-EVContactsPicker_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EVContactsPicker_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		C8C4F085290C0D2DF45DFCB1EDE20913 /* ExampleMetadata.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExampleMetadata.swift; path = Sources/Quick/ExampleMetadata.swift; sourceTree = "<group>"; };
 		C9CF8DE94169987612C63723676E7BE9 /* MatcherProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MatcherProtocols.swift; path = Sources/Nimble/Matchers/MatcherProtocols.swift; sourceTree = "<group>"; };
 		CAEB792EB92B266C62D2E1A3E796509C /* BeNil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeNil.swift; path = Sources/Nimble/Matchers/BeNil.swift; sourceTree = "<group>"; };
-		CBACD4EC8EC2E4E04C3EC0987028D5D5 /* Quick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Quick.framework; path = Quick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD865047A234F8BF597FF232BE3FD058 /* BeLogical.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeLogical.swift; path = Sources/Nimble/Matchers/BeLogical.swift; sourceTree = "<group>"; };
 		CF76C77090DF51D2A45CD69CBEFBFFF0 /* Nimble.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Nimble.h; path = Sources/Nimble/Nimble.h; sourceTree = "<group>"; };
 		D009D8503B75AACA552741C349E8F871 /* Nimble-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nimble-prefix.pch"; sourceTree = "<group>"; };
-		D325FC0D2CD2A8A7640AF837E75B1694 /* EVContactsPicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EVContactsPicker-umbrella.h"; sourceTree = "<group>"; };
+		D09BF2D55730AFE7057532FDAF36B3AC /* Images */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
 		D3396BFC8EAF6B0871C63C0410EC4F2F /* Errors.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Errors.swift; path = Sources/Nimble/Utils/Errors.swift; sourceTree = "<group>"; };
 		D655CD33ADCB3EDB1C48AC476F315F8A /* AssertionRecorder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssertionRecorder.swift; path = Sources/Nimble/Adapters/AssertionRecorder.swift; sourceTree = "<group>"; };
 		D704013C4915BCE9CD714EF8ACE9194B /* Quick.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Quick.xcconfig; sourceTree = "<group>"; };
 		D86F9796696539ADD8B0331A63393C40 /* SatisfyAnyOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SatisfyAnyOf.swift; path = Sources/Nimble/Matchers/SatisfyAnyOf.swift; sourceTree = "<group>"; };
+		DE198A921777FC0FB86544E063E56C37 /* pt.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = pt.lproj; sourceTree = "<group>"; };
 		E0E9BB3FF9FF1E2AA09D544D166C73BA /* Expression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Expression.swift; path = Sources/Nimble/Expression.swift; sourceTree = "<group>"; };
+		E2464C8025048CAC83471901FB1C2391 /* fr.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = fr.lproj; sourceTree = "<group>"; };
+		E32B5EA230585831F469C7101837FD8F /* ro.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = ro.lproj; sourceTree = "<group>"; };
 		E3E23A8278579CC10E09C630ECA5D621 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4610D6C60983CF61CA2F4FA53A7B4ED /* BeCloseTo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeCloseTo.swift; path = Sources/Nimble/Matchers/BeCloseTo.swift; sourceTree = "<group>"; };
 		E4DA320C5CEC8FDA897345D9EAC8ADD1 /* Pods-EVContactsPicker_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EVContactsPicker_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		E4F399D367519DF6544F63D1BDE940CA /* Pods-EVContactsPicker_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EVContactsPicker_Example-resources.sh"; sourceTree = "<group>"; };
 		E6B4EF5126103B3FB9AAF157C68D4C7F /* Pods-EVContactsPicker_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EVContactsPicker_Example-dummy.m"; sourceTree = "<group>"; };
+		EB33A4C9209D671151E74A787CAE3C94 /* icon-checkbox-selected-green-25x25.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "icon-checkbox-selected-green-25x25.png"; sourceTree = "<group>"; };
+		EB8042A0D5ADB498D51171103FEA5556 /* icon-avatar-60x60.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "icon-avatar-60x60.png"; sourceTree = "<group>"; };
 		EC18533F85C82B54F02A539F8FC61436 /* BeAKindOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BeAKindOf.swift; path = Sources/Nimble/Matchers/BeAKindOf.swift; sourceTree = "<group>"; };
 		EC3D894D8922C73EFEDF5AF5DC0B5431 /* HaveCount.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HaveCount.swift; path = Sources/Nimble/Matchers/HaveCount.swift; sourceTree = "<group>"; };
 		ED7938A701C05690B7E68B3A114C07D0 /* RaisesException.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RaisesException.swift; path = Sources/Nimble/Matchers/RaisesException.swift; sourceTree = "<group>"; };
 		F30815AFA113F42006B3966F34139B6C /* NimbleXCTestHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NimbleXCTestHandler.swift; path = Sources/Nimble/Adapters/NimbleXCTestHandler.swift; sourceTree = "<group>"; };
 		F3E44BFC1B7F53F6964669C69A936FB0 /* QuickConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = QuickConfiguration.h; path = Sources/QuickObjectiveC/Configuration/QuickConfiguration.h; sourceTree = "<group>"; };
-		F436FE2C80E5F851E64FAFA931C7BE5A /* Quick.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Quick.modulemap; sourceTree = "<group>"; };
+		F436FE2C80E5F851E64FAFA931C7BE5A /* Quick.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Quick.modulemap; sourceTree = "<group>"; };
 		F57F6238DD8E65A2E507CDCF1ED792C2 /* QuickSpec.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = QuickSpec.m; path = Sources/QuickObjectiveC/QuickSpec.m; sourceTree = "<group>"; };
+		F75F3D7CCD05DCA7F0191C50914249AD /* EVContact.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVContact.swift; sourceTree = "<group>"; };
 		FA2924A23B93CE2EE3F172F9114D77AB /* PostNotification.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PostNotification.swift; path = Sources/Nimble/Matchers/PostNotification.swift; sourceTree = "<group>"; };
-		FD4BADB4FFD2D02912B5BC166E98D1F0 /* EVContactsPickerViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVContactsPickerViewController.swift; sourceTree = "<group>"; };
+		FB4401482363A48D44EC9EC830731D86 /* it.lproj */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder; path = it.lproj; sourceTree = "<group>"; };
 		FD53BE4DBD443958F98C361BF7B45650 /* Configuration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = Sources/Quick/Configuration/Configuration.swift; sourceTree = "<group>"; };
+		FE9BF06C0143B16934F74180422FBC4E /* EVContactsPickerViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVContactsPickerViewController.swift; sourceTree = "<group>"; };
 		FEBA9ED0D27145BA04E5BB9DDDA3EF30 /* NMBStringify.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NMBStringify.m; path = Sources/NimbleObjectiveC/NMBStringify.m; sourceTree = "<group>"; };
-		FF3086BBF49CF5C1D3FBDA5E54CC96C6 /* EVContactsPickerDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVContactsPickerDelegate.swift; sourceTree = "<group>"; };
+		FEBEC26EE756B32229CCDA5854C5CC31 /* EVContactsPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EVContactsPicker-dummy.m"; sourceTree = "<group>"; };
 		FFD5B9B618EF5CC0BA7FA33BF89A8382 /* CurrentTestCaseTracker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CurrentTestCaseTracker.h; path = Sources/NimbleObjectiveC/CurrentTestCaseTracker.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		03981F9A376AD1C648E46DA99393BF3C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		13A543E923C394DC0228FC7DB61A74E8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -339,14 +404,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		98C6221FE1CBE3BF2199A6659E53A91F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7B290E22FA4C7E54452F4AE529680E08 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F6B3256596D9A7A28A3260CA3950F0C7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -355,40 +412,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FC2A87602AF02E9D80BBEB2FAB1828E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56F0A1D8BB0892807B8F6EDE1B11F530 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04D96FB9BAF4074A28F35AA2B82B13CF /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				8FDA5611B439E830D2EF8B6627E74856 /* EVBubbleColor.swift */,
-				69287BC7DCBDEF88F349670224CBDBB1 /* EVCContactsPickerDataSourceProtocol.swift */,
-				623319EFBE08D07CCF26A9BF6DC1FBE4 /* EVContact.swift */,
-				31B22FF13544FE4789FB8B9021CDA0F4 /* EVContactBubble.swift */,
-				A028CA242D4B23C67CBF08062AA1A804 /* EVContactBubbleDelegate.swift */,
-				07351841912DE3297A396BB16A63981D /* EVContactsPickerConstants.swift */,
-				FF3086BBF49CF5C1D3FBDA5E54CC96C6 /* EVContactsPickerDelegate.swift */,
-				A1D15EFCC40B9832A05F43AD01175327 /* EVContactsPickerTableViewCell.swift */,
-				0DA65499F69F2AFE2ECE5601A0CEF1DC /* EVContactsPickerTableViewCell.xib */,
-				FD4BADB4FFD2D02912B5BC166E98D1F0 /* EVContactsPickerViewController.swift */,
-				4B35D169563F54419661B836DCED3AE8 /* EVContactsPickerViewController.xib */,
-				0EB06C88F9443912F3EB424253E2523D /* EVPickedContactsView.swift */,
-				6EACA79DEB968D56FD72E75EED72B512 /* EVPickedContactsViewDelegate.swift */,
-				0D9D363F764DC746D7DCFD98F48AF83D /* NSBundle+EVBundle.swift */,
-			);
-			name = Classes;
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		06E2D1CD0BDE77B18778D548C25F06B4 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				A2746886A4D60DC0151B2C51C44CAA58 /* Assets */,
-			);
-			name = Pod;
-			path = Pod;
-			sourceTree = "<group>";
-		};
 		12A5B6B6052AA924DFACA38E7BCBA113 /* Nimble */ = {
 			isa = PBXGroup;
 			children = (
@@ -447,7 +481,6 @@
 				889C9B5D4D813D6EE8BD3131D4F7AD5D /* XCTestObservationCenter+Register.m */,
 				CDBC8327A466AAE3FCBC157EC78EF7EF /* Support Files */,
 			);
-			name = Nimble;
 			path = Nimble;
 			sourceTree = "<group>";
 		};
@@ -486,42 +519,7 @@
 				9E4927062CFEE82AD9E83CD9BF2FE507 /* XCTestSuite+QuickTestSuiteBuilder.m */,
 				C954F2165C468272044A512B62FEC505 /* Support Files */,
 			);
-			name = Quick;
 			path = Quick;
-			sourceTree = "<group>";
-		};
-		146F4441864C9623CDC7673F7416201E /* EVContactsPicker */ = {
-			isa = PBXGroup;
-			children = (
-				155DF75D6A73FD47D73B1614D4F50105 /* Pod */,
-				4DB4A5F547D8F094ECAFAAB1EA6B26CB /* Resources */,
-				2C5007B6A43F935FB94D99BE8101B37E /* Support Files */,
-			);
-			name = EVContactsPicker;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		155DF75D6A73FD47D73B1614D4F50105 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				04D96FB9BAF4074A28F35AA2B82B13CF /* Classes */,
-			);
-			name = Pod;
-			path = Pod;
-			sourceTree = "<group>";
-		};
-		2C5007B6A43F935FB94D99BE8101B37E /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				B544F5C0BD56B74636057C0A70364D4D /* EVContactsPicker.modulemap */,
-				809581CDBCA65EBEDD4C5E2B135F202F /* EVContactsPicker.xcconfig */,
-				A7DBCEDAD5564C818FCA9707EAA99C7F /* EVContactsPicker-dummy.m */,
-				216E33DE2F6AC5B96928ABF2D3EBA3C4 /* EVContactsPicker-prefix.pch */,
-				D325FC0D2CD2A8A7640AF837E75B1694 /* EVContactsPicker-umbrella.h */,
-				2F82D57B1CC83C43959F7670F647EDEB /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/EVContactsPicker";
 			sourceTree = "<group>";
 		};
 		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
@@ -532,24 +530,80 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4DB4A5F547D8F094ECAFAAB1EA6B26CB /* Resources */ = {
+		474A9D188C9F3F58FA6D86B54A510140 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				06E2D1CD0BDE77B18778D548C25F06B4 /* Pod */,
+				F2CB215CD0456F47A5C6CBD59CE063BB /* Assets */,
 			);
-			name = Resources;
+			path = Pod;
 			sourceTree = "<group>";
 		};
-		54C04B8703C585B5D0D9F52675C7D430 /* Products */ = {
+		5902D56DA46CF6FD38C70BC22A0F8133 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				51F878C0B42A039A1B5563E6114A030F /* EVContactsPicker.framework */,
-				378E99DCAECC448C54251A2ABCB83E32 /* Nimble.framework */,
-				ABEAFF4509A674C5F43894BA85CBE2B9 /* Pods_EVContactsPicker_Example.framework */,
-				BB16ADC346F77492B59D3AF77906044E /* Pods_EVContactsPicker_Tests.framework */,
-				CBACD4EC8EC2E4E04C3EC0987028D5D5 /* Quick.framework */,
+				A1FD2F99A3F92833C1D041A44C4604B0 /* EVContactsPicker.modulemap */,
+				006959F37E0B765AB0D28029E7F372A5 /* EVContactsPicker.xcconfig */,
+				FEBEC26EE756B32229CCDA5854C5CC31 /* EVContactsPicker-dummy.m */,
+				1E17A4CA31DBA2D0785E25CC7BD838BC /* EVContactsPicker-prefix.pch */,
+				82352C61D7C6E513A23998197C9851A6 /* EVContactsPicker-umbrella.h */,
+				312C7811DDB1BFAFE1855E77BF0D79C8 /* Info.plist */,
+				C45D5359FCE895135985CFCD6A6C85EC /* ResourceBundle-EVContactsPicker-Info.plist */,
 			);
-			name = Products;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/EVContactsPicker";
+			sourceTree = "<group>";
+		};
+		5A120F0C47EC4F33F350A56F7245F43C /* EVContactsPickerAssets.bundle */ = {
+			isa = PBXGroup;
+			children = (
+				07C4408BE707C791DE675ADB58C9DB93 /* ar.lproj */,
+				C3CFE416AAEE0D4A2478ED4C1908FF6A /* Base.lproj */,
+				B3BED455CEDD1088D2C5FFEB8B500995 /* de.lproj */,
+				4C89C0F1F9950AC08B0A0E1DB6503AB3 /* en.lproj */,
+				1BFC5F4F00AC6567E6A74FF49121A79F /* es.lproj */,
+				06BC29BD50182EC8D98370AC7E874D2C /* fa.lproj */,
+				3D49C14812E9C3A2274CAC76B9698A09 /* fi.lproj */,
+				E2464C8025048CAC83471901FB1C2391 /* fr.lproj */,
+				73E164841C62E17C600BC05A7A5BF563 /* he.lproj */,
+				15E0F4F51EBE863B66B7FAF88832CF4E /* hy.lproj */,
+				D09BF2D55730AFE7057532FDAF36B3AC /* Images */,
+				FB4401482363A48D44EC9EC830731D86 /* it.lproj */,
+				9B7234DD5599B49945EC5BA12C71D977 /* ja.lproj */,
+				7AD752ADCBD6FA4976AC27FC708066F7 /* ko.lproj */,
+				3F2E23134DF6127526D3BD875D517AD1 /* nl.lproj */,
+				BB1D38050CAA197B4F0832B6CB51BD74 /* pl.lproj */,
+				DE198A921777FC0FB86544E063E56C37 /* pt.lproj */,
+				E32B5EA230585831F469C7101837FD8F /* ro.lproj */,
+				0C8CD518011F0E290098D985466DABE7 /* ru.lproj */,
+				2093C7230A1BA8B31BE0D2A947F89EB3 /* template */,
+				BDD9415CC7E82192B8AD7F720BF2B560 /* th.lproj */,
+				3DE6978FD5919BEFEC8473FA38E91104 /* tr.lproj */,
+				34C1CE57471C869917F8D8791E63BFE9 /* vi.lproj */,
+				1BEF02715F0B0D51FBEC0E2F31678AAE /* zh-Hans.lproj */,
+				037DB43492CF500AA3C5414C318331A5 /* zh-Hant.lproj */,
+			);
+			path = EVContactsPickerAssets.bundle;
+			sourceTree = "<group>";
+		};
+		624FDF4CF7502674852B74C96174926B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6F12A2475B606B9F9CB14B3C394EF2F8 /* EVBubbleColor.swift */,
+				243BB542A065B27F80C114453FA85A9C /* EVCContactsPickerDataSourceProtocol.swift */,
+				F75F3D7CCD05DCA7F0191C50914249AD /* EVContact.swift */,
+				7169C79B76954860A8F4BB4964520FA2 /* EVContactBubble.swift */,
+				696A815EBD202B8630CADAD44DC3AFCF /* EVContactBubbleDelegate.swift */,
+				8A180EBB8B829F72E21E70F85253EFD6 /* EVContactsPickerConstants.swift */,
+				BF11F16D90EC6699C8403A474515695C /* EVContactsPickerDelegate.swift */,
+				9A7813289DCA92F67B2AADABA745CB5F /* EVContactsPickerTableViewCell.swift */,
+				9BF42A2599F58AB1EE2437CF3FA3B387 /* EVContactsPickerTableViewCell.xib */,
+				FE9BF06C0143B16934F74180422FBC4E /* EVContactsPickerViewController.swift */,
+				B3D32F983BF9A192DC65FE677EE6F870 /* EVContactsPickerViewController.xib */,
+				7EE92FA282C2C2580A032309AB453E3E /* EVPickedContactsView.swift */,
+				166DF0893F80C7D78E0DD8DD7076C65E /* EVPickedContactsViewDelegate.swift */,
+				497AACCA7CB4D5159E6C816864052BED /* Bundle+EVBundle.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -559,9 +613,17 @@
 				C776939790AFBBAA20246B3693E39AE6 /* Development Pods */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
 				8AB23000B224107F549D6B1B059A59A5 /* Pods */,
-				54C04B8703C585B5D0D9F52675C7D430 /* Products */,
+				C3D55776A909ABC13BD47F0F9B76CAEF /* Products */,
 				FB911CCF914361B31E656CA06EFC44F2 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		8A4E7197BB6AB78FAD2A5DF3C574B073 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				474A9D188C9F3F58FA6D86B54A510140 /* Pod */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		8AB23000B224107F549D6B1B059A59A5 /* Pods */ = {
@@ -600,19 +662,28 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		A2746886A4D60DC0151B2C51C44CAA58 /* Assets */ = {
+		A59E6730A15E666AE6F1CC0DEC8307FA /* EVContactsPicker */ = {
 			isa = PBXGroup;
 			children = (
-				8A02F9FF8AA29E63BB2AF8EA6B86AE39 /* EVContactsPickerAssets.bundle */,
-				46C6126C1C0F3B0202F3B17BEEADE530 /* icon-avatar-60x60.png */,
-				21E101B659E920D394A60CAB48B72C9A /* icon-avatar-60x60@2x.png */,
-				A4BECC4230A1386A9B6E7EA34B514EC9 /* icon-checkbox-selected-green-25x25.png */,
-				BD3D1014AFE8BA3874EDCA991CDBF4E4 /* icon-checkbox-selected-green-25x25@2x.png */,
-				599EF4D5C127B72F623A63841233751D /* icon-checkbox-unselected-25x25.png */,
-				733B7DA50005585A06C1181BE242F98D /* icon-checkbox-unselected-25x25@2x.png */,
+				FAA572C21A2F22F0CE52118F405B7300 /* Pod */,
+				8A4E7197BB6AB78FAD2A5DF3C574B073 /* Resources */,
+				5902D56DA46CF6FD38C70BC22A0F8133 /* Support Files */,
 			);
-			name = Assets;
-			path = Assets;
+			name = EVContactsPicker;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		C3D55776A909ABC13BD47F0F9B76CAEF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				81FDC9FC261C8B42DDAFE390FA50E797 /* EVContactsPicker.bundle */,
+				2D77C74C1222C9BED3ACBAB95075BEC2 /* EVContactsPicker.framework */,
+				6CFB94AA1CFCDFA64FDC4E8532534ED2 /* Nimble.framework */,
+				4BFBBD9F1A6104CE6D4CD2C5AA059BDC /* Pods_EVContactsPicker_Example.framework */,
+				8B1112BC5957B089C349141B19FB4A88 /* Pods_EVContactsPicker_Tests.framework */,
+				185CE1E7D395012C6619C761C6087667 /* Quick.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		C6BBDF11BC7D27BD88116A2FB6D7FD54 /* Pods-EVContactsPicker_Example */ = {
@@ -636,7 +707,7 @@
 		C776939790AFBBAA20246B3693E39AE6 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				146F4441864C9623CDC7673F7416201E /* EVContactsPicker */,
+				A59E6730A15E666AE6F1CC0DEC8307FA /* EVContactsPicker */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -667,6 +738,28 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Nimble";
+			sourceTree = "<group>";
+		};
+		F2CB215CD0456F47A5C6CBD59CE063BB /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				EB8042A0D5ADB498D51171103FEA5556 /* icon-avatar-60x60.png */,
+				2B737225163FA9C029E3844EC2BB0F77 /* icon-avatar-60x60@2x.png */,
+				EB33A4C9209D671151E74A787CAE3C94 /* icon-checkbox-selected-green-25x25.png */,
+				2086E50F0CC08B7610E77FDF921A7C08 /* icon-checkbox-selected-green-25x25@2x.png */,
+				8F1864E077D27F347E694F21F946E27C /* icon-checkbox-unselected-25x25.png */,
+				B2302E77F14F690BEC2F90E4B3640288 /* icon-checkbox-unselected-25x25@2x.png */,
+				5A120F0C47EC4F33F350A56F7245F43C /* EVContactsPickerAssets.bundle */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		FAA572C21A2F22F0CE52118F405B7300 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				624FDF4CF7502674852B74C96174926B /* Classes */,
+			);
+			path = Pod;
 			sourceTree = "<group>";
 		};
 		FB911CCF914361B31E656CA06EFC44F2 /* Targets Support Files */ = {
@@ -702,14 +795,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C87ED59DCAA9FF26BA040630A628A7B4 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E7E705DA5296783D64509B056295AF6B /* EVContactsPicker-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D1BED4947A8B8109C6C77A2DC289EA78 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -733,26 +818,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FCB038AA3D64799F53089C10FEB130E6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE37FB3EDC727D4150EA76AC8D263EFA /* EVContactsPicker-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		1E0BEE6BAB87A66D72D22DBF0C0895A7 /* EVContactsPicker */ = {
+		14CD81203D303D2E2983979D8E8631D4 /* EVContactsPicker-EVContactsPicker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2B825E761343A96669634667BE0604DF /* Build configuration list for PBXNativeTarget "EVContactsPicker" */;
+			buildConfigurationList = 0FED9249CD88CF4D84E1D47FB1F3ACE5 /* Build configuration list for PBXNativeTarget "EVContactsPicker-EVContactsPicker" */;
 			buildPhases = (
-				7C0ADE6FAE98AA34E3D1E5EF37F3E5E5 /* Sources */,
-				98C6221FE1CBE3BF2199A6659E53A91F /* Frameworks */,
-				86C8C6CC64DF3D6EF0CFBF9E47563CAF /* Resources */,
-				C87ED59DCAA9FF26BA040630A628A7B4 /* Headers */,
+				C79F633348C7E7E016154AEB44227AED /* Sources */,
+				03981F9A376AD1C648E46DA99393BF3C /* Frameworks */,
+				131E0044A7EB38EDD4BF62185D8A98EA /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = EVContactsPicker;
-			productName = EVContactsPicker;
-			productReference = 51F878C0B42A039A1B5563E6114A030F /* EVContactsPicker.framework */;
-			productType = "com.apple.product-type.framework";
+			name = "EVContactsPicker-EVContactsPicker";
+			productName = "EVContactsPicker-EVContactsPicker";
+			productReference = 81FDC9FC261C8B42DDAFE390FA50E797 /* EVContactsPicker.bundle */;
+			productType = "com.apple.product-type.bundle";
 		};
 		6C9F6ED40FDF454832E8EAFCAB4DB6AC /* Quick */ = {
 			isa = PBXNativeTarget;
@@ -768,7 +860,7 @@
 			);
 			name = Quick;
 			productName = Quick;
-			productReference = CBACD4EC8EC2E4E04C3EC0987028D5D5 /* Quick.framework */;
+			productReference = 185CE1E7D395012C6619C761C6087667 /* Quick.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		717EC02F4A5A70C09EA03B314A132BA3 /* Pods-EVContactsPicker_Example */ = {
@@ -786,7 +878,7 @@
 			);
 			name = "Pods-EVContactsPicker_Example";
 			productName = "Pods-EVContactsPicker_Example";
-			productReference = ABEAFF4509A674C5F43894BA85CBE2B9 /* Pods_EVContactsPicker_Example.framework */;
+			productReference = 4BFBBD9F1A6104CE6D4CD2C5AA059BDC /* Pods_EVContactsPicker_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		83809A38136027B4284EC111C802F7B0 /* Nimble */ = {
@@ -803,7 +895,26 @@
 			);
 			name = Nimble;
 			productName = Nimble;
-			productReference = 378E99DCAECC448C54251A2ABCB83E32 /* Nimble.framework */;
+			productReference = 6CFB94AA1CFCDFA64FDC4E8532534ED2 /* Nimble.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8CD53177C1355C41662ADBA153C2DD4A /* EVContactsPicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FFFD9E04B2076F62A00077897262021F /* Build configuration list for PBXNativeTarget "EVContactsPicker" */;
+			buildPhases = (
+				274AB2151BF51A537A1DD4BA7C996A42 /* Sources */,
+				FC2A87602AF02E9D80BBEB2FAB1828E7 /* Frameworks */,
+				26408F47C036A87FEBFDCE4809180129 /* Resources */,
+				FCB038AA3D64799F53089C10FEB130E6 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B3E828E3A7322ADBE20661BC386EF42F /* PBXTargetDependency */,
+			);
+			name = EVContactsPicker;
+			productName = EVContactsPicker;
+			productReference = 2D77C74C1222C9BED3ACBAB95075BEC2 /* EVContactsPicker.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		E25B1BAB6276612519635722D27963D9 /* Pods-EVContactsPicker_Tests */ = {
@@ -823,7 +934,7 @@
 			);
 			name = "Pods-EVContactsPicker_Tests";
 			productName = "Pods-EVContactsPicker_Tests";
-			productReference = BB16ADC346F77492B59D3AF77906044E /* Pods_EVContactsPicker_Tests.framework */;
+			productReference = 8B1112BC5957B089C349141B19FB4A88 /* Pods_EVContactsPicker_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -843,11 +954,12 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 54C04B8703C585B5D0D9F52675C7D430 /* Products */;
+			productRefGroup = C3D55776A909ABC13BD47F0F9B76CAEF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1E0BEE6BAB87A66D72D22DBF0C0895A7 /* EVContactsPicker */,
+				8CD53177C1355C41662ADBA153C2DD4A /* EVContactsPicker */,
+				14CD81203D303D2E2983979D8E8631D4 /* EVContactsPicker-EVContactsPicker */,
 				83809A38136027B4284EC111C802F7B0 /* Nimble */,
 				717EC02F4A5A70C09EA03B314A132BA3 /* Pods-EVContactsPicker_Example */,
 				E25B1BAB6276612519635722D27963D9 /* Pods-EVContactsPicker_Tests */,
@@ -857,17 +969,49 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		86C8C6CC64DF3D6EF0CFBF9E47563CAF /* Resources */ = {
+		131E0044A7EB38EDD4BF62185D8A98EA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7D33B108729CD33DAB44B4084C4A12C /* EVContactsPickerAssets.bundle in Resources */,
-				BCF8FA14A62A1C15CFC5C4813A5509D8 /* icon-avatar-60x60.png in Resources */,
-				5A6C506EADE518E5150C965515C9CA06 /* icon-avatar-60x60@2x.png in Resources */,
-				D6488BEC2B3DD48D1742BCB589B11214 /* icon-checkbox-selected-green-25x25.png in Resources */,
-				A6B7FEB3E53AC8404DC476F892BE279A /* icon-checkbox-selected-green-25x25@2x.png in Resources */,
-				56B26E0FDC98673D9E4E29C50FB2450F /* icon-checkbox-unselected-25x25.png in Resources */,
-				8E335CB6F162E316012A3E31170B3066 /* icon-checkbox-unselected-25x25@2x.png in Resources */,
+				324AA3AC29DE3E56B5D90C30C80F0DBA /* ar.lproj in Resources */,
+				750F8344B6C73F3491CEAA1339DB85AA /* Base.lproj in Resources */,
+				408495257DFF7CCBA9F59D2E95BB5362 /* de.lproj in Resources */,
+				BF0D12C76F489C5F34979AC103B3383E /* en.lproj in Resources */,
+				7D0F59F5D5331155D860FFF04CB0D232 /* es.lproj in Resources */,
+				97E0F5F961678CF4706C79274A01F208 /* fa.lproj in Resources */,
+				F4CDF48CAE70BFCB6D7114E268C10D0A /* fi.lproj in Resources */,
+				14F17DBBDEC09BA7A748E59D7FC067B4 /* fr.lproj in Resources */,
+				4F2DCD576560221FCACB6CA8A4DBE8F0 /* he.lproj in Resources */,
+				DED379F4691B5A1E7CC9CCFA8EFB70E7 /* hy.lproj in Resources */,
+				71B040C24090777FB7832FB5C4596EA2 /* icon-avatar-60x60.png in Resources */,
+				B7415F82E285E45EBD9928E3C1DE9474 /* icon-avatar-60x60@2x.png in Resources */,
+				911DA60A65AA0B5E8F00ECC3604FB8B0 /* icon-checkbox-selected-green-25x25.png in Resources */,
+				909576C8AD50EA54B1E175E33E72E8F0 /* icon-checkbox-selected-green-25x25@2x.png in Resources */,
+				24CF40A56B8371C14A00E1E057AAD564 /* icon-checkbox-unselected-25x25.png in Resources */,
+				3E1CF7B394617542C58A0FF8160EE8DB /* icon-checkbox-unselected-25x25@2x.png in Resources */,
+				557D3149B865A1F499EB99DB86FF0EC0 /* Images in Resources */,
+				CD4DD83C2E671A44AED7ECC44EC417F7 /* it.lproj in Resources */,
+				B63EAC3628267660F5620B1F2D254856 /* ja.lproj in Resources */,
+				96A13CB565C2A45ABFDE9E7C67160264 /* ko.lproj in Resources */,
+				B87389722D76EA0314B7C3287B9B753A /* nl.lproj in Resources */,
+				BBD6F323A7751622584BEE22920FF955 /* pl.lproj in Resources */,
+				E9BC7A2F02F008CB75C86B739C9674D1 /* pt.lproj in Resources */,
+				9AAC7D03724C2FDFBBE5E0861E3BDEDA /* ro.lproj in Resources */,
+				5EC34EA7FAE9B710706002D3AAA8B604 /* ru.lproj in Resources */,
+				68F9D6B882A886BA61FCCDF81834610A /* template in Resources */,
+				74E14407161618AECB918249990C8EB8 /* th.lproj in Resources */,
+				FD207E1C0836DD45E15A703863E076EF /* tr.lproj in Resources */,
+				17E0BAF5392F1F9AA1623562365D082E /* vi.lproj in Resources */,
+				6F9DB2674CAEB9C50582FF374C359876 /* zh-Hans.lproj in Resources */,
+				7B87411683735289B3CD889F704CF313 /* zh-Hant.lproj in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26408F47C036A87FEBFDCE4809180129 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				269433FB93123321A88D05FF4944FBE1 /* EVContactsPicker.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -902,6 +1046,28 @@
 				01DFE70F2327471ACE69859AF5350622 /* World+DSL.swift in Sources */,
 				8947B7FB2553CF66DD958D9644973B4C /* World.swift in Sources */,
 				990B9256D3C4EB684AA3E921CBDD3C81 /* XCTestSuite+QuickTestSuiteBuilder.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		274AB2151BF51A537A1DD4BA7C996A42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A098B8EB93CB1646B9FC11263640DDC /* EVBubbleColor.swift in Sources */,
+				A6ECDFCE7B65D22A333EECEE3121998C /* EVCContactsPickerDataSourceProtocol.swift in Sources */,
+				BCA636D3854B9F277B35A137556BB148 /* EVContact.swift in Sources */,
+				0595106A8DA4062301AD52F22EACDA97 /* EVContactBubble.swift in Sources */,
+				B9333202ACF2AC5C81A905D4DE21485C /* EVContactBubbleDelegate.swift in Sources */,
+				AF636CE307A844B47D075E9B18BECCB9 /* EVContactsPicker-dummy.m in Sources */,
+				C78ECB18918D4846AD2A459FCDA45F3A /* EVContactsPickerConstants.swift in Sources */,
+				36FB40B9CFA3E0397C887C8BB23D6FFF /* EVContactsPickerDelegate.swift in Sources */,
+				47966FE1596F3A0997B9674FE4FF69A0 /* EVContactsPickerTableViewCell.swift in Sources */,
+				16AB3E42214CC819288CEBA72E0F57D9 /* EVContactsPickerTableViewCell.xib in Sources */,
+				9363DA58D33CBEE79FFF5527E68BB8C7 /* EVContactsPickerViewController.swift in Sources */,
+				CE2515404166F757370EBBE7D888B739 /* EVContactsPickerViewController.xib in Sources */,
+				FB12B3F7A629503558684C0B613AC3E0 /* EVPickedContactsView.swift in Sources */,
+				00375E2D749A84551ABBDD5AB0026AF0 /* EVPickedContactsViewDelegate.swift in Sources */,
+				172009167E33979C64E15389C8392918 /* Bundle+EVBundle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -969,33 +1135,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7C0ADE6FAE98AA34E3D1E5EF37F3E5E5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				22B0DA141CA07CEF51D54C8DADAEACC0 /* EVBubbleColor.swift in Sources */,
-				A09687435FB983F6B3F57D393D757705 /* EVCContactsPickerDataSourceProtocol.swift in Sources */,
-				485DCD5EB439A7CE28DF443BEBCA68ED /* EVContact.swift in Sources */,
-				DC6673BF1C4CB4BEAE7AAD89F55F223F /* EVContactBubble.swift in Sources */,
-				A30A435DCC90B06EDFDBB176039223E1 /* EVContactBubbleDelegate.swift in Sources */,
-				B3B3100E3C399AA457E6ADE4CB289F21 /* EVContactsPicker-dummy.m in Sources */,
-				1113E5EB902EA9C818AAF161B53FB941 /* EVContactsPickerConstants.swift in Sources */,
-				9117FE0C81FE02D3C2AF7CB95FA4E945 /* EVContactsPickerDelegate.swift in Sources */,
-				9AE715AA15878799C7409E693D5CB6BE /* EVContactsPickerTableViewCell.swift in Sources */,
-				D04A7579827112DF9E1DB08CB9F28DDD /* EVContactsPickerTableViewCell.xib in Sources */,
-				6787528579EF7B9394A8D2117BD03039 /* EVContactsPickerViewController.swift in Sources */,
-				D3D2628175B937DF9ACE2E6459014FDD /* EVContactsPickerViewController.xib in Sources */,
-				5DD660A6366DADDBF10BABA7FD61593A /* EVPickedContactsView.swift in Sources */,
-				C9BD9DAC55CD6B58E0166004BB6BC95A /* EVPickedContactsViewDelegate.swift in Sources */,
-				707C17A3DECEB90705899711E4992785 /* NSBundle+EVBundle.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		823CDBFA7F655F6964044DFAA750087D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6E3F7871414CF127F7132462933841FD /* Pods-EVContactsPicker_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C79F633348C7E7E016154AEB44227AED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1005,7 +1156,7 @@
 		1FA887A2A257A81B1DC22427FD43B0A0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = EVContactsPicker;
-			target = 1E0BEE6BAB87A66D72D22DBF0C0895A7 /* EVContactsPicker */;
+			target = 8CD53177C1355C41662ADBA153C2DD4A /* EVContactsPicker */;
 			targetProxy = 20ABEA3563FF7B238689A8FE0C858A50 /* PBXContainerItemProxy */;
 		};
 		3029374BEAAAE408F8BADB48C66259A8 /* PBXTargetDependency */ = {
@@ -1017,8 +1168,14 @@
 		6FE02E652B399903ECD3F2169A7E3840 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = EVContactsPicker;
-			target = 1E0BEE6BAB87A66D72D22DBF0C0895A7 /* EVContactsPicker */;
+			target = 8CD53177C1355C41662ADBA153C2DD4A /* EVContactsPicker */;
 			targetProxy = 1E0755200443CB7DC20A5F2E0C572BF9 /* PBXContainerItemProxy */;
+		};
+		B3E828E3A7322ADBE20661BC386EF42F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "EVContactsPicker-EVContactsPicker";
+			target = 14CD81203D303D2E2983979D8E8631D4 /* EVContactsPicker-EVContactsPicker */;
+			targetProxy = 1D54984F30849EEDE031AE0A4E5B43FD /* PBXContainerItemProxy */;
 		};
 		D8A91C038C4EF9E49E4C83AAC4C4F768 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1029,6 +1186,23 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0A0565F2ABE5DFB9D0EF40B1453C7420 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 006959F37E0B765AB0D28029E7F372A5 /* EVContactsPicker.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/EVContactsPicker";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/EVContactsPicker/ResourceBundle-EVContactsPicker-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_NAME = EVContactsPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
 		358F06A409836D4C629AFFCE61ADA001 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2F4D681F99E511DF933B395DEB917AFD /* Nimble.xcconfig */;
@@ -1277,39 +1451,6 @@
 			};
 			name = Debug;
 		};
-		9207C86ABA0D630A17828B16EF092BD4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 809581CDBCA65EBEDD4C5E2B135F202F /* EVContactsPicker.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/EVContactsPicker/EVContactsPicker-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/EVContactsPicker/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/EVContactsPicker/EVContactsPicker.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = EVContactsPicker;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		9E7180ED7FA8A22AB2F37AD1AFE8B1C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2F4D681F99E511DF933B395DEB917AFD /* Nimble.xcconfig */;
@@ -1342,6 +1483,55 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		A687E732D59CF967185BF89BC58F71BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 006959F37E0B765AB0D28029E7F372A5 /* EVContactsPicker.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/EVContactsPicker/EVContactsPicker-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EVContactsPicker/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/EVContactsPicker/EVContactsPicker.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = EVContactsPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B3B815FA1DD27EB4DD868DF033E29512 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 006959F37E0B765AB0D28029E7F372A5 /* EVContactsPicker.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/EVContactsPicker";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/EVContactsPicker/ResourceBundle-EVContactsPicker-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_NAME = EVContactsPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
 		};
 		B7324857C38B065FEB1EEE3105C2367A /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1383,15 +1573,15 @@
 			};
 			name = Release;
 		};
-		F895F22CEAE822F45971F70DC72B153D /* Release */ = {
+		F68A92AFFDE430BB2A07798302463DA9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 809581CDBCA65EBEDD4C5E2B135F202F /* EVContactsPicker.xcconfig */;
+			baseConfigurationReference = 006959F37E0B765AB0D28029E7F372A5 /* EVContactsPicker.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1404,16 +1594,17 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/EVContactsPicker/EVContactsPicker.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = EVContactsPicker;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		FD3A6E3C2C6DCA4B5D1C65131C699ACE /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1453,11 +1644,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2B825E761343A96669634667BE0604DF /* Build configuration list for PBXNativeTarget "EVContactsPicker" */ = {
+		0FED9249CD88CF4D84E1D47FB1F3ACE5 /* Build configuration list for PBXNativeTarget "EVContactsPicker-EVContactsPicker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9207C86ABA0D630A17828B16EF092BD4 /* Debug */,
-				F895F22CEAE822F45971F70DC72B153D /* Release */,
+				0A0565F2ABE5DFB9D0EF40B1453C7420 /* Debug */,
+				B3B815FA1DD27EB4DD868DF033E29512 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1503,6 +1694,15 @@
 			buildConfigurations = (
 				9E7180ED7FA8A22AB2F37AD1AFE8B1C5 /* Debug */,
 				358F06A409836D4C629AFFCE61ADA001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FFFD9E04B2076F62A00077897262021F /* Build configuration list for PBXNativeTarget "EVContactsPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F68A92AFFDE430BB2A07798302463DA9 /* Debug */,
+				A687E732D59CF967185BF89BC58F71BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

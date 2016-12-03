@@ -46,21 +46,18 @@ import ContactsUI
     
     
     lazy var avatarImage : UIImage = {
-       let bundle = Bundle.evAssetsBundle()
-       let path = bundle.path(forResource: kAvatarImage, ofType: "png", inDirectory: "Images")
-       return UIImage(named: path!)!
+        let image = Bundle.evImage(withName: kAvatarImage, andExtension: "png")!
+        return image
     }()
     
     lazy var selectedCheckbox : UIImage = {
-        let bundle = Bundle.evAssetsBundle()
-        let path = bundle.path(forResource: kSelectedCheckbox, ofType: "png", inDirectory: "Images")
-        return UIImage(named: path!)!
+        let image = Bundle.evImage(withName: kSelectedCheckbox, andExtension: "png")!
+        return image
     }()
     
     lazy var unselectedCheckbox : UIImage = {
-        let bundle = Bundle.evAssetsBundle()
-        let path = bundle.path(forResource: kUnselectedCheckbox, ofType: "png", inDirectory: "Images")
-        return UIImage(named: path!)!
+        let image = Bundle.evImage(withName: kUnselectedCheckbox, andExtension: "png")!
+        return image
     }()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -99,13 +96,13 @@ import ContactsUI
             if singleSelection {
                 self.title  = Bundle.evLocalizedStringForKey("Selected Contacts")
             } else {
-                self.title  = Bundle.evLocalizedStringForKey("Selected Contacts") + "(0)"
+                self.title  = Bundle.evLocalizedStringForKey("Selected Contacts")! + "(0)"
             }
         } else {
             if singleSelection {
                 self.title  = Bundle.evLocalizedStringForKey("Add Contacts")
             } else {
-                self.title = String(Bundle.evLocalizedStringForKey("Add Contacts") + "(\(self.selectedContacts!.count))")
+                self.title = String(Bundle.evLocalizedStringForKey("Add Contacts")! + "(\(self.selectedContacts!.count))")
             }
         }
     }
@@ -125,7 +122,7 @@ import ContactsUI
         
         self.contactPickerView = EVPickedContactsView(frame: CGRect(origin: CGPoint.zero, size: CGSize(width:self.view.frame.size.width, height: 100)))
         self.contactPickerView?.delegate = self
-        self.contactPickerView?.setPlaceHolderString(Bundle.evLocalizedStringForKey("Type Contact Name"))
+        self.contactPickerView?.setPlaceHolderString(Bundle.evLocalizedStringForKey("Type Contact Name")!)
         self.view.addSubview(self.contactPickerView!)
         
         
@@ -408,7 +405,7 @@ import ContactsUI
             self.barButton?.isEnabled = false
         }
         
-        self.title = String(Bundle.evLocalizedStringForKey("Add Contacts") + "(\(self.selectedContacts!.count))")
+        self.title = String(Bundle.evLocalizedStringForKey("Add Contacts")! + "(\(self.selectedContacts!.count))")
         self.filteredContacts = self.contacts
         self.tableView?.reloadData()
         
@@ -449,10 +446,13 @@ import ContactsUI
             } else {
                 self.barButton?.isEnabled = false
             }
-            let imPath = self.curBundle?.path(forResource: kUnselectedCheckbox, ofType: "png", inDirectory: "EVContactsPicker.bundle")
-            let im = UIImage(contentsOfFile: imPath!)
+//            let imPath = self.curBundle?.path(forResource: kUnselectedCheckbox, ofType: "png", inDirectory: "EVContactsPicker.bundle")
+//            let im = UIImage(contentsOfFile: imPath!)
+//            
+            let im = Bundle.evImage(withName: kUnselectedCheckbox, andExtension: "png")!
             cell.checkImage?.image = im
-            self.title = String(Bundle.evLocalizedStringForKey("Add Contacts") + "(\(self.selectedContacts!.count))")
+            
+            self.title = String(Bundle.evLocalizedStringForKey("Add Contacts")! + "(\(self.selectedContacts!.count))")
         }
     }
     

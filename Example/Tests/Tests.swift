@@ -19,8 +19,8 @@ class Tests: XCTestCase {
         XCTAssertNotNil(Bundle.evBundle())
     }
     
-    func testEVAssetsBundle() {
-        XCTAssertNotNil(Bundle.evAssetsBundle())
+    func testImages() {
+        XCTAssertNotNil(Bundle.evImage(withName: "icon-avatar-60x60", andExtension: "png"))
     }
     
 }

@@ -13,7 +13,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  EVContactsPicker: d3a6aa73f2fd13dba8698ffb2cface7f1d2c4ddc
+  EVContactsPicker: 54c728607f46e9df0a25828ced2be19a68be79f3
   Nimble: 56fc9f5020effa2206de22c3dd910f4fb011b92f
   Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
 
