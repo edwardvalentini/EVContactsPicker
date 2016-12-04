@@ -23,6 +23,13 @@ class QuickTests: QuickSpec {
             expect(contact.fullname()).to(equal("First Last"))
             expect(contact.email).to(equal("some@example.com"))
         }
+        
+        it("tests the items in the bundle are there") {
+            expect(Bundle.evBundle()).toNot(beNil())
+            expect(Bundle.evImage(withName: "icon-avatar-60x60", andExtension: "png")).toNot(beNil())
+            expect(Bundle.evImage(withName: "icon-checkbox-selected-green-25x25", andExtension: "png")).toNot(beNil())
+            expect(Bundle.evImage(withName: "icon-checkbox-unselected-25x25", andExtension: "png")).toNot(beNil())
+        }
 
     }
 }

@@ -15,12 +15,12 @@ class Tests: XCTestCase {
     }
     
     
-    func testEVBundle() {
-        XCTAssertNotNil(Bundle.evBundle())
-    }
+//    func testEVBundle() {
+//        XCTAssertNotNil(Bundle.evBundle())
+//    }
     
-    func testImages() {
-        XCTAssertNotNil(Bundle.evImage(withName: "icon-avatar-60x60", andExtension: "png"))
-    }
+//    func testImages() {
+//        XCTAssertNotNil(Bundle.evImage(withName: "icon-avatar-60x60", andExtension: "png"))
+//    }
     
 }

@@ -45,20 +45,20 @@ import ContactsUI
 
     
     
-    lazy var avatarImage : UIImage = {
+    var avatarImage : UIImage {
         let image = Bundle.evImage(withName: kAvatarImage, andExtension: "png")!
         return image
-    }()
+    }
     
-    lazy var selectedCheckbox : UIImage = {
+    var selectedCheckbox : UIImage {
         let image = Bundle.evImage(withName: kSelectedCheckbox, andExtension: "png")!
         return image
-    }()
+    }
     
-    lazy var unselectedCheckbox : UIImage = {
+    var unselectedCheckbox : UIImage {
         let image = Bundle.evImage(withName: kUnselectedCheckbox, andExtension: "png")!
         return image
-    }()
+    }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
