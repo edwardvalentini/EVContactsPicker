@@ -35,7 +35,7 @@ Pod::Spec.new do |s|
                }
 
   s.resource_bundles = {
-                        'EVContactsPicker' => ['Pod/Assets/EVContactsPickerAssets.bundle/*'] #,'Pod/Assets/*.{png,gif,jpg}']
+                        'EVContactsPicker' => ['Pod/Assets/*'] #,'Pod/Assets/*.{png,gif,jpg}']
                       }
 
 end
