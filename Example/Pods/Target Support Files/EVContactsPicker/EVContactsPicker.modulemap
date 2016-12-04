@@ -1,6 +1,0 @@
-framework module EVContactsPicker {
-  umbrella header "EVContactsPicker-umbrella.h"
-
-  export *
-  module * { export * }
-}

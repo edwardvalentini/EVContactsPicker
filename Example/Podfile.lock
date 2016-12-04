@@ -1,5 +1,5 @@
 PODS:
-  - EVContactsPicker (0.5.3)
+  - EVContactsPicker (0.5.4)
   - Nimble (5.0.0)
   - Quick (0.10.0)
 
@@ -13,7 +13,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  EVContactsPicker: 3483e5a1bc511e40cf08a2fd1838a3481563b1e1
+  EVContactsPicker: d7756e0ab4b8a15103642e5fbc1572aa1b5abd27
   Nimble: 56fc9f5020effa2206de22c3dd910f4fb011b92f
   Quick: 5d290df1c69d5ee2f0729956dcf0fd9a30447eaa
 
