@@ -8,10 +8,11 @@
 [![Platform](http://img.shields.io/badge/platform-ios-blue.svg?style=flat)](http://cocoapods.org/pods/EVContactsPicker)
 [![Downloads](https://img.shields.io/cocoapods/dt/EVContactsPicker.svg?style=flat)](http://cocoapods.org/pods/EVContactsPicker)
 
+ ![EVContactsPickerMasthead][img2]
 
 ## Swift Versions
 
-Releases for Xcode 8 / Swift 2.3 and Xcode 8 / Swift 3.0
+Xcode 8.x / Swift 3.0
 
 
 ## Screenshots
@@ -69,7 +70,7 @@ class DemoController: UIViewController, EVContactsPickerDelegate {
     }
 
     ...
-    
+
 }
 
 ```
@@ -85,3 +86,4 @@ EVContactsPicker is available under the MIT license. See the LICENSE file for mo
 
 [img0]:https://raw.githubusercontent.com/edwardvalentini/EVContactsPicker/master/Screenshots/screenshot0.png
 [img1]:https://raw.githubusercontent.com/edwardvalentini/EVContactsPicker/master/Screenshots/screenshot1.png
+[img2]:https://raw.githubusercontent.com/edwardvalentini/EVContactsPicker/master/Screenshots/EVContactsPickerMasthead.png
