@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Nuke
 
 class EVContactsPickerTableViewCell: UITableViewCell {
     
@@ -15,6 +16,13 @@ class EVContactsPickerTableViewCell: UITableViewCell {
     @IBOutlet var email : UILabel?
     @IBOutlet var contactImage : UIImageView?
     @IBOutlet var checkImage : UIImageView?
+    
+    var imageURL: URL? {
+        didSet {
+            guard let imageURL = imageURL, let contactImage = contactImage else { return }
+            Nuke.loadImage(with: imageURL, into: contactImage)
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

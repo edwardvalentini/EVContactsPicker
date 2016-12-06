@@ -19,6 +19,7 @@ public protocol EVContactProtocol {
     var phone : String? { get set }
     var email : String? { get set }
     var image : UIImage? { get set }
+    var imageURL : URL? { get set }
     var selected : Bool { get set }
     var date : Date? { get set }
     var dateUpdated : Date? { get set }
@@ -50,6 +51,7 @@ public struct EVContact: EVContactProtocol {
     public var date: Date? = nil
     public var selected: Bool = false
     public var image: UIImage? = nil
+    public var imageURL : URL? = nil
     public var email: String? = nil
     public var phone: String? = nil
     public var lastName: String? = nil

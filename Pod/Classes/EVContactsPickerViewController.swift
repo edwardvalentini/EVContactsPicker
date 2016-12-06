@@ -340,6 +340,10 @@ import ContactsUI
             cell.contactImage?.image = cImage
         }
         
+        if let cImageURL = contact.imageURL {
+            cell.imageURL = contact.imageURL
+        }
+        
         cell.contactImage?.layer.masksToBounds = true
         cell.contactImage?.layer.cornerRadius = 20
         

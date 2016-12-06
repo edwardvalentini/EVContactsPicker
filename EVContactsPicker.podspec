@@ -12,7 +12,6 @@ Pod::Spec.new do |s|
   s.summary          = "A Contact Picker using Contacts Framework that allows any input source not just the Apple Contacts."
 
   s.description      = <<-DESC
-                        Rewrite of THContactPicker in Swift with the following changes
                         1. uses Apples new ios9 Contacts and ContactsUI Frameworks
                         2. allows any contact source to be used as long as it conforms to the
                         EVCContactsPickerDataSourceProtocol Protocol.
@@ -37,5 +36,6 @@ Pod::Spec.new do |s|
   s.resource_bundles = {
                         'EVContactsPicker' => ['Pod/Assets/*'] #,'Pod/Assets/*.{png,gif,jpg}']
                       }
+  s.dependency 'Nuke', '~> 4.1.2'
 
 end
