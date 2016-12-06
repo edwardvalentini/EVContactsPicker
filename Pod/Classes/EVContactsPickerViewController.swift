@@ -222,9 +222,12 @@ import ContactsUI
                 }
                 
                 if(contact.imageDataAvailable) {
-                    let imgData = contact.imageData
-                    let img = UIImage(data: imgData!)
-                    tmpContact.image = img
+                    if let imgData = contact.imageData {
+                        let img = UIImage(data: imgData)
+                        tmpContact.image = img
+                    } else {
+                        tmpContact.image = self.avatarImage
+                    }
                 } else {
                     tmpContact.image = self.avatarImage
                 }
@@ -417,13 +420,33 @@ import ContactsUI
     }
     
     // MARK: - EVPickedContactsViewDelegate
+    private func doesContain(str1: String, str2: String) -> Bool {
+        var options = NSString.CompareOptions()
+        options.insert(NSString.CompareOptions.caseInsensitive)
+        options.insert(NSString.CompareOptions.diacriticInsensitive)
+        return (str1.range(of: str2, options: options, range: nil, locale: nil) != nil)
+    }
     
     func contactPickerTextViewDidChange(_ textViewText: String) -> Void {
         if(textViewText == "") {
             self.filteredContacts = self.contacts
         } else {
-            let pred = NSPredicate(format: "self.%@ contains[cd] %@ OR self.%@ contains[cd] %@", "firstName", textViewText, "lastName", textViewText)
-            self.filteredContacts = self.contacts?.filter { pred.evaluate(with: $0) }
+            guard let contacts = self.contacts else { return }
+            
+            self.filteredContacts = contacts.filter({ (contact) -> Bool in
+                var filterResultFirst : Bool = true
+                var filterResultLast : Bool = true
+
+                if let firstName = contact.firstName {
+                    filterResultFirst = filterResultFirst && doesContain(str1: firstName, str2: textViewText)
+                }
+                
+                if let lastName = contact.lastName {
+                    filterResultLast = filterResultLast && doesContain(str1: lastName, str2: textViewText)
+                }
+                
+                return filterResultFirst || filterResultLast
+            })
         }
         
         self.tableView?.reloadData()

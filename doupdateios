@@ -1,0 +1,3 @@
+#!/bin/sh
+
+git pull; gem install bundler ; bundle update ; bundle clean --force ; rbenv rehash ; pod repo update ; pod update --project-directory=Example
