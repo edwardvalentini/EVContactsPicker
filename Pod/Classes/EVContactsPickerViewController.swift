@@ -341,7 +341,7 @@ import ContactsUI
         }
         
         if let cImageURL = contact.imageURL {
-            cell.imageURL = contact.imageURL
+            cell.imageURL = cImageURL
         }
         
         cell.contactImage?.layer.masksToBounds = true
