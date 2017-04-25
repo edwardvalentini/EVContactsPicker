@@ -1,4 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '9.0'
 use_frameworks!
 
 def reusepods
@@ -6,8 +7,8 @@ def reusepods
 end
 
 def testpods
-  pod 'Quick', '~> 0.10.0'
-  pod 'Nimble', '~> 5.0.0'
+  pod 'Quick', '~> 1'
+  pod 'Nimble', '~> 5'
 end
 
 target 'EVContactsPicker_Example' do

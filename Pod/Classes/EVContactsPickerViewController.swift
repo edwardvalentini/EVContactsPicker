@@ -40,7 +40,7 @@ import ContactsUI
     public var showEmail = true
     public var showPhone = true
     
-    public var delegate : EVContactsPickerDelegate?
+    public weak var delegate : EVContactsPickerDelegate?
     fileprivate var curBundle : Bundle?
 
     
