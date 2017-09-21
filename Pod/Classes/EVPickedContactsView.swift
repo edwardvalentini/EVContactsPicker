@@ -424,7 +424,7 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
     
     // MARK: - Gesture Recognizer
     
-    func handleTapGesture() -> Void {
+    @objc func handleTapGesture() -> Void {
         if(self.limitToOne && self.contactKeys?.count == 1) {
             return
         }

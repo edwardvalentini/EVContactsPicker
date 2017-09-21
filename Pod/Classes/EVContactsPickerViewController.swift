@@ -173,7 +173,7 @@ import ContactsUI
         self.adjustTableViewFrame(false)
     }
     
-    func cancelTapped() {
+    @objc func cancelTapped() {
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -489,7 +489,7 @@ import ContactsUI
     
     // MARK: - Miscellaneous
 
-    open func done(_ sender: AnyObject) -> Void {
+    @objc open func done(_ sender: AnyObject) -> Void {
         let delayTime = DispatchTime.now() + Double(Int64(0.01 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
 
         DispatchQueue.main.asyncAfter(deadline: delayTime, execute: { () -> Void in

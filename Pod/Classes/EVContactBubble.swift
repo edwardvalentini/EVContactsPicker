@@ -134,7 +134,7 @@ class EVContactBubble: UIView, UITextViewDelegate {
         
     }
     
-    func handleTapGesture() -> Void {
+    @objc func handleTapGesture() -> Void {
         if(self.isSelected) {
             self.unSelect()
         } else {

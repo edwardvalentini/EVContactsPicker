@@ -24,18 +24,18 @@ Pod::Spec.new do |s|
   s.source           = { :git => "https://github.com/edwardvalentini/EVContactsPicker.git", :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/edwardvalentini'
 
-  s.platform     = :ios, '9.0'
+  s.platform     = :ios, '10.3'
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
 
   s.pod_target_xcconfig = {
-                 'SWIFT_VERSION' => '3.0'
+                 'SWIFT_VERSION' => '4.0'
                }
 
   s.resource_bundles = {
                         'EVContactsPicker' => ['Pod/Assets/*'] #,'Pod/Assets/*.{png,gif,jpg}']
                       }
-  s.dependency 'Nuke', '~> 4.1.2'
+  s.dependency 'Nuke'
 
 end
