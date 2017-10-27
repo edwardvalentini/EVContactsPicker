@@ -30,6 +30,7 @@ Pod::Spec.new do |s|
   s.source_files = 'Pod/Classes/**/*'
 
   s.pod_target_xcconfig = {
+		 'SWIFT_SWIFT3_OBJC_INFERENCE' => 'Default',
                  'SWIFT_VERSION' => '4.0'
                }
 
