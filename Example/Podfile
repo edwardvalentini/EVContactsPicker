@@ -1,5 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '10.3'
+platform :ios, '11.4'
 use_frameworks!
 
 def reusepods
