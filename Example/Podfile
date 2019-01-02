@@ -7,8 +7,6 @@ def reusepods
 end
 
 def testpods
-#  pod 'Quick'
-#  pod 'Nimble'
 end
 
 target 'EVContactsPicker_Example' do
