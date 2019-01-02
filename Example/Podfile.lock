@@ -1,19 +1,23 @@
 PODS:
-  - EVContactsPicker (0.5.12):
+  - EVContactsPicker (0.6.0):
     - Nuke
-  - Nuke (5.2)
+  - Nuke (7.5.2)
 
 DEPENDENCIES:
   - EVContactsPicker (from `../`)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Nuke
+
 EXTERNAL SOURCES:
   EVContactsPicker:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  EVContactsPicker: 26979726acfb21e2c2ec4f7cbcf43774f60ca64d
-  Nuke: 5f420c4637415f979c83afb35e73176dd03232d9
+  EVContactsPicker: c7a529aa41d85ecd4616413ef4864cf90c82ab04
+  Nuke: 0350d346a688426e8f2331253ef28dc2fc4f6178
 
-PODFILE CHECKSUM: 460075594c606530d8c0e6076199108988df4d95
+PODFILE CHECKSUM: 6cb260d4f36fd8c20b73fd1198c617d920dd966b
 
-COCOAPODS: 1.4.0.beta.2
+COCOAPODS: 1.6.0.beta.2

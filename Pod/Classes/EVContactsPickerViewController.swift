@@ -115,7 +115,7 @@ import ContactsUI
         self.navigationItem.rightBarButtonItem = barButton
         
         if self.navigationController?.viewControllers.first == self {
-            self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel,
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.cancel,
                                                                     target: self,
                                                                     action: #selector(cancelTapped))
         }
@@ -165,12 +165,14 @@ import ContactsUI
     
     override open func viewDidLayoutSubviews() -> Void {
         super.viewDidLayoutSubviews()
-        var topOffset : CGFloat = 0.0
-        if( self.responds(to: #selector(getter: UIViewController.topLayoutGuide))) {
-            topOffset = self.topLayoutGuide.length
-        }
-        self.contactPickerView?.frame.origin.y = topOffset
-        self.adjustTableViewFrame(false)
+//        var topOffset : CGFloat = 0.0
+//		if( self.responds(to: #selector(getter: UIViewController.view.safeAreaLayoutGuide.topAnchor))) {  //.topLayoutGuide))) {
+//            topOffset = self.view.safeAreaLayoutGuide. //topLayoutGuide.length
+//        }
+		self.contactPickerView?.safeAreaLayoutGuide.topAnchor.constraint(equalTo: <#T##NSLayoutAnchor<NSLayoutYAxisAnchor>#>, constant: <#T##CGFloat#>) //(equalTo: self.view.safeAreaLayoutGuide.topAnchor)
+        //self.contactPickerView?.safeAreaLayoutGuide.setA  // topAnchor = self.view.safeAreaLayoutGuide.topAnchor //?.frame.origin.y = topOffset
+		//NSLayoutConstraint(item: <#T##Any#>, attribute: <#T##NSLayoutConstraint.Attribute#>, relatedBy: <#T##NSLayoutConstraint.Relation#>, toItem: <#T##Any?#>, attribute: <#T##NSLayoutConstraint.Attribute#>, multiplier: <#T##CGFloat#>, constant: <#T##CGFloat#>)
+		self.adjustTableViewFrame(false)
     }
     
     @objc func cancelTapped() {
@@ -360,7 +362,7 @@ import ContactsUI
         if !self.useExternal {
             cell.accessoryView = UIButton(type: .detailDisclosure)
             let but = cell.accessoryView as! UIButton
-            but.addTarget(self, action: #selector(EVContactsPickerViewController.viewContactDetail(_:)), for: UIControlEvents.touchUpInside)
+            but.addTarget(self, action: #selector(EVContactsPickerViewController.viewContactDetail(_:)), for: UIControl.Event.touchUpInside)
         } else {
             cell.accessoryType = .none
             cell.accessoryView?.isHidden = true

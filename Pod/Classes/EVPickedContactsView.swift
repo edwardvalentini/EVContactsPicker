@@ -187,7 +187,7 @@ class EVPickedContactsView: UIView, EVContactBubbleDelegate, UITextViewDelegate,
         self.textView?.delegate = self
         self.textView?.font = contactBubble.label?.font
         self.textView?.backgroundColor = UIColor.clear
-        self.textView?.contentInset = UIEdgeInsetsMake(-4.0, -2.0, 0, 0)
+        self.textView?.contentInset = UIEdgeInsets.init(top: -4.0, left: -2.0, bottom: 0, right: 0)
         self.textView?.isScrollEnabled = false
         self.textView?.scrollsToTop = false
         self.textView?.clipsToBounds = false
